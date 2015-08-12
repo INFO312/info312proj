@@ -12,6 +12,7 @@
         <title>Initial Page</title>
     </head>
     <body>
-        <h1>Hello World!</h1>
+        <h1>HOME</h1>
+        <a href ="/PostGradSystem/login.jsp">Go to Login page</a>
     </body>
 </html>
