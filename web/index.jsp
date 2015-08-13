@@ -20,6 +20,27 @@
     </head>
 
     <body>
+        <% 
+         // get the status code to see why the log in page was requested           Integer statusCode = (Integer) request.getAttribute("javax.servlet.error.status_code"); 
+          Integer statusCode = (Integer) request.getAttribute("javax.servlet.error.status_code");
+         // default message to display to the user 
+          String message = "Please log in to continue."; 
+         // if the status code was 401 (UNAUTHORIZED) then extract the message 
+         // from the request 
+          if (statusCode != null 
+                  && statusCode == HttpServletResponse.SC_UNAUTHORIZED) { 
+             message = 
+                     request.getAttribute("javax.servlet.error.message").toString(); 
+          }if(statusCode != null && statusCode == HttpServletResponse.SC_BAD_REQUEST){ 
+             message = request.getAttribute("javax.servlet.error.message").toString(); 
+          } 
+           
+       %> 
+       <br> 
+       <p><%=message%></p><!-- display the message to the user --> 
+
+        
+        
         <img class="coat-of-arms" src="/resources/UoO - Coat of Arms.png">
         <h1>GAP</h1>
         <h2>Graduate Application Portal</h2>
@@ -33,18 +54,20 @@
                 </ul>
 
             <div id="login"> 
-                <form id="login-form" action="/home/index.html" method="get"> <!-- Action needs to be changed -->
+                <form id="login-form" action="/PostGradSystem/LoginServlet" method="post"> <!-- Action needs to be changed -->
                     <label for="email">Email: </label>
-                    <input type="text" name="email">
+                    <input type="text" name="username">
                     <br>
                     <label for="password">Password: </label>
                     <input type="password" name="password">
+                    <br><input type ="radio" name="type" value ="staff">Staff<br>
+                    <input type ="radio" name="type" value="student">Student<br>
                     <br>
                     <input type="submit" value="Login">
                     <p><a href="#">Forgot Password</a></p>
                 </form>
 
-                 <form id="register-form" action="/register/index.html" method="get">
+                 <form id="register-form" action="/PostGradSystem/RegisterServlet" method="post">
                      <label for="fname">First Name: </label>
                     <input type="text" name="fname">
                      <label for="lname">Last Name: </label>

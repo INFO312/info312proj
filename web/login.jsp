@@ -16,7 +16,7 @@
    </head>
    
    <body>
-      <!-- \\ include file = "/WEB-INF/jspf/nav.jspf"  -->
+      
       <h1>Log in</h1>
       <p> Need a select student or staff module here...</p>
       <div id ="wrapper">
