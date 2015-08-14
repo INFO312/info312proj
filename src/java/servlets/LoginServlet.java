@@ -1,6 +1,7 @@
 /*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
+ * Post Grad Management System Project Files
+ * 2015
+ * Authors: Kadin Boyle, Corey Sutton, Samuel O Connell, Hunter Stewart, Nathan Blomfield
  */
 package servlets;
 
@@ -38,27 +39,17 @@ public class LoginServlet extends HttpServlet {
            throws ServletException, IOException {
       String username = request.getParameter("username");
       String password = request.getParameter("password");
-      //REMOVE THIS LATER...
-      Person user = null;
       
       //Is the person a staff member or student?
       String type = request.getParameter("type");
+ 
+      Person user = new LoginJdbcDAO().logIn(username, password);
       
-      //LoginJdbc may change, possibly have different DAO's for student and staff
-      if(type.equals("student")){
-          user = new LoginJdbcDAO().logIn(username, password);
-      }else if(type.equals("staff")){
-          user = new LoginJdbcDAO().logIn(username, password);
-      }else {
-          //Type param incorrectly set?
-          response.sendError(HttpServletResponse.SC_UNAUTHORIZED,
-                 "Log in failed. Try again.");
-      }
-      
+      //If we managed to login..
       if (user != null) {
          HttpSession session = request.getSession();
          //Set the session attribute so that we can retrieve the current User,AND
-         //their type when navigating across pages.
+         //their type when navigating across pages i.e USER or STAFF.
          session.setAttribute("currentuser", user);
          session.setAttribute("usertype", type); //Set to staff or student..
 
