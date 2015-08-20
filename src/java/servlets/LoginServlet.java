@@ -62,13 +62,12 @@ public class LoginServlet extends HttpServlet {
             // and redirect to that page
             response.sendRedirect(requestedPath);
          } else {
-        // if not go to the home page
+            // if not go to the home page
             response.sendRedirect("/PostGradSystem/");
          }
       } else {
          // Login Unauthorized
-         response.sendError(HttpServletResponse.SC_UNAUTHORIZED,
-                 "Log in failed. Try again.");
+         response.sendError(HttpServletResponse.SC_UNAUTHORIZED, "Log in failed. Try again.");
       }
    }
 
