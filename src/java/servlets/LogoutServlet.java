@@ -14,7 +14,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 /**
- *
+ * Logs out the user by invalidating the session
  * @author Kadin Boyle
  */
 @WebServlet(name = "LogoutServlet", urlPatterns = {"/LogoutServlet"})

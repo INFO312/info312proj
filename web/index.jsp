@@ -113,7 +113,7 @@
                         <input type="text" name="email">
                     </label>
                     <label for="address">
-                        <span>Last Name: </span>
+                        <span>Address: </span>
                         <input type="text" name="address">
                     </label>
                     <label for="email">
@@ -143,7 +143,7 @@
 
                     <label>
                         <span>&nbsp;</span> 
-                        <input type="button" class="button" value="Register">
+                        <input type="submit" class="button" value="Register">
                     </label>
                 </form>
             </div>

@@ -6,13 +6,21 @@
 
 package domain;
 
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
 /**
  *
  * @author Kadin
  */
 public class Person {
     
-    private String person_id;
+    
+    //TODO: Ask samo to change "gender" in DB to char instead of varchar
+    private int person_id; 
+    public enum PERSON_TYPE {candidate, staff};
+    private PERSON_TYPE type;
+
     private String title;
     private String firstname;
     private String mname;
@@ -25,12 +33,28 @@ public class Person {
     private char gender;
     private String dob;
     
+
+    
     public Person(){
         
     }
+    
+    public Person(ResultSet data) throws SQLException{
+        this.person_id = data.getInt("person_id");
+        this.title = data.getString("title");
+        this.firstname = data.getString("fname");
+        this.mname = data.getString("mname");
+        this.lname = data.getString("lname");
+        this.address = data.getString("address");
+        this.email = data.getString("email");
+        this.hphone = data.getString("hphone");
+        this.mphone = data.getString("mphone");
+        this.wphone = data.getString("wphone");
+        this.gender = data.getString("gender").charAt(0);
+        this.dob = data.getDate("dob").toString();
+    }
 
-    public Person(String person_id, String title, String firstname, String mname, String lname, String address, String email, String hphone, String mphone, String wphone, char gender, String dob) {
-        this.person_id = person_id;
+    public Person(String title, String firstname, String mname, String lname, String address, String email, String hphone, String mphone, String wphone, char gender, String dob) {
         this.title = title;
         this.firstname = firstname;
         this.mname = mname;
@@ -43,15 +67,35 @@ public class Person {
         this.gender = gender;
         this.dob = dob;
     }
-
-    public String getPerson_id() {
-        return person_id;
+    
+    public boolean setPersonId(int id, String type){
+        switch(type){
+            case "candidate":
+                this.setType(PERSON_TYPE.candidate);
+                break;
+            case "staff":
+                this.setType(PERSON_TYPE.staff);
+                break; 
+            default:
+                return false;
+        }
+        this.person_id = id;
+        return true;
+    }
+    
+    public int getPersonid(){
+        return this.person_id;
     }
 
-    public void setPerson_id(String person_id) {
-        this.person_id = person_id;
+    //Returns as String
+    public String getType() {
+        return type.toString();
     }
 
+    public void setType(PERSON_TYPE type) {
+        this.type = type;
+    }
+    
     public String getTitle() {
         return title;
     }
@@ -138,6 +182,11 @@ public class Person {
 
     public void setDob(String dob) {
         this.dob = dob;
+    }
+
+    @Override
+    public String toString() {
+        return "Person{" + "person_id=" + person_id+ ", title=" + title + ", firstname=" + firstname + ", mname=" + mname + ", lname=" + lname + ", address=" + address + ", email=" + email + ", hphone=" + hphone + ", mphone=" + mphone + ", wphone=" + wphone + ", gender=" + gender + ", dob=" + dob + '}';
     }
     
     
