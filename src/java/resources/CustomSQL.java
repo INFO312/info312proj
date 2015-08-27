@@ -9,6 +9,7 @@ import domain.Person;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import java.sql.Statement;
 
 
 
@@ -18,13 +19,17 @@ import java.sql.SQLException;
  */
 public class CustomSQL {
     
-    private static String insertPersonSQL = "INSERT INTO Person (title, fname, mname, lname, address, email, mphone, hphone, wphone, gender, dob)"
+    private static final String insertPersonSQL = "INSERT INTO Person (title, fname, mname, lname, address, email, mphone, hphone, wphone, gender, dob, salt, hash, username)"
                                     + "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
     
-    private static String assignCandidateSQL = "INSERT INTO Candidate (Candidate_id) VALUES (?)";
+    private static final String assignCandidateSQL = "INSERT INTO Candidate (Candidate_id) VALUES (?)";
+    
+    private static final String authorizeUserSQL = "SELECT salt, hash FROM Person WHERE username = ?";
+    
+    private static final String retrieveUserSQL = "SELECT * FROM Person WHERE username = ?";
     
     //Returns the prepared statement for inserting a person into the database
-    public static PreparedStatement getRegisterPersonStmt(Person person, Connection connection) throws SQLException{
+    public static PreparedStatement getRegisterPersonStmt(Person person, String username, String salt, String hash, Connection connection) throws SQLException{
         PreparedStatement stmt = connection.prepareStatement(insertPersonSQL, PreparedStatement.RETURN_GENERATED_KEYS);
         stmt.setString(1, person.getTitle());
         stmt.setString(2, person.getFirstname());
@@ -35,16 +40,29 @@ public class CustomSQL {
         stmt.setString(7, person.getMphone());
         stmt.setString(8, person.getHphone());
         stmt.setString(9, person.getWphone());
-        //stmt.setString(10, person.getGender();
-        //stmt.setDate(11, person.getDob());
-        stmt.setString(11, person.getDob());
-        
+        stmt.setString(10, String.valueOf(person.getGender()));
+        stmt.setTimestamp(11, Util.convertStringToTimestamp(person.getDob()));
+        stmt.setString(12, salt);
+        stmt.setString(13, hash);
+        stmt.setString(14, username);    
         return stmt;
     }
     
     public static PreparedStatement getAssignCandidateStmt(int id, Connection connection) throws SQLException{
         PreparedStatement stmt = connection.prepareStatement(assignCandidateSQL);
         stmt.setInt(1, id);
+        return stmt;
+    }
+    
+    public static PreparedStatement getAuthorizeUserStmt(String username, Connection connection) throws SQLException{
+        PreparedStatement stmt = connection.prepareStatement(authorizeUserSQL);
+        stmt.setString(1, username);
+        return stmt;
+    }
+    
+    public static PreparedStatement getRetrieveUserStmt(String username, Connection connection) throws SQLException{
+        PreparedStatement stmt = connection.prepareStatement(retrieveUserSQL);
+        stmt.setString(1, username);
         return stmt;
     }
     

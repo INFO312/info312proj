@@ -8,6 +8,7 @@ package domain;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import resources.Util;
 
 /**
  *
@@ -39,6 +40,10 @@ public class Person {
         
     }
     
+    //Parsing a person after retreiving the from the DB.
+    //Note - gender must be char (.charAt(0))
+    //     - date must be converted from a timestamp to string
+    //       Use function i wrote in utils.
     public Person(ResultSet data) throws SQLException{
         this.person_id = data.getInt("person_id");
         this.title = data.getString("title");
@@ -51,9 +56,10 @@ public class Person {
         this.mphone = data.getString("mphone");
         this.wphone = data.getString("wphone");
         this.gender = data.getString("gender").charAt(0);
-        this.dob = data.getDate("dob").toString();
+        this.dob = Util.convertTimestampToString(data.getTimestamp("dob"));
     }
 
+    //Constructor
     public Person(String title, String firstname, String mname, String lname, String address, String email, String hphone, String mphone, String wphone, char gender, String dob) {
         this.title = title;
         this.firstname = firstname;

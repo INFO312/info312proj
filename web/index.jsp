@@ -14,10 +14,24 @@
         <!--[if lt IE 9]>
             <script src="/scripts/html5shiv.js"></script>
         <![endif]-->
+
+
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
         <script src="/_scripts/showhide.js"></script>
+        <script>
+            $(function () {
+                $("#datepicker").datepicker({
+                    changeMonth: true,
+                    changeYear: true,
+                    dateFormat: 'dd-mm-yy',
+                    defaultDate: '01-01-1990'
+                });
+            });
+        </script>
         <link href="/_sass/style.css" type="text/css" rel="stylesheet">
         <link href="formstyle.css" type ="text/css" rel="stylesheet">
+        <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
     </head>
 
     <body>
@@ -26,7 +40,7 @@
             Integer statusCode = (Integer) request.getAttribute("javax.servlet.error.status_code");
             // default message to display to the user 
             String message = "Please log in to continue.";
-         // if the status code was 401 (UNAUTHORIZED) then extract the message 
+            // if the status code was 401 (UNAUTHORIZED) then extract the message 
             // from the request 
             if (statusCode != null
                     && statusCode == HttpServletResponse.SC_UNAUTHORIZED) {
@@ -56,21 +70,21 @@
             </ul>
 
             <div id="login">
-                
+
                 <!-- YOU MUST USE THE FORM ACTIONS AND TYPE/NAME VALUES FOR THE INPUT FORMS AS SPECIFIED BELOW,
-                FI YOU CHANGE THE LAYOUT, OR ELSE THE LoginServlet WILL NOT WORK -->
+                IF YOU CHANGE THE LAYOUT, OR ELSE THE LoginServlet WILL NOT WORK -->
                 <form id="login-form" action="/PostGradSystem/LoginServlet" method="post" class="form-green"> <!-- Action needs to be changed -->
                     <h1>Login</h1>
                     <label for="email">
                         <span>Email: </span>
                         <input type="text" name="username">
                     </label>
-                    
+
                     <label for="password">
                         <span>Password: </span>
                         <input type="password" name="password">
                     </label>
-                    
+
                     <label>
                         <select name="type">
                             <option value="staff">Staff</option>
@@ -134,12 +148,17 @@
                         <input type="text" name="wphone">
                     </label>
                     <label for="gender">
+                        <span>Gender: </span>
                         <select name="gender">
                             <option value="m">Male</option>
                             <option value="f">Female</option>
                         </select>
                     </label>
-                    
+                    <label for ="dob">
+                        <span>Date of Birth: (Day/Month/Year)</span>
+                        <input type="text" id="datepicker" name="dob">
+                    </label
+
 
                     <label>
                         <span>&nbsp;</span> 

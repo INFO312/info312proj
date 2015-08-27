@@ -38,7 +38,8 @@ public class LoginServlet extends HttpServlet {
             throws ServletException, IOException {
         String username = request.getParameter("username");
         String password = request.getParameter("password");
-
+        //SHOULD I STORE THE DAO IN THE SESSION?
+        
         //Is the person a staff member or student?
         String type = request.getParameter("type");
         Person user = null;

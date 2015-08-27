@@ -54,7 +54,7 @@ public class Passwords {
   }
 
   /**
-   * Returns a salted and hashed password using the provided hash.<br>
+   * Returns a salted and hashed password using the provided hash.
    * Note - side effect: the password is destroyed (the char[] is filled with zeros)
    *
    * @param password the password to be hashed
@@ -76,7 +76,7 @@ public class Passwords {
   }
 
   /**
-   * Returns true if the given password and salt match the hashed value, false otherwise.<br>
+   * Returns true if the given password and salt match the hashed value, false otherwise.
    * Note - side effect: the password is destroyed (the char[] is filled with zeros)
    *
    * @param password     the password to check
