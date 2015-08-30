@@ -42,21 +42,21 @@
         </script>
         <link href="/_sass/style.css" type="text/css" rel="stylesheet">
         <link href="formstyle.css" type ="text/css" rel="stylesheet">
+        <link rel ="stylesheet" type ="text/css" href ="nav_style.css">
         <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
     </head>
 
     <body>
+        <div id ="headerbar">
+            <p> test Test </p>
+
+        </div>
         <br> 
-        <p><%=message%></p><!-- display the message to the user --> 
-        
-
-
         <img class="coat-of-arms" src="/resources/UoO - Coat of Arms.png">
-        <h1>GAP</h1>
-        <h2>Graduate Application Portal</h2>
+       
         <%@include file = "/WEB-INF/jspf/navigation.jspf" %>
         <div class="center-wrapper">
-
+            <p><%=message%></p><!-- display the message to the user --> 
             <p id="login-blurb">This portal allows you to <b>apply for</b> and <b>manage applications</b> for post-graduate study with the Information Science Department of the University of Otago.</p>
 
             <ul id="login-tabs">
