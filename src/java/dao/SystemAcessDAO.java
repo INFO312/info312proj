@@ -19,17 +19,22 @@ import resources.Passwords;
  */
 public class SystemAcessDAO {
 
-    //Logs a user in if credentials are valid
-    //CURRENTLY processes password in this method, although could be moved to Servlet,
-    //but this would require two different DAO methods? 
-    //Put this in my log - Kadin
-    public Person logIn(String username, String password) throws SQLException {
+    /**
+     * Logs a user in if credentials are valid
+     * CURRENTLY processes password in this method, although could be moved to Servlet,
+     * but this would require two different DAO methods? 
+     * 
+     * @param email Email for user to login
+     * @param password Users Password
+     * @return Person object representation of logged in user
+     * @throws SQLException 
+     */
+    public Person logIn(String email, String password) throws SQLException {
         Person person = null;
-        
         Connection connection = JdbcConnection.getConnection();
         connection.setAutoCommit(false);
 
-        PreparedStatement authorizeStatement = CustomSQL.getAuthorizeUserStmt(username, connection);
+        PreparedStatement authorizeStatement = CustomSQL.getAuthorizeUserStmt(email, connection);
         // execute the statement
         ResultSet rs_authorize = authorizeStatement.executeQuery();
         
@@ -42,8 +47,9 @@ public class SystemAcessDAO {
             
             //If the password they entered is correct (re hash the password with the salt stored
             //in the db, and if the new hash == the expected hash, then credentials are valid
+            //NOTE: .toCharArray() is neccessary for isExpectedPassword to function
             if (Passwords.isExpectedPassword(password.toCharArray(), salt, expectedHash)) {
-                PreparedStatement retrieveUserStatement = CustomSQL.getRetrieveUserStmt(username, connection);
+                PreparedStatement retrieveUserStatement = CustomSQL.getRetrieveUserStmt(email, connection);
                 ResultSet rs_person = retrieveUserStatement.executeQuery();
                 //Parse a Person object from the result set
                 if (rs_person.next()) {
@@ -53,14 +59,22 @@ public class SystemAcessDAO {
         }
 
         return person;
-
     }
 
-    public void registerCandidate(Person newPerson, String username, String salt, String hash) throws SQLException {
+    /**
+     * 
+     * 
+     * @param newPerson The newly created Person object passed from the RegisterServlet
+     * @param email Users Email
+     * @param salt
+     * @param hash
+     * @throws SQLException 
+     */
+    public void registerCandidate(Person newPerson, String salt, String hash) throws SQLException {
         Connection connection = JdbcConnection.getConnection();
 
         //Insert a new person into the database stmt 
-        PreparedStatement statement_register = CustomSQL.getRegisterPersonStmt(newPerson, username, salt, hash, connection);
+        PreparedStatement statement_register = CustomSQL.getRegisterPersonStmt(newPerson, newPerson.getEmail(), salt, hash, connection);
 
         // since saving and order involves multiple statements across
         // multiple tables we need to control the transaction ourselves

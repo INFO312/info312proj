@@ -5,6 +5,17 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<% String message = "";
+    Integer statusCode = (Integer) request.getAttribute("javax.servlet.error.status_code");
+    if (statusCode != null && statusCode == HttpServletResponse.SC_BAD_REQUEST) {
+        message = request.getAttribute("javax.servlet.error.message").toString();
+    }
+    if (statusCode != null
+            && statusCode == HttpServletResponse.SC_UNAUTHORIZED) {
+        //Login to continue
+        message = request.getAttribute("javax.servlet.error.message").toString();
+    }
+%>
 <!DOCTYPE HTML>
 
 <html>
@@ -35,32 +46,15 @@
     </head>
 
     <body>
-        <%
-            // get the status code to see why the log in page was requested           Integer statusCode = (Integer) request.getAttribute("javax.servlet.error.status_code"); 
-            Integer statusCode = (Integer) request.getAttribute("javax.servlet.error.status_code");
-            // default message to display to the user 
-            String message = "Please log in to continue.";
-            // if the status code was 401 (UNAUTHORIZED) then extract the message 
-            // from the request 
-            if (statusCode != null
-                    && statusCode == HttpServletResponse.SC_UNAUTHORIZED) {
-                message
-                        = request.getAttribute("javax.servlet.error.message").toString();
-            }
-            if (statusCode != null && statusCode == HttpServletResponse.SC_BAD_REQUEST) {
-                message = request.getAttribute("javax.servlet.error.message").toString();
-            }
-
-        %> 
         <br> 
         <p><%=message%></p><!-- display the message to the user --> 
-
+        
 
 
         <img class="coat-of-arms" src="/resources/UoO - Coat of Arms.png">
         <h1>GAP</h1>
         <h2>Graduate Application Portal</h2>
-
+        <%@include file = "/WEB-INF/jspf/navigation.jspf" %>
         <div class="center-wrapper">
 
             <p id="login-blurb">This portal allows you to <b>apply for</b> and <b>manage applications</b> for post-graduate study with the Information Science Department of the University of Otago.</p>
@@ -101,9 +95,9 @@
                 <br>
                 <form id="register-form" action="/PostGradSystem/RegisterServlet" method="post" class ="form-green">
                     <h1> Register </h1>
-                    <label for="username">
-                        <span>Username: </span>
-                        <input type="text" name="username">
+                    <label for="email">
+                        <span>Email: </span>
+                        <input type="text" name="email">
                     </label>
                     <label for="password">
                         <span>Password </span>
@@ -130,11 +124,9 @@
                         <span>Address: </span>
                         <input type="text" name="address">
                     </label>
-                    <label for="email">
-                        <span>Email: </span>
-                        <input type="text" name="email">
-                    </label>
+                    <br>
                     <hr>
+                    <br>
                     <label for="hphone">
                         <span>Home Phone: </span>
                         <input type="text" name="hphone">

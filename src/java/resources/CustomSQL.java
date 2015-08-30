@@ -19,17 +19,17 @@ import java.sql.Statement;
  */
 public class CustomSQL {
     
-    private static final String insertPersonSQL = "INSERT INTO Person (title, fname, mname, lname, address, email, mphone, hphone, wphone, gender, dob, salt, hash, username)"
-                                    + "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+    private static final String insertPersonSQL = "INSERT INTO Person (title, fname, mname, lname, address, email, mphone, hphone, wphone, gender, dob, salt, hash)"
+                                    + "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
     
     private static final String assignCandidateSQL = "INSERT INTO Candidate (Candidate_id) VALUES (?)";
     
-    private static final String authorizeUserSQL = "SELECT salt, hash FROM Person WHERE username = ?";
+    private static final String authorizeUserSQL = "SELECT salt, hash FROM Person WHERE email = ?";
     
-    private static final String retrieveUserSQL = "SELECT * FROM Person WHERE username = ?";
+    private static final String retrieveUserSQL = "SELECT * FROM Person WHERE email = ?";
     
     //Returns the prepared statement for inserting a person into the database
-    public static PreparedStatement getRegisterPersonStmt(Person person, String username, String salt, String hash, Connection connection) throws SQLException{
+    public static PreparedStatement getRegisterPersonStmt(Person person, String email, String salt, String hash, Connection connection) throws SQLException{
         PreparedStatement stmt = connection.prepareStatement(insertPersonSQL, PreparedStatement.RETURN_GENERATED_KEYS);
         stmt.setString(1, person.getTitle());
         stmt.setString(2, person.getFirstname());
@@ -44,7 +44,6 @@ public class CustomSQL {
         stmt.setTimestamp(11, Util.convertStringToTimestamp(person.getDob()));
         stmt.setString(12, salt);
         stmt.setString(13, hash);
-        stmt.setString(14, username);    
         return stmt;
     }
     
@@ -54,15 +53,15 @@ public class CustomSQL {
         return stmt;
     }
     
-    public static PreparedStatement getAuthorizeUserStmt(String username, Connection connection) throws SQLException{
+    public static PreparedStatement getAuthorizeUserStmt(String email, Connection connection) throws SQLException{
         PreparedStatement stmt = connection.prepareStatement(authorizeUserSQL);
-        stmt.setString(1, username);
+        stmt.setString(1, email);
         return stmt;
     }
     
-    public static PreparedStatement getRetrieveUserStmt(String username, Connection connection) throws SQLException{
+    public static PreparedStatement getRetrieveUserStmt(String email, Connection connection) throws SQLException{
         PreparedStatement stmt = connection.prepareStatement(retrieveUserSQL);
-        stmt.setString(1, username);
+        stmt.setString(1, email);
         return stmt;
     }
     

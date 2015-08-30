@@ -54,6 +54,7 @@ public class LoginServlet extends HttpServlet {
         //If we managed to login..
         if (user != null) {
             HttpSession session = request.getSession();
+            
             //Set the session attribute so that we can retrieve the current User,AND
             //their type when navigating across pages i.e USER or STAFF.
             session.setAttribute("currentuser", user);

@@ -40,7 +40,7 @@ public class RegisterServlet extends HttpServlet {
 
         String person_id = null;
 
-        String username = request.getParameter("username");
+        String email = request.getParameter("email");
         String password = request.getParameter("password");
 
         //Might not need this! ...
@@ -50,19 +50,39 @@ public class RegisterServlet extends HttpServlet {
         String mname = request.getParameter("mname");
         String lname = request.getParameter("lname");
         String address = request.getParameter("address");
-        String email = request.getParameter("email");
+        
         String hphone = request.getParameter("hphone");
         String mphone = request.getParameter("mphone");
         String wphone = request.getParameter("whpone");
         char gender = request.getParameter("gender").charAt(0);
-
-        // TODO: Uncomment when roper date form and params set
-        //String dobDay = request.getParameter("dobDay"); // 02, 26
-        //String dobMonth = request.getParameter("dobMonth");//01, 12
-        //String dobYear = request.getParameter("dobYear"); //1994, 2005
         String dob = request.getParameter("dob");
+        
+        // --------- PERFORM VALIDATION HERE! -------------//
+        
+        //if(fname.length() < 5 || etc etc etc){ }
 
-        /**
+        
+        Person newperson = new Person(title, fname, mname, lname, address, email, hphone, mphone, wphone, gender, dob);
+        //Generate a new salt for this user and conver the password string to Char array
+        byte[] saltbytes = Passwords.getNextSalt();
+        char[] pwd = password.toCharArray();
+        
+        //Hash the password and salt
+        byte[] hash = Passwords.hash(pwd, saltbytes);
+        String hashString = new String(hash);
+        String saltString = new String(saltbytes);
+        
+        //Try to register the user
+        try {
+            new SystemAcessDAO().registerCandidate(newperson, saltString, hashString);
+        } catch (Exception e) {
+            //Change this, set error code
+            response.sendRedirect("/PostGradSystem/");
+        }
+        response.sendRedirect("/PostGradSystem/");
+    }
+    
+    /** OLD NOT USED TESTING STUFF 
          * String pstr = "password"; char[] pwd = pstr.toCharArray();
          *
          * String tempsalt = new String(saltbytes); byte[] saltbytesC =
@@ -79,19 +99,6 @@ public class RegisterServlet extends HttpServlet {
          * System.out.println("ADDDD Successfull"); }
         *
          */
-        Person newperson = new Person(title, fname, mname, lname, address, email, hphone, mphone, wphone, gender, dob);
-        byte[] saltbytes = Passwords.getNextSalt();
-        char[] pwd = password.toCharArray();
-
-        byte[] hash = Passwords.hash(pwd, saltbytes);
-        String hashString = new String(hash);
-        String saltString = new String(saltbytes);
-        try {
-            new SystemAcessDAO().registerCandidate(newperson, username, saltString, hashString);
-        } catch (Exception e) {
-
-        }
-    }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
