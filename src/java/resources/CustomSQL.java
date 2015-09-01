@@ -24,7 +24,7 @@ public class CustomSQL {
     
     private static final String assignCandidateSQL = "INSERT INTO Candidate (Candidate_id) VALUES (?)";
     
-    private static final String authorizeUserSQL = "SELECT salt, hash FROM Person WHERE email = ?";
+    private static final String authorizeUserSQL = "SELECT salt, hash FROM Login WHERE email = ?";
     
     private static final String retrieveUserSQL = "SELECT * FROM Person WHERE email = ?";
     

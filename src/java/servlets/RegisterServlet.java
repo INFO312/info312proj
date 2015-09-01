@@ -60,7 +60,7 @@ public class RegisterServlet extends HttpServlet {
         // --------- PERFORM VALIDATION HERE! -------------//
         
         //if(fname.length() < 5 || etc etc etc){ }
-
+        //------------------------------------------------//
         
         Person newperson = new Person(title, fname, mname, lname, address, email, hphone, mphone, wphone, gender, dob);
         //Generate a new salt for this user and conver the password string to Char array

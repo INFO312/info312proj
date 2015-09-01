@@ -1,0 +1,35 @@
+<%-- any content can be specified here e.g.: --%>
+<%@ page pageEncoding="UTF-8" %>
+<div id = "sidebar_container">
+    
+        <div id="sidebar_top">
+        <img src="_images/uni_logo.jpg"  alt = "Uni Logo"><br>
+        <h3>GAP</h3>
+		<!-- <h4>Graduate Application Portal</h4> -->
+           <nav>
+           <fieldset>
+           <legend> Profile </legend>
+           <ul>
+           	<li><a href="/PostGradSystem/index.jsp"><span>Home</span></a></li>
+                <li><a href="/PostGradSystem/login.jsp"><span>TEMP login</span></a></li>
+                <li><a href="/PostGradSystem/details.jsp"><span>Details</span></a></li>
+                <li><a href="/PostGradSystem/pendingapps.jsp"><span>Pending Applications</span></a></li>
+                <li><a href="/PostGradSystem/documents.jsp"><span>Uploaded Documents</span></a></li>
+           </ul>
+                
+           </fieldset>
+           <br>
+           <fieldset>
+           <legend>  Tasks </legend>
+           <ul>
+           		<li><a href="/PostGradSystem/apply.jsp"><span>Apply</span></a></li>
+                <li><a href="/PostGradSystem/upload.jsp"><span>Upload</span></a></li>
+                <li><a href="/PostGradSystem/enquire.jsp"><span>Enquire</span></a></li>
+           </ul>
+           </fieldset>
+           </nav>
+        </div>
+        <div id="sidebar_bottom">
+        
+        </div>
+    </div>
