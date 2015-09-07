@@ -5,7 +5,7 @@
  */
 package servlets;
 
-import dao.SystemAcessDAO;
+import dao.SystemAccessDAO;
 import domain.Person;
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -74,7 +74,7 @@ public class RegisterServlet extends HttpServlet {
         
         //Try to register the user
         try {
-            new SystemAcessDAO().registerCandidate(newperson, saltString, hashString);
+            new SystemAccessDAO().registerCandidate(newperson, saltString, hashString);
         } catch (Exception e) {
             //Change this, set error code
             response.sendRedirect("/PostGradSystem/");

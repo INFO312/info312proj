@@ -6,7 +6,7 @@
 package servlets;
 
 //Import dao and jdbc dao here...
-import dao.SystemAcessDAO;
+import dao.SystemAccessDAO;
 import domain.Person;
 
 import java.io.IOException;
@@ -41,10 +41,13 @@ public class LoginServlet extends HttpServlet {
         //SHOULD I STORE THE DAO IN THE SESSION?
         
         //Is the person a staff member or student?
-        String type = request.getParameter("type");
+        String type = request.getParameter("accessLevel");
         Person user = null;
         try {
-            user = new SystemAcessDAO().logIn(username, password);
+            if(type.equals("candidate"))
+                user = new SystemAccessDAO().logInCandidate(username, password);
+            //else 
+                //user = new SystemAccessDAO().logInStaff(username, password);
         } catch (SQLException exc) {
             //Database error, so send a response, to be grabbed by web.xml and re route to error page
             //NOTE: you must register the redirection page for 503 (Service Unavailable) in the web.xml

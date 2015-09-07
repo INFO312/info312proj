@@ -35,7 +35,7 @@
         <div id="container">
             <%@include file = "/WEB-INF/jspf/header.jspf" %>
             <%@include file = "/WEB-INF/jspf/sidebar_noNavigation.jspf" %>
-            
+
             <!-- All Content should be put in here! -->
             <div id="main_content_area">
                 <p class="sessionMessage"><%=message%></p>
@@ -43,22 +43,26 @@
                     The Graduate Application Portal allows users to apply for Post-Graduate level study within the department of Information Science at the University of Otago.
                 </p>
                 <p class="genericText"> 
-                Here you can apply for study, connect with department members, and make enquiries.    
+                    Here you can apply for study, connect with department members, and make enquiries.    
                 </p>
                 <p class="genericText">
-                    If you haven't accessed the Graduate Application Portal previously you will need to <a href="/PostGradSystem/login.jsp">Register</a>.
+                    If you haven't accessed the Graduate Application Portal previously you will need to <a href="/PostGradSystem/register.jsp">Register</a>.
                 </p>
                 <p class="genericText">
                     Note: For returning Otago Students: You cannot use your University username and password. You must use your GAP account.
                 </p>
+
+                <!-- YOU MUST USE THE FORM ACTIONS AND TYPE/NAME VALUES FOR THE INPUT FORMS AS SPECIFIED BELOW,
+                IF YOU CHANGE THE LAYOUT, OR ELSE THE LoginServlet WILL NOT WORK -->
+                <%@include file = "/WEB-INF/jspf/loginForm.jspf" %>
+                <br>
+                <a href="/PostGradSystem/" class='yellowButton'> Go to Home </a>
+                <br>
+                
             </div>
-            
-             <%@include file = "/WEB-INF/jspf/footer.jspf" %>
+
+            <%@include file = "/WEB-INF/jspf/footer.jspf" %>
         </div
-
-
-        <div class="center-wrapper">
-
-        </div>    
+ 
     </body>
 </html>

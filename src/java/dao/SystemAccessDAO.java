@@ -17,7 +17,7 @@ import resources.Passwords;
  *
  * @author Kadin
  */
-public class SystemAcessDAO {
+public class SystemAccessDAO {
 
     /**
      * Logs a user in if credentials are valid
@@ -29,12 +29,12 @@ public class SystemAcessDAO {
      * @return Person object representation of logged in user
      * @throws SQLException 
      */
-    public Person logIn(String email, String password) throws SQLException {
+    public Person logInCandidate(String email, String password) throws SQLException {
         Person person = null;
         Connection connection = JdbcConnection.getConnection();
         connection.setAutoCommit(false);
 
-        PreparedStatement authorizeStatement = CustomSQL.getAuthorizeUserStmt(email, connection);
+        PreparedStatement authorizeStatement = CustomSQL.getAuthorizeCandidateStmt(email, connection);
         // execute the statement
         ResultSet rs_authorize = authorizeStatement.executeQuery();
         

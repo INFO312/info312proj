@@ -22,9 +22,11 @@ public class CustomSQL {
     private static final String insertPersonSQL = "INSERT INTO Person (title, fname, mname, lname, address, email, mphone, hphone, wphone, gender, dob, salt, hash)"
                                     + "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
     
-    private static final String assignCandidateSQL = "INSERT INTO Candidate (Candidate_id) VALUES (?)";
+    private static final String assignCandidateIDSQL = "INSERT INTO Candidate (Candidate_id) VALUES (?)";
     
-    private static final String authorizeUserSQL = "SELECT salt, hash FROM Login WHERE email = ?";
+    private static final String authorizeCandidateSQL = "SELECT salt, hash FROM Candidate_Login WHERE email = ?";
+    
+     private static final String authorizeStaffSQL = "SELECT salt, hash FROM Staff_Login WHERE email = ?";
     
     private static final String retrieveUserSQL = "SELECT * FROM Person WHERE email = ?";
     
@@ -48,13 +50,13 @@ public class CustomSQL {
     }
     
     public static PreparedStatement getAssignCandidateStmt(int id, Connection connection) throws SQLException{
-        PreparedStatement stmt = connection.prepareStatement(assignCandidateSQL);
+        PreparedStatement stmt = connection.prepareStatement(assignCandidateIDSQL);
         stmt.setInt(1, id);
         return stmt;
     }
     
-    public static PreparedStatement getAuthorizeUserStmt(String email, Connection connection) throws SQLException{
-        PreparedStatement stmt = connection.prepareStatement(authorizeUserSQL);
+    public static PreparedStatement getAuthorizeCandidateStmt(String email, Connection connection) throws SQLException{
+        PreparedStatement stmt = connection.prepareStatement(authorizeCandidateSQL);
         stmt.setString(1, email);
         return stmt;
     }

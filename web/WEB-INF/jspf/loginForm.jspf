@@ -1,0 +1,32 @@
+<div class="loginForm" >
+
+    <h2>
+        Login to Graduate Application Portal
+    </h2>
+
+    <fieldset class="loginFormFieldset">
+        <legend>Portal Login</legend>
+        <form action="/PostGradSystem/LoginServlet" method="post">
+            <label for="username"><b>Username: </b>
+            </label>
+            <input type="text" name="username" id="username" />
+            <br>
+            <br>
+            <label for="password"><b>Password: </b>
+
+            </label>
+            <input type="password" name="password" id="password" />
+            <br>
+            <br> 
+            <span>
+                <select name="accessLevel">
+                    <option value="staff">Staff</option>
+                    <option value="student">Student</option>
+                </select>
+            </span>
+
+            <br>
+            <input type="submit" class='yellowButton' value="Login" />
+        </form>
+    </fieldset>
+</div> 

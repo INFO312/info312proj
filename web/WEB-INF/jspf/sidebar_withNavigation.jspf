@@ -11,7 +11,7 @@
            <legend> Profile </legend>
            <ul>
            	<li><a href="/PostGradSystem/index.jsp"><span>Home</span></a></li>
-                <li><a href="/PostGradSystem/login.jsp"><span>TEMP login</span></a></li>
+                <li><a href="/PostGradSystem/login.jsp"><span>TEMP Login Page</span></a></li>
                 <li><a href="/PostGradSystem/details.jsp"><span>Details</span></a></li>
                 <li><a href="/PostGradSystem/pendingapps.jsp"><span>Pending Applications</span></a></li>
                 <li><a href="/PostGradSystem/documents.jsp"><span>Uploaded Documents</span></a></li>
