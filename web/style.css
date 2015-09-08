@@ -28,6 +28,9 @@ h4 {
     margin:0;
     height:45px;
     white-space: nowrap;
+    position:fixed;
+    top: 0;
+    width: 100%;
 }
 
 #header_bar p{
@@ -46,7 +49,8 @@ h4 {
 
 #sidebar_container {
     margin-left:50px;
-    margin-top:-45px; /** NOTE: VERY IMPORTANT THAT THIS MARGIN IS - (WHATEVER THE HEIGHT OF HEADER BAR IS )**/
+    position:fixed;
+    top: 0; 
 }
 
 nav {
