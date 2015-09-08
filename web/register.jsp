@@ -39,8 +39,8 @@
 
     <body>
         <div id="container">
-            <%@include file = "/WEB-INF/jspf/header.jspf" %>
-            <%@include file = "/WEB-INF/jspf/sidebar_withNavigation.jspf" %>
+            <%@include file = "/WEB-INF/jspf/global/header.jspf" %>
+            <%@include file = "/WEB-INF/jspf/sidebar/sidebar_empty.jspf" %>
 
 
             <!--!!! All Content should be put in here!!! -->
@@ -105,7 +105,7 @@
                     <label for ="dob">
                         <span>Date of Birth: (Day/Month/Year)</span>
                         <input type="text" id="datepicker" name="dob">
-                    </label
+                    </label>
 
 
                     <label>
@@ -116,8 +116,8 @@
 
             </div>
 
-            <%@include file = "/WEB-INF/jspf/footer.jspf" %>
-        </div
+            <%@include file = "/WEB-INF/jspf/global/footer.jspf" %>
+        </div>
 
     </body>
 </html>
