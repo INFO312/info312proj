@@ -1,0 +1,29 @@
+<%-- any content can be specified here e.g.: --%>
+<%@ page pageEncoding="UTF-8" %>
+<div id = "sidebar_container">
+    
+    <div id="sidebar_top">
+        <img src="_images/uni_logo.jpg"  alt = "Uni Logo"><br>
+        <h3>GAP</h3>
+        <!-- <h4>Graduate Application Portal</h4> -->
+        
+        <nav>
+            <fieldset>
+                <legend>Profile</legend>
+                    <ul>
+                        <li><a href="home/index.jsp"><span>Home</span></a></li>
+                        <li><a href="admin/profile.jsp"><span>My Profile</span></a></li>
+                        <li><a href="admin/messagecenter.jsp"><span>Message Center</span></a></li>
+                        <li><a href="admin/applications.jsp"><span>Application Management</span></a></li>
+                        <li><a href="admin/profiles.jsp"><span>Profile Management</span></a></li>
+                        <li><a href="admin/portal.jsp"><span>Portal Management</span></a></li>
+                </ul>
+            </fieldset>
+        </nav>  
+        
+    </div>
+  
+    <div id="sidebar_bottom">
+        
+    </div>
+</div>

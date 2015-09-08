@@ -1,3 +1,0 @@
-This is a placeholder file.  It is here because Git ignores empty folders.
-
-You should NOT delete this file.

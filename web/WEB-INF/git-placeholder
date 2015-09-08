@@ -1,3 +1,0 @@
-This files only exits because git excludes empty folders. Therefore to keep a consistent structure among devices we need these empty folders to contain something.
-
-Netbeans gets shitty if WEB-INF is missing.
