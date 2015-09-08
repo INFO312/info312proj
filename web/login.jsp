@@ -28,8 +28,8 @@
 
     <body>
         <div id="container">
-            <%@include file = "/WEB-INF/jspf/header.jspf" %>
-            <%@include file = "/WEB-INF/jspf/sidebar_noNavigation.jspf" %>
+            <%@include file = "/WEB-INF/jspf/global/header.jspf" %>
+            <%@include file = "/WEB-INF/jspf/sidebar/sidebar_empty.jspf" %>
 
             <!-- All Content should be put in here! -->
             <div id="main_content_area">
@@ -49,15 +49,12 @@
 
                 <!-- YOU MUST USE THE FORM ACTIONS AND TYPE/NAME VALUES FOR THE INPUT FORMS AS SPECIFIED BELOW,
                 IF YOU CHANGE THE LAYOUT, OR ELSE THE LoginServlet WILL NOT WORK -->
-                <%@include file = "/WEB-INF/jspf/loginForm.jspf" %>
-                <br>
-                <a href="/PostGradSystem/" class='yellowButton'> Go to Home </a>
-                <br>
+                <%@include file = "/WEB-INF/jspf/login/loginForm.jspf" %>
                 
             </div>
 
-            <%@include file = "/WEB-INF/jspf/footer.jspf" %>
-        </div
+            <%@include file = "/WEB-INF/jspf/global/footer.jspf" %>
+        </div>
  
     </body>
 </html>
