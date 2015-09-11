@@ -3,7 +3,7 @@
 <div id = "sidebar_container">
     
     <div id="sidebar_top">
-        <img src="_images/uni_logo.jpg"  alt = "Uni Logo"><br>
+        <img src="images/uni_logo.jpg"  alt = "Uni Logo"><br>
         <h3>GAP</h3>
         <!-- <h4>Graduate Application Portal</h4> -->
         
@@ -19,6 +19,7 @@
                         <li><a href="admin/portal.jsp"><span>Portal Management</span></a></li>
                 </ul>
             </fieldset>
+            <p><a href="logout.jsp"/>Logout</a></p>
         </nav>  
         
     </div>

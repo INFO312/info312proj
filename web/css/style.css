@@ -1,0 +1,153 @@
+@charset "utf-8";
+
+/*
+    Sitewide styling
+*/
+body, html {
+    margin:0;
+    padding:0;
+}
+
+h4 {
+    padding:0;
+    margin:0;
+    font: 18px "Trebuchet MS";	
+}
+
+/*
+    Background Image
+*/
+#container {
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background:url(images/uni_background.png) no-repeat center center fixed;
+    width:100%;
+    min-height:800px;
+}
+
+/*
+    Header
+*/
+#header_bar {
+    background:#FFEC0F;
+    clear:both;
+    margin:0;
+    height:45px;
+    white-space: nowrap;
+    position:fixed;
+    top: 0;
+    width: 100%;
+}
+
+    #header_bar p{
+        padding-top:10px;
+        color:#FFF;
+        font: 24px "Trebuchet MS";
+        font-weight:600;
+        margin:0;
+        padding-left:350px;
+    }
+
+ /*
+    Sidebar
+*/
+#sidebar_container {
+    margin-left:50px;
+    position:fixed;
+    top: 0; 
+}
+
+    #sidebar_top {
+        float:left;
+        width:250px;
+        height:540px;
+        background:url(images/nav_top.png) no-repeat;
+        padding-top:20px;
+        text-align:center;
+        color:white;
+    }
+
+        #sidebar_top h3 {
+            font: 50px "Trebuchet MS";
+            padding:0;
+            margin:0;	
+        }
+
+        #sidebar_top img{
+            margin:auto;
+            width:40%;
+            height:auto;	
+        }
+        
+        #sidebar_top legend {
+            margin:auto;
+            color:inherit;
+            font: 16px "Trebuchet MS" bold;
+        }
+        
+        #sidebar_top nav {
+            margin-top:30px;
+            width:250px;
+            padding-bottom:30px;
+        }
+
+            #sidebar_top nav fieldset {
+                width:80%;
+                margin:auto;
+                padding-bottom:8px;
+
+            }
+
+            #sidebar_top nav ul {
+                list-style:none;
+                margin:auto;
+                padding:0;
+            }
+
+                #sidebar_top nav li{
+                    padding-top:5px; 
+                    height:20px; 
+                    display:block;
+                }
+
+                    #sidebar_top nav li a{
+                        text-align:center;
+                        height:20px; 
+
+                        font:16px "Trebuchet MS", Georgia, Arial, Helvetica, sans-serif; 
+                        color:white;
+                        display:block; 
+                        text-decoration:none;
+                    }
+
+                    #sidebar_top nav li a:hover{
+                        color:#FFEC0F;
+                    }
+
+    #sidebar_bottom{
+        float:left;
+        clear:both;
+        width:250px;
+        height:200px;
+        background:url(images/nav_bottom.png) no-repeat;
+        background-size:100%;
+        margin-left:1px;
+    }
+    
+ /*
+    Footer
+*/    
+#footer {
+    background:url(images/transparent_panel.png) repeat;
+    clear:both;
+    text-align:right;
+    padding-right:20px;
+    white-space: nowrap;
+}
+
+    #footer p {
+        padding:5px;
+        margin:0;
+    }

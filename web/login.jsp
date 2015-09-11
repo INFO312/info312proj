@@ -20,10 +20,11 @@
 
 <html>
     <head>
-        <title>Login - Information Science Otago</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
-        <%@include file = "/WEB-INF/jspf/script_style_include.jspf" %>
+        <%@include file = "/WEB-INF/jspf/global-include.jspf" %>
+        <link href="/PostGradSystem/css/login/content.css" rel="stylesheet" type="text/css">
+        <link href="/PostGradSystem/css/login/form.css" rel="stylesheet" type="text/css">
+        <title>Login - Information Science Otago</title>
     </head>
 
     <body>
