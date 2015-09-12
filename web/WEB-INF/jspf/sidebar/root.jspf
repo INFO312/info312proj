@@ -11,9 +11,9 @@
             <fieldset>
                 <legend>Profile</legend>
                 <ul>
-                    <li><a href="/PostGradSystem/index.jsp"><span></span></a></li>
-                    <li><a href="/PostGradSystem/root/manage/index.jsp"><span>Create Department Member</span></a></li>
-                    <li><a href="/PostGradSystem/root/access/index.jsp"><span>Manage Department Access Levels</span></a></li>
+                    <li><a href="/PostGradSystem/index.jsp">Home</a></li>
+                    <li><a href="/PostGradSystem/root/manage/index.jsp">Create Department Member</a></li>
+                    <li><a href="/PostGradSystem/root/access/index.jsp">Manage Department Access Levels</a></li>
                 </ul>
             </fieldset>
             <ul><li><a href="/PostGradSystem/logout.jsp"/>Logout</a></li></ul>

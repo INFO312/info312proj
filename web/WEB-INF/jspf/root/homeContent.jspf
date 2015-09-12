@@ -1,0 +1,6 @@
+<%-- any content can be specified here e.g.: --%>
+<%@ page pageEncoding="UTF-8" %>
+<h3>Root User Tasks</h3>
+<p>As root user you can create and manage department members along with managing their access levels</p>
+
+<p>To begin select a task from the navigation</p>

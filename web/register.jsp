@@ -23,7 +23,8 @@
         <title>Home - Graduate Application Portal</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
-        <%@include file = "/WEB-INF/jspf/script_style_include.jspf" %>
+        <%@include file = "/WEB-INF/jspf/global-include.jspf" %>
+        <link href="/PostGradSystem/css/login/form.css" type="text/css" rel="stylesheet">
         <script>
             $(function () {
                 $("#datepicker").datepicker({
@@ -40,11 +41,11 @@
     <body>
         <div id="container">
             <%@include file = "/WEB-INF/jspf/global/header.jspf" %>
-            <%@include file = "/WEB-INF/jspf/sidebar/sidebar_empty.jspf" %>
+            <%@include file = "/WEB-INF/jspf/sidebar/empty.jspf" %>
 
 
             <!--!!! All Content should be put in here!!! -->
-            <div id="main_content_area">
+            <div id="wrapper">
                 <p><%=message%></p>
                 <p> Placeholder 1</p>
                 <p> Placeholder 2 </p>

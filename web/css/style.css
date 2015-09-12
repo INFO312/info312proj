@@ -6,6 +6,14 @@
 body, html {
     margin:0;
     padding:0;
+    font-family:"Trebuchet MS", Georgia, Arial, Helvetica, sans-serif; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background:url(images/uni_background.png) no-repeat center center fixed;
+    width:100%;
+    min-height:900px;
 }
 
 h4 {
@@ -14,28 +22,13 @@ h4 {
     font: 18px "Trebuchet MS";	
 }
 
-/*
-    Background Image
-*/
-#container {
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    background:url(images/uni_background.png) no-repeat center center fixed;
-    width:100%;
-    min-height:800px;
-}
 
 /*
     Header
 */
 #header_bar {
     background:#FFEC0F;
-    clear:both;
-    margin:0;
     height:45px;
-    white-space: nowrap;
     position:fixed;
     top: 0;
     width: 100%;
@@ -53,15 +46,15 @@ h4 {
  /*
     Sidebar
 */
-#sidebar_container {
-    margin-left:50px;
+#sidebar_container {    
     position:fixed;
     top: 0; 
+    left: 50px;
+    width: 250px;
+    text-align: center;
 }
 
     #sidebar_top {
-        float:left;
-        width:250px;
         height:540px;
         background:url(images/nav_top.png) no-repeat;
         padding-top:20px;
@@ -84,7 +77,7 @@ h4 {
         #sidebar_top legend {
             margin:auto;
             color:inherit;
-            font: 16px "Trebuchet MS" bold;
+            font-size: 16px;
         }
         
         #sidebar_top nav {
@@ -113,12 +106,9 @@ h4 {
                 }
 
                     #sidebar_top nav li a{
-                        text-align:center;
+                        font-size: 12px;
                         height:20px; 
-
-                        font:16px "Trebuchet MS", Georgia, Arial, Helvetica, sans-serif; 
                         color:white;
-                        display:block; 
                         text-decoration:none;
                     }
 
@@ -127,16 +117,13 @@ h4 {
                     }
 
     #sidebar_bottom{
-        float:left;
-        clear:both;
-        width:250px;
         height:200px;
         background:url(images/nav_bottom.png) no-repeat;
         background-size:100%;
         margin-left:1px;
     }
     
- /*
+/*
     Footer
 */    
 #footer {
@@ -151,3 +138,23 @@ h4 {
         padding:5px;
         margin:0;
     }
+    
+/*
+    Wrapper
+*/
+#wrapper {
+    width: 70%;
+    margin-left: 370px;
+    margin-top: 100px;
+    padding: 0 20px;
+    background-color: rgba(255, 255, 255, 0.6);
+}
+
+.loginForm {
+    margin: 0 auto;
+}
+
+.genericText{
+    font: 14px Arial;
+    line-height: 1.5;  
+}

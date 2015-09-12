@@ -30,10 +30,10 @@
     <body>
         <div id="container">
             <%@include file = "/WEB-INF/jspf/global/header.jspf" %>
-            <%@include file = "/WEB-INF/jspf/sidebar/sidebar_empty.jspf" %>
+            <%@include file = "/WEB-INF/jspf/sidebar/empty.jspf" %>
 
             <!-- All Content should be put in here! -->
-            <div id="main_content_area">
+            <div id="wrapper">
                 <p class="sessionMessage"><%=message%></p>
                 <p class="genericText"> 
                     The Graduate Application Portal allows users to apply for Post-Graduate level study within the department of Information Science at the University of Otago.

@@ -11,7 +11,7 @@
     String name = "";
     String sidebarURL = "";
     
-    ArrayList contentIncludeURLs = new ArrayList();
+    ArrayList<String> contentIncludeURLs = new ArrayList<String>();
     
     // Check if the user is logged in. If no then redirect to login.jsp
 //    Person p = (Person) session.getAttribute("currentuser");
@@ -19,7 +19,8 @@
     
     String r = "root";
     Person p = new Person( "Mr", r,  "User", r, r, r, r, r, r, 'M', "1/1/11");
-    String userType = "r";
+//    String userType = "r";
+    String userType = null;
     
     if (userType == null) {
         response.sendRedirect(request.getContextPath() + "/login.jsp");
@@ -28,7 +29,7 @@
         switch(userType) {
             case "r":
                 sidebarURL = "/WEB-INF/jspf/sidebar/root.jspf";
-//                contentIncludeURLs.add();
+                contentIncludeURLs.add("/WEB-INF/jspf/root/homeContent.jspf");
                 break;
             case "a":
                 sidebarURL = "/WEB-INF/jspf/sidebar/admin.jspf";
@@ -51,15 +52,17 @@
         <title><%=name%></title>
     </head>
     <body>
-        <div id="container">
-            <jsp:include page="/WEB-INF/jspf/global/header.jspf" flush="true">
-                <jsp:param name="name" value="<%= name %>" />
-            </jsp:include>
-            <jsp:include page="<%= sidebarURL %>" flush="true" />
-            
-            <div id="wrapper">
-                <!-- Content Here -->
-            </div>
+        <jsp:include page="/WEB-INF/jspf/global/header.jspf" flush="true">
+            <jsp:param name="name" value="<%= name %>" />
+        </jsp:include>
+        <jsp:include page="<%= sidebarURL %>" flush="true" />
+
+        <div id="wrapper">
+            <!-- Content Here -->
+            <%
+            for(String content : contentIncludeURLs) { %>
+                <jsp:include page="<%= content %>" flush="true" />
+            <% } %>
         </div>
     </body>
 </html>
