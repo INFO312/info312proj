@@ -12,7 +12,7 @@
                 <legend>Profile</legend>
                 <ul>
                     <li><a href="/PostGradSystem/index.jsp">Home</a></li>
-                    <li><a href="/PostGradSystem/root/manage/index.jsp">Create Department Member</a></li>
+                    <li><a href="/PostGradSystem/root/manage/index.jsp">Manage Department Members</a></li>
                     <li><a href="/PostGradSystem/root/access/index.jsp">Manage Department Access Levels</a></li>
                 </ul>
             </fieldset>

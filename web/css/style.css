@@ -16,6 +16,10 @@ body, html {
     min-height:900px;
 }
 
+h1, h2, h3, h4 {
+    text-align: center;
+}
+
 h4 {
     padding:0;
     margin:0;
@@ -158,3 +162,29 @@ h4 {
     font: 14px Arial;
     line-height: 1.5;  
 }
+
+/*
+
+*/
+.subnav {
+
+}
+
+    .subnav ul {
+        margin:0;
+        padding: 0;
+        list-style: none;
+        width: 100%;
+        text-align: center;
+    }
+
+    .subnav li {
+        display: inline-block;
+        padding: 10px 50px;
+        cursor: pointer;
+        
+    }
+    
+    .subnav li:nth-child(1) {
+        border-right: 1px black solid;
+    }
