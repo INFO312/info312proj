@@ -164,7 +164,7 @@ h4 {
 }
 
 /*
-
+    Page Subnav Styling
 */
 .subnav {
 
@@ -188,3 +188,43 @@ h4 {
     .subnav li:nth-child(1) {
         border-right: 1px black solid;
     }
+    
+    
+/** -------------- YELLOW BUTTON STYLE -------- **/
+/** Style for yellowButton in general, can be reused **/
+ .yellowButton {
+    padding: 4px 25px 4px 25px;
+    border: 2px solid #a37a00;
+    background: #e6ad00;
+    background: -webkit-gradient(linear, left top, left bottom, from(#ffcc23), to(#e6ad00));
+    background: -webkit-linear-gradient(top, #ffcc23, #e6ad00);
+    background: -moz-linear-gradient(top, #ffcc23, #e6ad00);
+    background: -ms-linear-gradient(top, #ffcc23, #e6ad00);
+    background: -o-linear-gradient(top, #ffcc23, #e6ad00);
+    background-image: -ms-linear-gradient(top, #ffcc23 0%, #e6ad00 100%);
+    -webkit-border-radius: 14px;
+    -moz-border-radius: 14px;
+    border-radius: 14px;
+    -webkit-box-shadow: rgba(255, 255, 255, 0.4) 0 1px 0, inset rgba(255, 255, 255, 0.4) 0 1px 0;
+    -moz-box-shadow: rgba(255, 255, 255, 0.4) 0 1px 0, inset rgba(255, 255, 255, 0.4) 0 1px 0;
+    box-shadow: rgba(255, 255, 255, 0.4) 0 1px 0, inset rgba(255, 255, 255, 0.4) 0 1px 0;
+    text-shadow: #ffffff 0 1px 0;
+    color: #000000;
+    font-size: 14px;
+    font-family: helvetica, serif;
+    text-decoration: none;
+    vertical-align: middle;
+}
+.yellowButton:hover {
+    cursor:pointer;
+    border: 2px solid #a37a00;
+    text-shadow: #ffffff 0 1px 0;
+    background: #ffcc23;
+    background: -webkit-gradient(linear, left top, left bottom, from(#e6ad00), to(#ffcc23));
+    background: -webkit-linear-gradient(top, #e6ad00, #ffcc23);
+    background: -moz-linear-gradient(top, #e6ad00, #ffcc23);
+    background: -ms-linear-gradient(top, #e6ad00, #ffcc23);
+    background: -o-linear-gradient(top, #e6ad00, #ffcc23);
+    background-image: -ms-linear-gradient(top, #e6ad00 0%, #ffcc23 100%);
+    color: #000000;
+}
