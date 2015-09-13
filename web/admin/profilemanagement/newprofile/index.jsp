@@ -34,12 +34,13 @@
         <title><%=name%></title>
     </head>
     <body>
-        <div id="container">
+        <div id ="container">
             <jsp:include page="/WEB-INF/jspf/global/header.jspf" flush="true">
                 <jsp:param name="name" value="<%= name%>" />
             </jsp:include>
             <jsp:include page="/WEB-INF/jspf/sidebar/admin.jspf" flush="true" />  
-            <div id="wrapper">
+            
+            <div id="main_content_area">
                 <nav id="subnav">
                     <h2>Create New Department Member Profile</h2>
                 </nav>
@@ -213,6 +214,8 @@
                 </form>
                 
             </div>
-        </div>
+                
+        <%@include file = "/WEB-INF/jspf/global/footer.jspf" %>
+            </div>
     </body>
 </html>

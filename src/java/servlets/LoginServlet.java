@@ -62,7 +62,7 @@ public class LoginServlet extends HttpServlet {
             //their type when navigating across pages i.e USER or STAFF.
             session.setAttribute("currentuser", user);
             session.setAttribute("usertype", type); //Set to staff or student..
-
+            
             // get the requested page from the session if they tried to access a page for
             // which they were not authorized.
             String requestedPath = (String) session.getAttribute("requestedPath");

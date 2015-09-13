@@ -32,12 +32,12 @@
         <title><%=name%></title>
     </head>
     <body>
-        <div id="container">
+        <div id ="container">
             <jsp:include page="/WEB-INF/jspf/global/header.jspf" flush="true">
                 <jsp:param name="name" value="<%= name%>" />
             </jsp:include>
             <jsp:include page="/WEB-INF/jspf/sidebar/root.jspf" flush="true" />  
-            <div id="wrapper">
+            <div id="main_content_area">
                 <nav id="subnav">
                     <h2>Manage Department Access Levels</h2>
                 </nav>
@@ -121,6 +121,7 @@
                 <button type="button">Save Changes</button>
                 </form>
             </div>
-        </div>
+            <%@include file = "/WEB-INF/jspf/global/footer.jspf" %>
+    </div>
     </body>
 </html>

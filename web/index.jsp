@@ -19,7 +19,7 @@
     
     String r = "admin";
     Person p = new Person( "Mr", r,  "User", r, r, r, r, r, r, 'M', "1/1/11");
-    String userType = "a";
+    String userType = "r";
 //    String userType = null;
     
     if (userType == null) {
@@ -52,17 +52,20 @@
         <title><%=name%></title>
     </head>
     <body>
+        <div id ="container">
         <jsp:include page="/WEB-INF/jspf/global/header.jspf" flush="true">
             <jsp:param name="name" value="<%= name %>" />
         </jsp:include>
         <jsp:include page="<%= sidebarURL %>" flush="true" />
 
-        <div id="wrapper">
+        <div id="main_content_area">
             <!-- Content Here -->
             <%
             for(String content : contentIncludeURLs) { %>
                 <jsp:include page="<%= content %>" flush="true" />
             <% } %>
+        </div>
+        <%@include file = "/WEB-INF/jspf/global/footer.jspf" %>
         </div>
     </body>
 </html>

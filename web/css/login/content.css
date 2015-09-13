@@ -1,16 +1,1 @@
-#main_content_area {
-    border-style:solid;
-    border-color:#CCC;
-    min-height:200px;
-    border-width:thick;
-    margin-top:100px;
-    margin-left:400px;
-    margin-right:50px;
-    width:auto;
-    padding:15px;
-    overflow:hidden;
-    overflow-wrap:normal;
-    text-justify:auto;
-    background:url(images/transparent_panel.png) repeat;
-}
 

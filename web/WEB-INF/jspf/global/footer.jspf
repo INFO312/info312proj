@@ -3,3 +3,13 @@
 <footer id="footer">
     <p> Footer </p>
 </footer>
+
+<script>
+    
+        var offsetHeight = document.getElementById('main_content_area').offsetHeight;
+        console.log(offsetHeight);
+        
+
+
+
+</script>
