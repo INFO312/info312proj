@@ -15,7 +15,7 @@
                         <li><a href="admin/profile.jsp"><span>My Profile</span></a></li>
                         <li><a href="admin/messagecenter.jsp"><span>Message Center</span></a></li>
                         <li><a href="admin/applications.jsp"><span>Application Management</span></a></li>
-                        <li><a href="admin/profiles.jsp"><span>Profile Management</span></a></li>
+                        <li><a href="admin/profilemanagement/newprofile/index.jsp"><span>Profile Management</span></a></li>
                         <li><a href="admin/portal.jsp"><span>Portal Management</span></a></li>
                 </ul>
             </fieldset>

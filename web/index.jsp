@@ -17,9 +17,9 @@
 //    Person p = (Person) session.getAttribute("currentuser");
 //    String userType = (String) session.getAttribute("usertype");
     
-    String r = "root";
+    String r = "admin";
     Person p = new Person( "Mr", r,  "User", r, r, r, r, r, r, 'M', "1/1/11");
-    String userType = "r";
+    String userType = "a";
 //    String userType = null;
     
     if (userType == null) {
