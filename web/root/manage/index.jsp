@@ -126,7 +126,7 @@
                         </select>
                         <br>
 
-                        <button type="button" name="addAnotherQualification">+ Add another qualification</button>
+                        <button type="button" name="addAnotherQualification" class="yellowButton">+ Add another qualification</button>
                         <br>
 
 
@@ -139,20 +139,46 @@
                         <label for="otherInformation">Other Information</label>
                         <br>
                         <textarea name="fname"></textarea>
+                        
+                        <input type="submit" value="Create" class="yellowButton">
 
                     </div>
                 </form>
 
                 <div id="manageDeparment">
 
-                    <ul>
-                        <li>
-                            FNAME LNAME
-                            <button type="button" name="FNAME LNMAME" class="yellowButton">Edit</button>
-                            <button type="button" name="FNAME LNMAME" class="yellowButton">Delete</button>
-                        </li>
-                    </ul>
+                    
+                    <div class="float-left">
+                        <ul>
+                            <li>
+                                FNAME LNAME
+                                <button type="button" name="FNAME LNMAME" class="yellowButton">Edit</button>
+                                <button type="button" name="FNAME LNMAME" class="yellowButton">Delete</button>
+                            </li>
 
+                            <li>
+                                FNAME LNAME
+                                <button type="button" name="FNAME LNMAME" class="yellowButton">Edit</button>
+                                <button type="button" name="FNAME LNMAME" class="yellowButton">Delete</button>
+                            </li>
+                        </ul>
+                    </div>
+                        
+                    <div class="float-right">
+                        <ul>
+                            <li>
+                                FNAME LNAME
+                                <button type="button" name="FNAME LNMAME" class="yellowButton">Edit</button>
+                                <button type="button" name="FNAME LNMAME" class="yellowButton">Delete</button>
+                            </li>
+
+                            <li>
+                                FNAME LNAME
+                                <button type="button" name="FNAME LNMAME" class="yellowButton">Edit</button>
+                                <button type="button" name="FNAME LNMAME" class="yellowButton">Delete</button>
+                            </li>
+                         </ul>
+                    </div>
                 </div>
 
             </div>
