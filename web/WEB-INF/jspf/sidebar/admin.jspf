@@ -11,12 +11,12 @@
             <fieldset>
                 <legend>Profile</legend>
                     <ul>
-                        <li><a href="home/index.jsp"><span>Home</span></a></li>
-                        <li><a href="admin/profile.jsp"><span>My Profile</span></a></li>
-                        <li><a href="admin/messagecenter.jsp"><span>Message Center</span></a></li>
-                        <li><a href="admin/applications.jsp"><span>Application Management</span></a></li>
-                        <li><a href="admin/profilemanagement/newprofile/index.jsp"><span>Profile Management</span></a></li>
-                        <li><a href="admin/portal.jsp"><span>Portal Management</span></a></li>
+                        <li><a href="/PostGradSystem/index.jsp"><span>Home</span></a></li>
+                        <li><a href="/PostGradSystem/admin/profile.jsp"><span>My Profile</span></a></li>
+                        <li><a href="/PostGradSystem/admin/messagecenter.jsp"><span>Message Center</span></a></li>
+                        <li><a href="/PostGradSystem/dmin/applications.jsp"><span>Application Management</span></a></li>
+                        <li><a href="/PostGradSystem/admin/profilemanagement/newprofile/index.jsp"><span>Profile Management</span></a></li>
+                        <li><a href="/PostGradSystem/admin/portal.jsp"><span>Portal Management</span></a></li>
                 </ul>
             </fieldset>
             <p><a href="logout.jsp"/>Logout</a></p>

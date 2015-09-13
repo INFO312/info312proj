@@ -10,10 +10,10 @@
            <fieldset>
            <legend> Profile </legend>
            <ul>
-           	<li><a href="index.jsp"><span>Home</span></a></li>
-                <li><a href="details.jsp"><span>Details</span></a></li>
-                <li><a href="pendingapps.jsp"><span>Pending Applications</span></a></li>
-                <li><a href="documents.jsp"><span>Uploaded Documents</span></a></li>
+           	<li><a href="/PostGradSystem/index.jsp"><span>Home</span></a></li>
+                <li><a href="/PostGradSystem/candidate/details.jsp"><span>Details</span></a></li>
+                <li><a href="/PostGradSystem/candidate/pendingapps.jsp"><span>Pending Applications</span></a></li>
+                <li><a href="/PostGradSystem/candidate/documents.jsp"><span>Uploaded Documents</span></a></li>
            </ul>
                 
            </fieldset>

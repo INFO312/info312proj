@@ -11,10 +11,10 @@
             <fieldset>
                 <legend>Profile</legend>
                 <ul>
-                    <li><a href="index.jsp"><span>Home</span></a></li>
-                    <li><a href="department/profile.jsp"><span>My Profile</span></a></li>
-                    <li><a href="department/messagecenter.jsp"><span>Message Center</span></a></li>
-                    <li><a href="department/applications.jsp"><span>Application Management</span></a></li>
+                    <li><a href="/PostGradSystem/index.jsp"><span>Home</span></a></li>
+                    <li><a href="/PostGradSystem/department/profile.jsp"><span>My Profile</span></a></li>
+                    <li><a href="/PostGradSystem/department/messagecenter.jsp"><span>Message Center</span></a></li>
+                    <li><a href="/PostGradSystem/department/applications.jsp"><span>Application Management</span></a></li>
                 </ul>
             </fieldset>
         </nav>    
