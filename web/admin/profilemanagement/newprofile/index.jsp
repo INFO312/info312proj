@@ -39,7 +39,7 @@
                 <jsp:param name="name" value="<%= name%>" />
             </jsp:include>
             <jsp:include page="/WEB-INF/jspf/sidebar/admin.jspf" flush="true" />  
-            
+
             <div id="main_content_area">
                 <nav id="subnav">
                     <h2>Create New Department Member Profile</h2>
@@ -56,12 +56,12 @@
                         <br>
                         <input name="lname" type="text">
                         <br>
-                        
+
                         <label for="mname">Last Name</label>
                         <br>
                         <input name="lname" type="text">
                         <br>
-                        
+
 
                         <label for="access">Access Level</label>
                         <br>
@@ -70,152 +70,174 @@
                             <option value ="a">Administrator</option>
                         </select>
                         <br>
-                        
-                        
+
+
                         <label for="genre">Gender</label>
                         <br>
                         <input name="fname" type="text">
                     </div>
-                    
+
                     <div class="float-right">
 
                         <label for="email">Email</label>
                         <br>
                         <input name="fname" type="text">
                         <br>
-                        
+
 
                         <label for="mphone">Mobile Phone</label>
                         <br>
                         <input name="fname" type="text">
                         <br>
-                        
+
 
                         <label for="hphone">Home Phone</label>
                         <br>
                         <input name="fname" type="text">
                         <br>
-                        
+
 
                         <label for="wphone">Work Phone</label>
                         <br>
                         <input name="fname" type="text">
                         <br>
-                            
+
                         <label for="dob">Date of Birth</label>
                         <br>
                         <input name="fname" type="text">
                         <br>
-                    
+
                     </div>
-                    
-                    
+
+
                     <div class="clear">
-                    
+
                         <label for="address">Address</label>
                         <br>
                         <input name="address" type="text">
                         <br>
-                        
-                        
+
+
                         <label for="qualifications">Qualifications</label>
                         <br>
                         <select name="qualifications">
                             <option value =""></option>
                         </select>
                         <br>
-                        
+
                         <button type="button" name="addAnotherQualification">+ Add another qualification</button>
                         <br>
-                        
-                        
+
+
                         <label for="publications">Publications</label>
                         <br>
                         <textarea name="fname"></textarea>
                         <br>
-                        
+
 
                         <label for="otherInformation">Other Information</label>
                         <br>
                         <textarea name="fname"></textarea>
-                        
-                        <input type="submit" class="button" value="Create Department Member">
-                        
-                    </div>
+                        </div>
+                        <input type="submit" name="createDepartmentMember" class="yellowButton" value="Create Department Member">
+
+                    
                 </form>
-                
+
                 <nav id="subnav">
                     <h2>Create New Candidate Profile</h2>
                 </nav>
-                
-                <form id="register-form" action="/PostGradSystem/RegisterServlet" method="post" class ="form-green">
+
+                <form id="createMember" action="/PostGradSystem/RegisterServlet" method="post">
                     <h1> Register </h1>
-                    <label for="email">
-                        <span>Email: </span>
-                        <input type="text" name="email">
-                    </label>
-                    <label for="password">
-                        <span>Password </span>
-                        <input type="password" name="password">
-                    </label>
-                    <hr>
-                    <label for="title">
-                        <span>Title: </span>
-                        <input type="text" name="title">
-                    </label>
-                    <label for="fname">
-                        <span>First Name: </span>
-                        <input type="text" name="fname">
-                    </label>
-                    <label for="mname">
-                        <span>Middle Name: </span>
-                        <input type="text" name="mname">
-                    </label>
-                    <label for="lname">
-                        <span>Last Name: </span>
-                        <input type="text" name="email">
-                    </label>
-                    <label for="address">
-                        <span>Address: </span>
-                        <input type="text" name="address">
-                    </label>
-                    <br>
-                    <hr>
-                    <br>
-                    <label for="hphone">
-                        <span>Home Phone: </span>
-                        <input type="text" name="hphone">
-                    </label>
-                    <label for="mphone">
-                        <span>Mobile Phone: </span>
-                        <input type="text" name="mphone">
-                    </label>
-                    <label for="wphone">
-                        <span>Work Phone: </span>
-                        <input type="text" name="wphone">
-                    </label>
-                    <label for="gender">
-                        <span>Gender: </span>
-                        <select name="gender">
-                            <option value="m">Male</option>
-                            <option value="f">Female</option>
-                        </select>
-                    </label>
-                    <label for ="dob">
-                        <span>Date of Birth: (Day/Month/Year)</span>
+
+                    <div class="float-left">
+                        <label for="email">Email
+                            <br>
+                            <input name="email" type="text">
+                        </label>
+                        <br>
+                        <label for="title">Title
+                            <br>
+                            <input name="title" type="text">
+                        </label>
+                        <br>
+                        <label for="middlename">Middle Name
+                            <br>
+                            <input name="middlename" type="text">
+                        </label>
+                        <br>
+                    </div>
+
+                    <div class="float-right">
+                        <label for="password">Password
+                            <br>
+                            <input name="password" type="password">
+                        </label>
+                        <br>
+                        <label for="firstname">First Name
+                            <br>
+                            <input name="firstname" type="text">
+                        </label>
+                        <br>
+                        <label for="lastname">Last Name
+                            <br>
+                            <input name=lastname type="text">
+                        </label>
+                        <br>
+
+                    </div>
+
+                    <div class="clear">
+
+                        <label for="address">Address</label>
+                        <br>
+                        <input name="address" type="text">
+                        <br>
+
+                    </div>
+
+                    <div class="float-left">
+
+                        <label for="homephone">Home Phone</label>
+                        <br>
+                        <input name="homephone" type="number">
+                        <br>
+                        <label for="workphone">workphone</label>
+                        <br>
+                        <input name="workphone" type="number">
+                        <br>
+                        <label for ="dob">Date of Birth: (Day/Month/Year)</label>
+                        <br>
                         <input type="text" id="datepicker" name="dob">
-                    </label>
+                        <br>
 
+                    </div>
 
+                    <div class="float-right">
+                        <label for="mobile">Mobile</label>
+                        <br>
+                        <input name="mobile" type="number">
+                        <br>    
+                        <label for="gender">Gender
+                            <select name="gender">
+                                <option value="m">Male</option>
+                                <option value="f">Female</option>
+                            </select>
+                        </label>
+                        <br>
+                    </div>
                     <label>
-                        <span>&nbsp;</span> 
-                        <input type="submit" class="button" value="Register">
+                        <span>&nbsp;</span>
                     </label>
+                  
+                        <input type="submit" name="register" class="yellowButton" value="Register">
+                    
                 </form>
-                
+
             </div>
-                
-        <%@include file = "/WEB-INF/jspf/global/footer.jspf" %>
-            </div>
+
+            <%@include file = "/WEB-INF/jspf/global/footer.jspf" %>
+        </div>
     </body>
 </html>
