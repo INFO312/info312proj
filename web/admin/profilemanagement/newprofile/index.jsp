@@ -41,6 +41,11 @@
             <jsp:include page="/WEB-INF/jspf/sidebar/admin.jspf" flush="true" />  
 
             <div id="main_content_area">
+                
+                <div id="subheader">
+                <a href="/PostGradSystem/admin/profilemanagement/manageprofile/index.jsp"><span>Manage Profiles</span></a>
+                </div>
+                
                 <nav id="subnav">
                     <h2>Create New Department Member Profile</h2>
                 </nav>
@@ -149,41 +154,40 @@
                 </nav>
 
                 <form id="createMember" action="/PostGradSystem/RegisterServlet" method="post">
-                    <h1> Register </h1>
+                    
 
                     <div class="float-left">
-                        <label for="email">Email
+                        <label for="email">Email</label>
                             <br>
                             <input name="email" type="text">
-                        </label>
                         <br>
-                        <label for="title">Title
+                        
+                        <label for="title">Title</label>
                             <br>
                             <input name="title" type="text">
-                        </label>
                         <br>
-                        <label for="middlename">Middle Name
+                        
+                        <label for="middlename">Middle Name</label>
                             <br>
                             <input name="middlename" type="text">
-                        </label>
                         <br>
+                        
                     </div>
 
                     <div class="float-right">
-                        <label for="password">Password
+                        <label for="password">Password</label>
                             <br>
                             <input name="password" type="password">
-                        </label>
                         <br>
-                        <label for="firstname">First Name
+                        
+                        <label for="firstname">First Name</label>
                             <br>
                             <input name="firstname" type="text">
-                        </label>
                         <br>
-                        <label for="lastname">Last Name
+                        
+                        <label for="lastname">Last Name</label>
                             <br>
                             <input name=lastname type="text">
-                        </label>
                         <br>
 
                     </div>
@@ -203,14 +207,15 @@
                         <br>
                         <input name="homephone" type="number">
                         <br>
-                        <label for="workphone">workphone</label>
+                        
+                        <label for="workphone">Work Phone</label>
                         <br>
                         <input name="workphone" type="number">
                         <br>
+                        
                         <label for ="dob">Date of Birth: (Day/Month/Year)</label>
                         <br>
                         <input type="text" id="datepicker" name="dob">
-                        <br>
 
                     </div>
 
@@ -218,7 +223,8 @@
                         <label for="mobile">Mobile</label>
                         <br>
                         <input name="mobile" type="number">
-                        <br>    
+                        <br>   
+                        
                         <label for="gender">Gender
                             <select name="gender">
                                 <option value="m">Male</option>
@@ -226,12 +232,13 @@
                             </select>
                         </label>
                         <br>
+                        
                     </div>
-                    <label>
-                        <span>&nbsp;</span>
-                    </label>
-                  
+                    
+                    <div class="break">
                         <input type="submit" name="register" class="yellowButton" value="Register">
+                        </div>
+                        
                     
                 </form>
 

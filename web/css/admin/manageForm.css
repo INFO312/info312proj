@@ -34,6 +34,12 @@
         width: 95%;
     }
     
+    #createMember .break {
+        float:left;
+        width: 95%;
+       
+    }
+    
     #createMember .clear input, 
     #createMember .clear select {
         margin-bottom: 20px;
@@ -67,4 +73,8 @@
 
 .clear {
     clear:both;
+}
+
+.header {
+   text-align: right; 
 }
