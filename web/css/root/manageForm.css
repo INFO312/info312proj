@@ -54,13 +54,13 @@
     
     
 
-#manageDepartment {
+#manageDepartmentMembers {
     width: 80%;
     margin: auto;
     font-size: 20px;
 }
 
-#manageDepartment ul {
+#manageDepartmentMembers ul {
     list-style: none;
     margin: 0;
     padding: 0;
