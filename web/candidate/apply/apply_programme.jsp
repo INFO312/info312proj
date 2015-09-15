@@ -29,6 +29,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <jsp:include page="/WEB-INF/jspf/global-include.jspf" />
+        <script src="scripts/redirect.js"></script>
         <title><%=name%></title>
     </head>
     <body>
@@ -39,6 +40,8 @@
             <jsp:include page="/WEB-INF/jspf/sidebar/candidate.jspf" flush="true" />  
             <div id="main_content_area">
                 <nav id="subnav">
+                    
+                </nav>
                     <h2>Apply - Programme Selection</h2>
                     
                     <p>
@@ -47,7 +50,7 @@
                     <p>
                         E.g. Master of Science (MSc)
                     </p>
-                    <form>
+                    <form name="form1" action="/PostGradSystem/candidate/apply/study_period.jsp" method="post">
                         <label for="programme">Programme:</label>
                             <select name="programme">
                                 <option value =""></option>
@@ -65,16 +68,18 @@
                                 <option value ="2017">2017</option>
                                 <option value ="2018">2018</option>
                             </select>
+                        <br>
+                        <br>
+                        <button type="button" name="addAnotherProgramme" class="yellowButton ">+ Add another programme</button>
+                        <br>
+                        <br>
+                        <a href="/PostGradSystem/index.jsp"><button type="button" class="yellowButton">Cancel</button></a>
+                        <a href="/PostGradSystem/index.jsp"><button type="button" class="yellowButton">Back</button></a>
+                        
+                        <input type="submit" name="next" id="next" value="Next">
+                        
                     
                     </form>
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                </nav>
             </div>
         </div>
     </body>
