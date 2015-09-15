@@ -1,4 +1,4 @@
-<form id="createDepartmentMember" action="" method="post">
+<form id="createDepartmentMember" action="/PostGradSystem/CreateDepartmentMemeberServelet" method="post">
     <div class="float-left">
         <label for="fname">First Name</label>
         <br>
@@ -10,7 +10,7 @@
         <input name="lname" type="text">
         <br>
 
-        <label for="mname">Last Name</label>
+        <label for="lname">Last Name</label>
         <br>
         <input name="lname" type="text">
         <br>
@@ -25,39 +25,39 @@
         <br>
 
 
-        <label for="genre">Gender</label>
+        <label for="gender">Gender</label>
         <br>
-        <input name="fname" type="text">
+        <input name="gender" type="text">
     </div>
 
     <div class="float-right">
 
         <label for="email">Email</label>
         <br>
-        <input name="fname" type="text">
+        <input name="email" type="text">
         <br>
 
 
         <label for="mphone">Mobile Phone</label>
         <br>
-        <input name="fname" type="text">
+        <input name="mphone" type="text">
         <br>
 
 
         <label for="hphone">Home Phone</label>
         <br>
-        <input name="fname" type="text">
+        <input name="hphone" type="text">
         <br>
 
 
         <label for="wphone">Work Phone</label>
         <br>
-        <input name="fname" type="text">
+        <input name="wphone" type="text">
         <br>
 
         <label for="dob">Date of Birth</label>
         <br>
-        <input name="fname" type="text">
+        <input name="dob" type="text">
         <br>
 
     </div>
@@ -70,6 +70,8 @@
         <input name="address" type="text">
         <br>
 
+        <input hidden type="text" id="hiddenQualificationCounter" name="qualificationCounter">
+        
         <div id="qualificationSelectorContainer0">
             <label for="qualifications">Qualifications</label>
             <br>
@@ -89,13 +91,13 @@
 
         <label for="publications">Publications</label>
         <br>
-        <textarea name="fname"></textarea>
+        <textarea name="publications"></textarea>
         <br>
 
 
         <label for="otherInformation">Other Information</label>
         <br>
-        <textarea name="fname"></textarea>
+        <textarea name="otherInformation"></textarea>
 
         <input type="submit" value="Create" class="yellowButton">
 
