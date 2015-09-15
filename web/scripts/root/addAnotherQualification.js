@@ -1,4 +1,5 @@
 var qualificationCounter = 0;
+var amountOfQualifications = 0;
 
 function deleteQualification() {
     var qualificationNumebr = $(this).val();
@@ -11,11 +12,14 @@ function deleteQualification() {
     
     // Remoe the qualification container
     $(qualificationToBeRemovedSelector).parent().remove();
+    
+    amountOfQualifications --;
 }
 
 function addAnotherQualification() {
     
-    if ($($(".qualificationSelector")[qualificationCounter]).val() === "") {
+    
+    if ($($(".qualificationSelector")[amountOfQualifications]).val() === "") {
         alert("Please select a qualification before attempting to add another.");
     } else {
          // Disable the previous qualification 
@@ -25,8 +29,9 @@ function addAnotherQualification() {
         $('<button type="button" name="deleteQualification" class="yellowButton" value=' + qualificationCounter + '>Delete</button><br>').insertBefore($(this));
         $('button[value="' + qualificationCounter + '"]').click(deleteQualification);
         
-        // Increment the counter
+        // Increment the counters
         qualificationCounter ++;
+        amountOfQualifications ++;
         
         // Add a new qualification selector
         $('<div class="qualificationSelectorContainer"><label for="qualifications">Qualifications</label><br><select name="qualification' + qualificationCounter + '" class="qualificationSelector"><option value =""></option><option value ="masterOfScience">Master of Science</option><option value ="masterOfBusiness">Master of Business</option><option value ="masterOfBusinessAdministration">Master of Business Administration</option><option value ="masterOfBusinessDataScience">Master of Business Data Science</option></select><br></div>').insertBefore(this);  
