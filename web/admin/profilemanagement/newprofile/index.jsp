@@ -29,8 +29,8 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <jsp:include page="/WEB-INF/jspf/global-include.jspf" />
-        <link href="/PostGradSystem/css/admin/form.css" rel="stylesheet" type="text/css" />
         <link href="/PostGradSystem/css/admin/manageForm.css" rel="stylesheet" type="text/css" />
+        
         <title><%=name%></title>
     </head>
     <body>
@@ -42,12 +42,16 @@
 
             <div id="main_content_area">
                 
-                <div id="subheader">
-                <a href="/PostGradSystem/admin/profilemanagement/manageprofile/index.jsp"><span>Manage Profiles</span></a>
-                </div>
-                
-                <nav id="subnav">
+                <nav class="subnav">
                     <h2>Create New Department Member Profile</h2>
+                    <ul>
+                        <li>
+                            <span>Create New Profile</span>
+                        </li>
+                        <li>
+                            <a href="/PostGradSystem/admin/profilemanagement/manageprofile/index.jsp"><span>Manage Profiles</span></a>
+                        </li>
+                    </ul>
                 </nav>
 
                 <form id="createMember" action="" method="post">
@@ -130,7 +134,7 @@
                         </select>
                         <br>
 
-                        <button type="button" name="addAnotherQualification">+ Add another qualification</button>
+                        <button type="button" name="addAnotherQualification" class="yellowButton ">+ Add another qualification</button>
                         <br>
 
 
