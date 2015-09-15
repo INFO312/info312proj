@@ -30,7 +30,8 @@
         <jsp:include page="/WEB-INF/jspf/global-include.jspf" />
         <link href="/PostGradSystem/css/root/manageForm.css" rel="stylesheet" type="text/css" />
         <title><%=name%></title>
-        <script src="/PostGradSystem/scripts/addAnotherQualification.js" type="text/javascript"></script>
+        <script src="/PostGradSystem/scripts/root/addAnotherQualification.js" type="text/javascript"></script>
+        <script src="/PostGradSystem/scripts/root/showHide.js" type="text/javascript"></script>
     </head>
     <body>
         <div id ="container">
@@ -47,141 +48,9 @@
                     </ul>
                 </nav>
 
-                <form id="createMember" action="" method="post">
-                    <div class="float-left">
-                        <label for="fname">First Name</label>
-                        <br>
-                        <input name="fname" type="text">
-                        <br>
-
-                        <label for="mname">Middle Name</label>
-                        <br>
-                        <input name="lname" type="text">
-                        <br>
-
-                        <label for="mname">Last Name</label>
-                        <br>
-                        <input name="lname" type="text">
-                        <br>
-
-
-                        <label for="access">Access Level</label>
-                        <br>
-                        <select name="access">
-                            <option value ="d">Department Member</option>
-                            <option value ="a">Administrator</option>
-                        </select>
-                        <br>
-
-
-                        <label for="genre">Gender</label>
-                        <br>
-                        <input name="fname" type="text">
-                    </div>
-
-                    <div class="float-right">
-
-                        <label for="email">Email</label>
-                        <br>
-                        <input name="fname" type="text">
-                        <br>
-
-
-                        <label for="mphone">Mobile Phone</label>
-                        <br>
-                        <input name="fname" type="text">
-                        <br>
-
-
-                        <label for="hphone">Home Phone</label>
-                        <br>
-                        <input name="fname" type="text">
-                        <br>
-
-
-                        <label for="wphone">Work Phone</label>
-                        <br>
-                        <input name="fname" type="text">
-                        <br>
-
-                        <label for="dob">Date of Birth</label>
-                        <br>
-                        <input name="fname" type="text">
-                        <br>
-
-                    </div>
-
-
-                    <div class="clear">
-
-                        <label for="address">Address</label>
-                        <br>
-                        <input name="address" type="text">
-                        <br>
-
-
-                        <label for="qualifications">Qualifications</label>
-                        <br>
-                        <select name="qualifications">
-                            <option value =""></option>
-                        </select>
-                        <br>
-
-                        <button type="button" name="addAnotherQualification" class="yellowButton addAnotherQualificationButton">+ Add another qualification</button>
-                        <br>
-
-
-                        <label for="publications">Publications</label>
-                        <br>
-                        <textarea name="fname"></textarea>
-                        <br>
-
-
-                        <label for="otherInformation">Other Information</label>
-                        <br>
-                        <textarea name="fname"></textarea>
-                        
-                        <input type="submit" value="Create" class="yellowButton">
-
-                    </div>
-                </form>
-
-                <div id="manageDeparment">
-
-                    
-                    <div class="float-left">
-                        <ul>
-                            <li>
-                                FNAME LNAME
-                                <button type="button" name="FNAME LNMAME" class="yellowButton">Edit</button>
-                                <button type="button" name="FNAME LNMAME" class="yellowButton">Delete</button>
-                            </li>
-
-                            <li>
-                                FNAME LNAME
-                                <button type="button" name="FNAME LNMAME" class="yellowButton">Edit</button>
-                                <button type="button" name="FNAME LNMAME" class="yellowButton">Delete</button>
-                            </li>
-                        </ul>
-                    </div>
-                        
-                    <div class="float-right">
-                        <ul>
-                            <li>
-                                FNAME LNAME
-                                <button type="button" name="FNAME LNMAME" class="yellowButton">Edit</button>
-                                <button type="button" name="FNAME LNMAME" class="yellowButton">Delete</button>
-                            </li>
-
-                            <li>
-                                FNAME LNAME
-                                <button type="button" name="FNAME LNMAME" class="yellowButton">Edit</button>
-                                <button type="button" name="FNAME LNMAME" class="yellowButton">Delete</button>
-                            </li>
-                         </ul>
-                    </div>
-                </div>
-
+                <jsp:include page="/WEB-INF/jspf/root/createDepartmentMemberForm.jspf" flush="true" /> 
+                <jsp:include page="/WEB-INF/jspf/root/manageDepartmentMembers.jspf" flush="true" /> 
+                
             </div>
             <%@include file = "/WEB-INF/jspf/global/footer.jspf" %>
         </div>

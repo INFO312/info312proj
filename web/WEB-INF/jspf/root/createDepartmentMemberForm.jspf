@@ -1,0 +1,103 @@
+<form id="createDepartmentMember" action="" method="post">
+    <div class="float-left">
+        <label for="fname">First Name</label>
+        <br>
+        <input name="fname" type="text">
+        <br>
+
+        <label for="mname">Middle Name</label>
+        <br>
+        <input name="lname" type="text">
+        <br>
+
+        <label for="mname">Last Name</label>
+        <br>
+        <input name="lname" type="text">
+        <br>
+
+
+        <label for="access">Access Level</label>
+        <br>
+        <select name="access">
+            <option value ="d">Department Member</option>
+            <option value ="a">Administrator</option>
+        </select>
+        <br>
+
+
+        <label for="genre">Gender</label>
+        <br>
+        <input name="fname" type="text">
+    </div>
+
+    <div class="float-right">
+
+        <label for="email">Email</label>
+        <br>
+        <input name="fname" type="text">
+        <br>
+
+
+        <label for="mphone">Mobile Phone</label>
+        <br>
+        <input name="fname" type="text">
+        <br>
+
+
+        <label for="hphone">Home Phone</label>
+        <br>
+        <input name="fname" type="text">
+        <br>
+
+
+        <label for="wphone">Work Phone</label>
+        <br>
+        <input name="fname" type="text">
+        <br>
+
+        <label for="dob">Date of Birth</label>
+        <br>
+        <input name="fname" type="text">
+        <br>
+
+    </div>
+
+
+    <div class="clear">
+
+        <label for="address">Address</label>
+        <br>
+        <input name="address" type="text">
+        <br>
+
+        <div id="qualificationSelectorContainer0">
+            <label for="qualifications">Qualifications</label>
+            <br>
+            <select name="qualification0" class="qualificationSelector">
+                <option value =""></option>
+                <option value ="masterOfScience">Master of Science</option>
+                <option value ="masterOfBusiness">Master of Business</option>
+                <option value ="masterOfBusinessAdministration">Master of Business Administration</option>
+                <option value ="masterOfBusinessDataScience">Master of Business Data Science</option>
+            </select>  
+            <br>
+        </div>
+
+        <button type="button" name="addAnotherQualification" class="yellowButton addAnotherQualificationButton">+ Add another qualification</button>
+        <br>
+
+
+        <label for="publications">Publications</label>
+        <br>
+        <textarea name="fname"></textarea>
+        <br>
+
+
+        <label for="otherInformation">Other Information</label>
+        <br>
+        <textarea name="fname"></textarea>
+
+        <input type="submit" value="Create" class="yellowButton">
+
+    </div>
+</form>

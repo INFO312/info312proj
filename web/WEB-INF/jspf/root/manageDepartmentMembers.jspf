@@ -1,0 +1,33 @@
+<div id="manageDeparmentMembers">
+    <div class="float-left">
+        <ul>
+            <li>
+                FNAME LNAME
+                <button type="button" name="FNAME LNMAME" class="yellowButton">Edit</button>
+                <button type="button" name="FNAME LNMAME" class="yellowButton">Delete</button>
+            </li>
+
+            <li>
+                FNAME LNAME
+                <button type="button" name="FNAME LNMAME" class="yellowButton">Edit</button>
+                <button type="button" name="FNAME LNMAME" class="yellowButton">Delete</button>
+            </li>
+        </ul>
+    </div>
+
+    <div class="float-right">
+        <ul>
+            <li>
+                FNAME LNAME
+                <button type="button" name="FNAME LNMAME" class="yellowButton">Edit</button>
+                <button type="button" name="FNAME LNMAME" class="yellowButton">Delete</button>
+            </li>
+
+            <li>
+                FNAME LNAME
+                <button type="button" name="FNAME LNMAME" class="yellowButton">Edit</button>
+                <button type="button" name="FNAME LNMAME" class="yellowButton">Delete</button>
+            </li>
+        </ul>
+    </div>
+</div>
