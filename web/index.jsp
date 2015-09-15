@@ -19,7 +19,7 @@
     
     String r = "applicant";
     Person p = new Person( "Mr", r,  "User", r, r, r, r, r, r, 'M', "1/1/11");
-    String userType = "c";
+    String userType = "r";
 //    String userType = null;
     
     if (userType == null) {

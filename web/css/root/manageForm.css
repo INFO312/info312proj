@@ -2,7 +2,11 @@
     width: 80%;
     margin: auto;
     font-size: 20px;
-    display:none;
+    /*display:none;*/
+}
+
+.addAnotherQualificationButton {
+    font-size: 100px;
 }
 
     #createMember label {
@@ -35,7 +39,7 @@
         width: 95%;
     }
     
-    #createMember .clear input, 
+    #createMember .clear input[type="text"], 
     #createMember .clear select {
         margin-bottom: 20px;
         height: 25px;
@@ -46,6 +50,10 @@
     
     #createMember .clear button {
         margin-bottom: 20px;
+    }
+    
+    #createMember .clear input[type="submit"] {
+        float:right;
     }
     
     

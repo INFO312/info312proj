@@ -30,6 +30,7 @@
         <jsp:include page="/WEB-INF/jspf/global-include.jspf" />
         <link href="/PostGradSystem/css/root/manageForm.css" rel="stylesheet" type="text/css" />
         <title><%=name%></title>
+        <script src="/PostGradSystem/scripts/addAnotherQualification.js" type="text/javascript"></script>
     </head>
     <body>
         <div id ="container">
@@ -41,8 +42,8 @@
                 <nav class="subnav">
                     <h2>Manage Department Members</h2>
                     <ul>
-                        <li>Create</li>
-                        <li>Manage</li>
+                        <li class="subnav-item">Create</li>
+                        <li class="subnav-item">Manage</li>
                     </ul>
                 </nav>
 
@@ -126,7 +127,7 @@
                         </select>
                         <br>
 
-                        <button type="button" name="addAnotherQualification" class="yellowButton">+ Add another qualification</button>
+                        <button type="button" name="addAnotherQualification" class="yellowButton addAnotherQualificationButton">+ Add another qualification</button>
                         <br>
 
 
