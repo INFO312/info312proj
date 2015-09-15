@@ -1,0 +1,82 @@
+#createDepartmentMember {
+    width: 80%;
+    margin: auto;
+    font-size: 20px;
+    /*display:none;*/
+}
+
+    #createDepartmentMember label {
+        margin-bottom: 20px;
+    }
+
+    #createDepartmentMember .float-left input, 
+    #createDepartmentMember .float-right input, 
+    #createDepartmentMember .float-left select, 
+    #createDepartmentMember .float-right select {
+        margin-bottom: 20px;
+        height: 25px;
+        width: 90%;
+        font-size: 18px;
+        line-height:30px;
+    }
+    
+    #createDepartmentMember select {
+        -webkit-appearance: menulist-button;
+    }
+    
+    #createDepartmentMember textarea {
+        width: 100%;
+        height: 150px;
+        resize: none;
+    }
+    
+    #createDepartmentMember .clear {
+        border-top: black solid 1px;
+        width: 95%;
+    }
+    
+    #createDepartmentMember .clear input[type="text"], 
+    #createDepartmentMember .clear select {
+        margin-bottom: 20px;
+        height: 25px;
+        width: 100%;
+        font-size: 18px;
+        line-height:30px;
+    }
+    
+    #createDepartmentMember .clear button {
+        margin-bottom: 20px;
+    }
+    
+    #createDepartmentMember .clear input[type="submit"] {
+        float:right;
+    }
+    
+    
+
+#manageDepartmentMembers {
+    width: 80%;
+    margin: auto;
+    font-size: 20px;
+    display:none;
+}
+
+#manageDepartmentMembers ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.float-left {
+    float:left;
+    width: 50%;
+}
+
+.float-right {
+    float:right;    
+    width: 50%;
+}
+
+.clear {
+    clear:both;
+}
