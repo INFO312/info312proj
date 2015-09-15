@@ -1,9 +1,8 @@
 <%-- 
     Document   : index
-    Created on : 14/09/2015, 10:37:14 AM
-    Author     : Nathan
+    Created on : Sep 11, 2015, 11:45:13 AM
+    Author     : nblomfield
 --%>
-
 <%@page import="java.util.ArrayList"%>
 <%@page import="domain.Person"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -27,38 +26,68 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
         <jsp:include page="/WEB-INF/jspf/global-include.jspf" />
-        <link href="/PostGradSystem/css/admin/form.css" rel="stylesheet" type="text/css" />
         <link href="/PostGradSystem/css/admin/manageForm.css" rel="stylesheet" type="text/css" />
         <title><%=name%></title>
     </head>
-    
     <body>
-        
         <div id ="container">
             <jsp:include page="/WEB-INF/jspf/global/header.jspf" flush="true">
                 <jsp:param name="name" value="<%= name%>" />
             </jsp:include>
-            <jsp:include page="/WEB-INF/jspf/sidebar/admin.jspf" flush="true" />  
-
+            <jsp:include page="/WEB-INF/jspf/sidebar/admin.jspf" flush="true" />
+            
             <div id="main_content_area">
-                <nav id="subnav">
-                    <h2>Manage profiles</h2>
+                <nav class="subnav">
+                    <h2>Manage Department Members</h2>
+                    <ul>
+                        <li class="active">
+                            <a href="/PostGradSystem/admin/profilemanagement/newprofile/index.jsp"><span>Create New Profile</span></a>
+                        </li>
+                        <li class="active">
+                            <span>Manage Profiles</span>
+                        </li>
+                    </ul>
                 </nav>
+
+                <div id="manageDeparment">
+
                     
-                    <form action="">
-                    <input type="radio" name="departmentmember" value="heathercooper">Heather Cooper<br>
-                    <input type="radio" name="departmentmember" value="michaelwinikoff">Michael Winikoff
-                    </form>
-                    
-                    
-                    
-                    
-                    
-                    
+                    <div class="float-left">
+                        <ul>
+                            <li>
+                                FNAME LNAME
+                                <button type="button" name="FNAME LNMAME" class="yellowButton">Edit</button>
+                                <button type="button" name="FNAME LNMAME" class="yellowButton">Delete</button>
+                            </li>
+
+                            <li>
+                                FNAME LNAME
+                                <button type="button" name="FNAME LNMAME" class="yellowButton">Edit</button>
+                                <button type="button" name="FNAME LNMAME" class="yellowButton">Delete</button>
+                            </li>
+                        </ul>
+                    </div>
+                        
+                    <div class="float-right">
+                        <ul>
+                            <li>
+                                FNAME LNAME
+                                <button type="button" name="FNAME LNMAME" class="yellowButton">Edit</button>
+                                <button type="button" name="FNAME LNMAME" class="yellowButton">Delete</button>
+                            </li>
+
+                            <li>
+                                FNAME LNAME
+                                <button type="button" name="FNAME LNMAME" class="yellowButton">Edit</button>
+                                <button type="button" name="FNAME LNMAME" class="yellowButton">Delete</button>
+                            </li>
+                         </ul>
+                    </div>
                 </div>
 
+            </div>
             <%@include file = "/WEB-INF/jspf/global/footer.jspf" %>
         </div>
     </body>
