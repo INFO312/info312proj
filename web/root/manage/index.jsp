@@ -28,7 +28,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
         <jsp:include page="/WEB-INF/jspf/global-include.jspf" />
-        <link href="/PostGradSystem/css/root/manageForm.css" rel="stylesheet" type="text/css" />
+        <link href="/PostGradSystem/css/root/manageDepartment.css" rel="stylesheet" type="text/css" />
         <title><%=name%></title>
         <script src="/PostGradSystem/scripts/root/addAnotherQualification.js" type="text/javascript"></script>
         <script src="/PostGradSystem/scripts/root/showHide.js" type="text/javascript"></script>
@@ -43,7 +43,7 @@
                 <nav class="subnav">
                     <h2>Manage Department Members</h2>
                     <ul>
-                        <li class="subnav-item">Create</li>
+                        <li class="subnav-item selected">Create</li>
                         <li class="subnav-item">Manage</li>
                     </ul>
                 </nav>
