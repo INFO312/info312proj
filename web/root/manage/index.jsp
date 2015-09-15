@@ -47,7 +47,7 @@
                     </ul>
                 </nav>
 
-                <form id="createMember" action="" method="post">
+                <form id="createDepartmentMember" action="" method="post">
                     <div class="float-left">
                         <label for="fname">First Name</label>
                         <br>
@@ -118,14 +118,19 @@
                         <br>
                         <input name="address" type="text">
                         <br>
-
-
-                        <label for="qualifications">Qualifications</label>
-                        <br>
-                        <select name="qualifications">
-                            <option value =""></option>
-                        </select>
-                        <br>
+                        
+                        <div id="qualificationSelectorContainer0">
+                            <label for="qualifications">Qualifications</label>
+                            <br>
+                            <select name="qualification0" class="qualificationSelector">
+                                <option value =""></option>
+                                <option value ="masterOfScience">Master of Science</option>
+                                <option value ="masterOfBusiness">Master of Business</option>
+                                <option value ="masterOfBusinessAdministration">Master of Business Administration</option>
+                                <option value ="masterOfBusinessDataScience">Master of Business Data Science</option>
+                            </select>  
+                            <br>
+                        </div>
 
                         <button type="button" name="addAnotherQualification" class="yellowButton addAnotherQualificationButton">+ Add another qualification</button>
                         <br>
