@@ -30,7 +30,7 @@
         <jsp:include page="/WEB-INF/jspf/global-include.jspf" />
         <link href="/PostGradSystem/css/root/manageForm.css" rel="stylesheet" type="text/css" />
         <title><%=name%></title>
-        <script src="/PostGradSystem/scripts/addAnotherQualification.js" type="text/javascript"></script>
+        <script src="/PostGradSystem/scripts/root/addAnotherQualification.js" type="text/javascript"></script>
     </head>
     <body>
         <div id ="container">
