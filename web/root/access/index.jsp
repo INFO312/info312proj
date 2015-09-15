@@ -29,6 +29,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <jsp:include page="/WEB-INF/jspf/global-include.jspf" />
+        <link href="/PostGradSystem/css/root/manageDepartmentAccess.css" type="text/css" rel="stylesheet">
         <title><%=name%></title>
     </head>
     <body>
@@ -42,11 +43,11 @@
                     <h2>Manage Department Access Levels</h2>
                 </nav>
 
-                <table style="width:100%">
+                <table id="manageDepartmentAccess" style="width:100%">
                     <tr>
                         <td>Heather Cooper</td>
-                        <td><label for="fname">Access Level</label>
-                            <select name="fname">
+                        <td><label for="access">Access Level</label>
+                            <select name="access">
                                 <option value ="Admin">Admin</option>
                                 <option value ="Staff">Staff</option>
                                 <option value ="HOD">HOD</option>
@@ -116,10 +117,10 @@
                     </tr>             
                 </table>
                 <br>
-
-                <button type="button">Discard Changes</button>
-                <button type="button">Save Changes</button>
-                </form>
+                
+                <button type="button" id="saveButton" class="yellowButton">Save Changes</button>
+                <button type="button" id="discardButton" class="yellowButton">Discard Changes</button>
+                
             </div>
             <%@include file = "/WEB-INF/jspf/global/footer.jspf" %>
     </div>
