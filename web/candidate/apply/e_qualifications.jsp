@@ -51,7 +51,7 @@
                     <p>
                         E.g. Bachelor of Science (BSc)
                     </p>
-                    <form name="form1" action="/PostGradSystem/candidate/apply/f_documents.jsp" method="post">
+                    <form name="form5" action="/PostGradSystem/candidate/apply/f_documents.jsp" method="post">
                         <label for="qualifications">Qualifications:</label>
                             <input name="qualifications" type="text">
                         

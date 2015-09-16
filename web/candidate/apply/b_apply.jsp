@@ -51,7 +51,7 @@
                     <p>
                         E.g. Master of Science (MSc)
                     </p>
-                    <form name="form1" action="/PostGradSystem/candidate/apply/c_period.jsp" method="post">
+                    <form name="form2" action="/PostGradSystem/candidate/apply/c_period.jsp" method="post">
                         <label for="programme">Programme:</label>
                             <select name="programme">
                                 <option value =""></option>

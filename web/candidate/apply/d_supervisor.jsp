@@ -54,7 +54,7 @@
                     <b><a href="http://infosci.otago.ac.nz/our-people/">Look at Department Members Here</a></b>
                 </p>
 
-                <form name="form1" action="/PostGradSystem/candidate/apply/e_qualifications.jsp" method="post">
+                <form name="form4" action="/PostGradSystem/candidate/apply/e_qualifications.jsp" method="post">
                     <label for="supervisor">---Here will be your programme you selected---:</label>
 
                     <input hidden type="text" id="hiddenDepartmentMemberCounter" name="departmentMemberCounter">

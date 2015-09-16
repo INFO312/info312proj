@@ -49,7 +49,7 @@
                     By submitting this application for postgraduate study with the Department of Information Science at the University of Otago you agree the all information provided is correct and true. 
                 </p>
 
-                <form name="form1" method="post" action="/PostGradSystem/index.jsp" onsubmit="if (document.getElementById('agree').checked) {
+                <form name="form7" method="post" action="/PostGradSystem/index.jsp" onsubmit="if (document.getElementById('agree').checked) {
                             return true;
                         } else {
                             alert('Please indicate that you have read and agree to the Terms and Conditions and Privacy Policy');

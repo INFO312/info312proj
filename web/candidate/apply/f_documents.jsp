@@ -51,7 +51,7 @@
                     <p>
                         If you have uploaded an academic transcript before you will be able to reuse that document for this application, although you are free to upload a recent revision. 
                     </p>
-                    <form name="form1" action="/PostGradSystem/candidate/apply/g_submission.jsp" method="post">
+                    <form name="form6" action="/PostGradSystem/candidate/apply/g_submission.jsp" method="post">
                         
                         <label for="academicTranscript"><b>Academic Transcript:</b></label>
                         <input type="file" name="academicTranscript" size="chars"> 

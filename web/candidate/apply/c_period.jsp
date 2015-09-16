@@ -48,7 +48,7 @@
                     </p>
                     <p>
                         ---Here will be your programme you selected in the pervious screen---
-                    <form name="form1" action="/PostGradSystem/candidate/apply/d_supervisor.jsp" method="post">
+                    <form name="form3" action="/PostGradSystem/candidate/apply/d_supervisor.jsp" method="post">
                         <label for="programme">Year:</label>
                             <select name="programme">
                                 <option value =""></option>
