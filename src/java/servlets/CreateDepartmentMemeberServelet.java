@@ -18,7 +18,7 @@ import javax.servlet.http.HttpServletResponse;
  */
 @WebServlet(name = "CreateDepartmentMemeberServelet", urlPatterns = {"/CreateDepartmentMemeberServelet"})
 public class CreateDepartmentMemeberServelet extends HttpServlet {
-
+    
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
