@@ -31,6 +31,7 @@
         <jsp:include page="/WEB-INF/jspf/global-include.jspf" />
         <script src="scripts/redirect.js"></script>
         <title><%=name%></title>
+        <script src="/PostGradSystem/scripts/root/addAnotherQualification.js" type="text/javascript"></script>
     </head>
     <body>
         <div id ="container">
@@ -70,7 +71,7 @@
                             </select>
                         <br>
                         <br>
-                        <button type="button" name="addAnotherProgramme" class="yellowButton ">+ Add another programme</button>
+                        <button type="button" name="addAnotherQualification" class="yellowButton addAnotherQualificationButton">+ Add another programme</button>
                         <br>
                         <br>
                         <a href="/PostGradSystem/index.jsp"><button type="button" class="yellowButton">Cancel</button></a>

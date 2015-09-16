@@ -41,9 +41,31 @@
                 <nav id="subnav">
                 </nav>
                 
-                <p>For each programme application select the study term</p>
-                
-                
+                <h2>Apply - Study Period</h2>
+                    
+                    <p>
+                        For each programme application select the study term
+                    </p>
+                    <p>
+                        ---Here will be your programme you selected in the pervious screen---:
+                    </p>
+                    <form name="form1" action="/PostGradSystem/candidate/apply/study_period.jsp" method="post">
+                        <label for="programme">Programme:</label>
+                            <select name="programme">
+                                <option value =""></option>
+                                <option value ="fullTime">Full Time</option>
+                                <option value ="PartTime">Part Time</option>
+                                <option value ="undecided">Undecided</option>
+                            </select>
+                        <br>
+                        <br>
+                        <a href="/PostGradSystem/index.jsp"><button type="button" class="yellowButton">Cancel</button></a>
+                        <a href="/PostGradSystem/apply/study_period.jsp"><button type="button" class="yellowButton">Back</button></a>
+                        
+                        <input type="submit" name="next" id="next" value="Next">
+                        
+                    
+                    </form>
                 
             </div>
             
