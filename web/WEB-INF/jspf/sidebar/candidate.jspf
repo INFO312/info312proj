@@ -21,7 +21,7 @@
            <fieldset>
            <legend>  Tasks </legend>
            <ul>
-                <li><a href="/PostGradSystem/candidate/apply/apply_programme.jsp"><span>Apply</span></a></li>
+                <li><a href="/PostGradSystem/candidate/apply/a_returning.jsp"><span>Apply</span></a></li>
                 <li><a href="upload.jsp"><span>Upload</span></a></li>
                 <li><a href="enquire.jsp"><span>Enquire</span></a></li>
            </ul>
