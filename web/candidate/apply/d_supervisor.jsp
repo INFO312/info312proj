@@ -29,7 +29,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <jsp:include page="/WEB-INF/jspf/global-include.jspf" />
-        <script src="/PostGradSystem/scripts/root/addAnotherDepartmentMember.js" type="text/javascript"></script>
+        <script src="/PostGradSystem/scripts/root/createDepartmentMemberValidation.js" type="text/javascript"></script>
         <title><%=name%></title>
     </head>
     <body>
