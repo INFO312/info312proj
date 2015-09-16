@@ -208,10 +208,19 @@ h4 {
         display: inline-block;
         padding: 10px 50px;
         cursor: pointer;
-        
     }
     
-    .subnav li:nth-child(1) {
+    .subnav a:hover,
+    .subnav li:hover {
+        color: yellow;
+    }
+    
+    .subnav li a {
+        text-decoration: none;
+        color: black;
+    }
+    
+    .subnav li:not(:last-child) {
         border-right: 1px black solid;
     }
     

@@ -15,9 +15,9 @@
 //    String userType = (String) session.getAttribute("usertype");
     String r = "admin";
     Person p = new Person("Mr", r, "User", r, r, r, r, r, r, 'M', "1/1/11");
-    String userType = "r";
+    String userType = "a";
 
-    if (userType != "r") {
+    if (userType != "a") {
         response.sendRedirect(request.getContextPath() + "/login.jsp");
         return;
     }
@@ -42,11 +42,14 @@
                 <nav class="subnav">
                     <h2>Manage Department Members</h2>
                     <ul>
-                        <li class="active">
-                            <a href="/PostGradSystem/admin/profilemanagement/newprofile/index.jsp"><span>Create New Profile</span></a>
+                        <li class="subnav-item active">
+                            <a href="/PostGradSystem/admin/profilemanagement/newProfile.jsp">Create New Profile</a>
                         </li>
-                        <li class="active">
-                            <span>Manage Profiles</span>
+                        <li class="subnav-item">
+                            <a href="/PostGradSystem/admin/profilemanagement/index.jsp">Manage Profiles</a>
+                        </li>
+                        <li class="subnav-item">
+                            <a href="/PostGradSystem/admin/profilemanagement/browseProfiles.jsp">Browse Profiles</a>
                         </li>
                     </ul>
                 </nav>
