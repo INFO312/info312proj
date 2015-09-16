@@ -1,6 +1,6 @@
 <%-- 
-    Document   : g_submission
-    Created on : 17/09/2015, 11:13:22 AM
+    Document   : h_received
+    Created on : 17/09/2015, 11:28:38 AM
     Author     : Nathan
 --%>
 
@@ -46,24 +46,12 @@
                 <h2>Apply - Submission</h2>
 
                 <p>
-                    By submitting this application for postgraduate study with the Department of Information Science at the University of Otago you agree the all information provided is correct and true. 
+                    Congratulations your application had been received. 
+                <p>
+You can view and add additional information to this and other applications through the application link. 
+                <p>
+If you have any questions please use the enquiry link to talk directly with a department member.
                 </p>
-
-                <form name="form7" method="post" action="/PostGradSystem/candidate/apply/h_received.jsp" onsubmit="if (document.getElementById('agree').checked) {
-                            return true;
-                        } else {
-                            alert('Please indicate that you have read and agree to the Terms and Conditions and Privacy Policy');
-                            return false;
-                        }">
-                    <input type="checkbox" name="checkbox" value="check" id="agree" /> I have read and agree to the Terms and Conditions and Privacy Policy
-                    <br>
-                    <br>
-
-                    <a href="/PostGradSystem/index.jsp"><button type="button" class="yellowButton">Cancel</button></a>
-                    <input class="yellowButton" action="action" type="button" value="Back" onclick="history.go(-1);" />
-                    <input class="yellowButton" type="submit" name="next" id="next" value="Next"/>
-
-                </form>
             </div>
         </div>
     </body>
