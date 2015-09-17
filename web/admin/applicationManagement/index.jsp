@@ -1,9 +1,8 @@
 <%-- 
     Document   : index
     Created on : Sep 11, 2015, 11:45:13 AM
-    Author     : nblomfield
+    Author     : csutton
 --%>
-<%@page import="java.util.ArrayList"%>
 <%@page import="domain.Person"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%
@@ -20,6 +19,8 @@
         return;
     }
     name = p.getFirstname() + " " + p.getLname();
+    
+    
 %>
 <!DOCTYPE html>
 <html>
@@ -58,17 +59,14 @@
                     </ul>
                 </nav>
 
+                <h3>20 August 2014</h3>
+                
                 <table class="applicationSummaryTable">
                     <tr>
-                        <td>FNAME LNAME</td>
+                        <td class="applicationName" colspan="3"><a href="/PostGradSystem/admin/applicationManagement/application.jsp">FNAME LNAME</a></td>
                     </tr>
                     <tr>
-                        <td>&nbsp;Master of Business Data Science (2015)</td>
-                    </tr>
-                    <tr>
-                        <td>Application Complete</td>
-                        <td>Complete</td>
-                        <td>-</td>
+                        <td class="applicationQualification" colspan="3">Master of Business Data Science (2015)</td>
                     </tr>
                     <tr>
                         <td>Application Complete</td>
@@ -76,9 +74,41 @@
                         <td>-</td>
                     </tr>
                     <tr>
-                        <td>Application Complete</td>
+                        <td>Documents Verified</td>
+                        <td>Incomplete</td>
+                        <td>Invalid documents received</td>
+                    </tr>
+                    <tr>
+                        <td>Course Approved</td>
                         <td>Complete</td>
                         <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>Supervisor Status</td>
+                        <td>Complete</td>
+                        <td>Appointed Grant Dick</td>
+                    </tr>
+                    <tr>
+                        <td>External Approval</td>
+                        <td>N/A</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>HOD Approval</td>
+                        <td>Incomplete</td>
+                        <td>Awaiting correct documentation</td>
+                    </tr>
+                    <tr>
+                        <td colspan="3">Incomplete - Work Required</td>
+                    </tr>
+                </table>
+                
+                <table class="applicationSummaryTable">
+                    <tr>
+                        <td class="applicationName" colspan="3">FNAME LNAME</td>
+                    </tr>
+                    <tr>
+                        <td class="applicationQualification" colspan="3">Master of Business Data Science (2015)</td>
                     </tr>
                     <tr>
                         <td>Application Complete</td>
@@ -86,9 +116,32 @@
                         <td>-</td>
                     </tr>
                     <tr>
-                        <td>Application Complete</td>
+                        <td>Documents Verified</td>
+                        <td>Incomplete</td>
+                        <td>Invalid documents received</td>
+                    </tr>
+                    <tr>
+                        <td>Course Approved</td>
                         <td>Complete</td>
                         <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>Supervisor Status</td>
+                        <td>Complete</td>
+                        <td>Appointed Grant Dick</td>
+                    </tr>
+                    <tr>
+                        <td>External Approval</td>
+                        <td>N/A</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>HOD Approval</td>
+                        <td>Incomplete</td>
+                        <td>Awaiting correct documentation</td>
+                    </tr>
+                    <tr>
+                        <td colspan="3">Incomplete - Work Required</td>
                     </tr>
                 </table>
                 

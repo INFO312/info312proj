@@ -1,0 +1,43 @@
+.float-left {
+    float: left;
+}
+
+.float-right {
+    float: right;
+}
+
+.clear {
+    clear: both;
+}
+
+h2 {
+   text-align: left; 
+}
+
+h3 {
+    text-align:left;
+}
+
+p span {
+    
+}
+
+iframe {
+    width: 90%;
+    height: 800px;
+    clear: both;
+    display:none;
+}
+
+button {
+    vertical-align: bottom;
+}
+
+.documentHeader {
+    display: inline;
+}
+
+.applicationShowHide {
+    display: inline;
+    float: right;
+}
