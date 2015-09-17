@@ -24,9 +24,11 @@ public class CustomSQL {
     
     private static final String assignCandidateIDSQL = "INSERT INTO Candidate (Candidate_id) VALUES (?)";
     
+    private static final String assignStaffIDSQL = "INSERT INTO Staff (Staff_id) VALUES (?)";
+    
     private static final String authorizeCandidateSQL = "SELECT salt, hash FROM Candidate_Login WHERE email = ?";
     
-     private static final String authorizeStaffSQL = "SELECT salt, hash FROM Staff_Login WHERE email = ?";
+    private static final String authorizeStaffSQL = "SELECT salt, hash FROM Staff_Login WHERE email = ?";
     
     private static final String retrieveUserSQL = "SELECT * FROM Person WHERE email = ?";
     
@@ -57,6 +59,18 @@ public class CustomSQL {
     
     public static PreparedStatement getAuthorizeCandidateStmt(String email, Connection connection) throws SQLException{
         PreparedStatement stmt = connection.prepareStatement(authorizeCandidateSQL);
+        stmt.setString(1, email);
+        return stmt;
+    }
+    
+    public static PreparedStatement getAssignStaffStmt(int id, Connection connection) throws SQLException{
+        PreparedStatement stmt = connection.prepareStatement(assignStaffIDSQL);
+        stmt.setInt(1, id);
+        return stmt;
+    }
+    
+    public static PreparedStatement getAuthorizeStaffStmt(String email, Connection connection) throws SQLException{
+        PreparedStatement stmt = connection.prepareStatement(authorizeStaffSQL);
         stmt.setString(1, email);
         return stmt;
     }

@@ -20,7 +20,7 @@ import resources.Passwords;
  * @author Kadin Boyle
  */
 @WebServlet(name = "RegisterServlet", urlPatterns = {"/RegisterServlet"})
-public class RegisterServlet extends HttpServlet {
+public class RegisterCandidateServlet extends HttpServlet {
 
     //NOTE YOU MUST HAVE THE <CODE> POST </CODE>
     /**

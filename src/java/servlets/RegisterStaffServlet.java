@@ -17,7 +17,7 @@ import javax.servlet.http.HttpServletResponse;
  * @author csutton
  */
 @WebServlet(name = "CreateDepartmentMemeberServelet", urlPatterns = {"/CreateDepartmentMemeberServelet"})
-public class CreateDepartmentMemeberServelet extends HttpServlet {
+public class RegisterStaffServlet extends HttpServlet {
     
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -44,6 +44,8 @@ public class CreateDepartmentMemeberServelet extends HttpServlet {
        String dob = request.getParameter("dob");
        
        String address = request.getParameter("address");
+       
+       
        String publications = request.getParameter("publications");
        String otherInformation = request.getParameter("otherInformation");
        
