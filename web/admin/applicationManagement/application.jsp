@@ -26,6 +26,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
         <jsp:include page="/WEB-INF/jspf/global-include.jspf" />
         <link href="/PostGradSystem/css/application.css" rel="stylesheet" type="text/css" />
+        <link href="/PostGradSystem/css/admin/applicationSummaryTable.css" rel="stylesheet" type="text/css" />
         <script src="/PostGradSystem/scripts/applicationDocumentToggle.js"></script>
         <title><%=name%></title>
     </head>
@@ -37,87 +38,118 @@
             <jsp:include page="/WEB-INF/jspf/sidebar/admin.jspf" flush="true" />
             
             <div id="main_content_area">
-                <h2 class="float-left">FNAME LNAME - QUALIFICATION</h2>
-                <p class="float-right">STUDENTIDNUMBER</p>
-                <p class="clear">Commencing Study: <span>YEAR</span></p>
-                <p>Full Time Student: <span>T/F</span></p>
-                <p>Obtained Qualifications:</p>
-                <ul>
-                    <li>QUALIFICATION</li>
-                </ul>
-                
-                <div class="applicationDoucment">
-                    <h3 class="documentHeader">Academic Transcript</h3>
-                    <button class="applicationShowHide" type="button" name="showTranscript" >Show</button>
-                    <hr>
-                    <iframe data-src="/PostGradSystem/placeholders/cv.pdf"></iframe>
-                </div>
-                
-                <div class="applicationDoucment">
-                    <h3 class="documentHeader">Personal Statement</h3>
-                    <button class="applicationShowHide" type="button" name="showTranscript" >Show</button>
-                    <hr>
-                    <iframe data-src="/PostGradSystem/placeholders/cv.pdf"></iframe>
-                </div>
-                
-                <div class="applicationDoucment">
-                    <h3 class="documentHeader">Additional Information</h3>
-                    <button class="test2 applicationShowHide" type="button" name="showTranscript" >Show</button>
-                    <hr>
-                    <iframe data-src="/PostGradSystem/placeholders/cv.pdf"></iframe>
-                </div>
+                <div id="applicationWrapper">
+                    <h2 class="float-left">John Smith - Master of Science</h2>
+                    <p class="float-right">2736642</p>
+                    <p class="clear">Commencing Study: <span>2016</span></p>
+                    <p>Full Time Student: <span>True</span></p>
+                    <p>Obtained Qualifications:</p>
+                    <ul>
+                        <li>Bachelor of Science</li>
+                        <li>PostGraduate Diploma in Business</li>
+                    </ul>
                     
-                <div class="applicationDoucment">
-                    <h3 class="documentHeader">Supplementary Documents</h3>
-                    <button class="test2 applicationShowHide" type="button" name="showTranscript" >Show</button>
-                    <hr>
-                    <iframe data-src="/PostGradSystem/placeholders/cv.pdf"></iframe>
-                </div>
+                    <h3>Summary + Actions</h3>
+                    <table class="applicationSummaryTable">
+                        <tr>
+                            <th>Item</th>
+                            <th>Status</th>
+                            <th>Message</th>
+                            <th>Action</th>
+                        </tr>
+                        <tr class="astGreen">
+                            <td>Initial Application</td>
+                            <td>Complete</td>
+                            <td>-</td>
+                            <td><button type="button" name="" disabled>Complete Item</button></td>
+                        </tr>
+                        <tr class="astYellow">
+                            <td>Documents Verified</td>
+                            <td>Incomplete</td>
+                            <td>Invalid documents received</td>
+                            <td><button type="button" name="">Complete Item</button></td>
+                        </tr>
+                        <tr class="astGreen">
+                            <td>Course Approved</td>
+                            <td>Complete</td>
+                            <td>-</td>
+                            <td><button type="button" name="" disabled>Complete Item</button></td>
+                        </tr>
+                        <tr class="astGreen">
+                            <td>Supervisor Status</td>
+                            <td>Complete</td>
+                            <td>Appointed Grant Dick</td>
+                            <td><button type="button" name="" disabled>Complete Item</button></td>
+                        </tr>
+                        <tr class="astGreen">
+                            <td>External Approval</td>
+                            <td>N/A</td>
+                            <td>-</td>
+                            <td><button type="button" name="" disabled>Complete Item</button></td>
+                        </tr>
+                        <tr class="astYellow">
+                            <td>HOD Approval</td>
+                            <td>Incomplete</td>
+                            <td>Awaiting correct documentation</td>
+                            <td><button type="button" name="" disabled>Complete Item</button></td>
+                        </tr>
+                        <tr class="astYellow bottomTableRow">
+                            <td colspan="4">Incomplete - Work Required</td>
+                        </tr>
+                    </table>
+
+                    <div class="applicationDocument">
+                        <h3 class="documentHeader">Academic Transcript</h3>
+                        <button class="applicationShowHide yellowButton" type="button" name="showTranscript" >Show</button>
+                        <hr>
+                        <iframe data-src="/PostGradSystem/placeholders/ar.pdf"></iframe>
+                    </div>
+
+                    <div class="applicationDocument">
+                        <h3 class="documentHeader">Personal Statement</h3>
+                        <button class="applicationShowHide yellowButton" type="button" name="showTranscript" >Show</button>
+                        <hr>
+                        <iframe data-src="/PostGradSystem/placeholders/cl.pdf"></iframe>
+                    </div>
+
+                    <div class="applicationDocument">
+                        <h3 class="documentHeader">Curriculum Vitae</h3>
+                        <button class="applicationShowHide yellowButton" type="button" name="showTranscript" >Show</button>
+                        <hr>
+                        <iframe data-src="/PostGradSystem/placeholders/cv.pdf"></iframe>
+                    </div>
+
+                    <div class="applicationDocument">
+                        <h3 class="documentHeader">Additional Information</h3>
+                        <button class="applicationShowHide" type="button" name="showTranscript" disabled>No Document to Show</button>
+                        <hr>
+                        <iframe data-src="/PostGradSystem/placeholders/cv.pdf"></iframe>
+                    </div>
+
+                    <div class="applicationDocument">
+                        <h3 class="documentHeader">Supplementary Documents</h3>
+                        <button class="applicationShowHide" type="button" name="showTranscript" disabled>No Document to Show</button>
+                        <hr>
+                    </div>
+
+                    <h3>Supervisors</h3>
+                    <table id='supervisorTable'>
+                        <tr>
+                            <td>Grant Dick </td>
+                            <td><button type="button" class='yellowButton'>Decline</button></td>
+                            <td><button type="button" class='yellowButton'>Accept</button></td>
+                        </tr>
+                        <tr>
+                            <td>Brendon Woodford</td>
+                            <td><button type="button" class='yellowButton'>Decline</button></td>
+                            <td><button type="button" class='yellowButton'>Accept</button></td>
+                        </tr>
+                        <tr>
+                            <td colspan='4'><button type="button" class='yellowButton'>Add interested supervisor</button></td>
+                        </tr>
+                    </table>
                     
-                <h3>Supervisors</h3>
-                
-                <table class="applicationSummaryTable">
-                    <tr>
-                        <td class="applicationName" colspan="3"><a href="/PostGradSystem/admin/applicationManagement/application.jsp">FNAME LNAME</a></td>
-                    </tr>
-                    <tr>
-                        <td class="applicationQualification" colspan="3">Master of Business Data Science (2015)</td>
-                    </tr>
-                    <tr>
-                        <td>Application Complete</td>
-                        <td>Complete</td>
-                        <td>-</td>
-                    </tr>
-                    <tr>
-                        <td>Documents Verified</td>
-                        <td>Incomplete</td>
-                        <td>Invalid documents received</td>
-                    </tr>
-                    <tr>
-                        <td>Course Approved</td>
-                        <td>Complete</td>
-                        <td>-</td>
-                    </tr>
-                    <tr>
-                        <td>Supervisor Status</td>
-                        <td>Complete</td>
-                        <td>Appointed Grant Dick</td>
-                    </tr>
-                    <tr>
-                        <td>External Approval</td>
-                        <td>N/A</td>
-                        <td>-</td>
-                    </tr>
-                    <tr>
-                        <td>HOD Approval</td>
-                        <td>Incomplete</td>
-                        <td>Awaiting correct documentation</td>
-                    </tr>
-                    <tr>
-                        <td colspan="3">Incomplete - Work Required</td>
-                    </tr>
-                </table>
-                
+                </div>
             </div>
             <%@include file = "/WEB-INF/jspf/global/footer.jspf" %>
         </div>
