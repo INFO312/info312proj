@@ -1,0 +1,41 @@
+<table class="applicationSummaryTable">
+    <tr>
+        <td class="applicationName" colspan="3"><a href="/PostGradSystem/admin/applicationManagement/application.jsp">${param.fname} ${param.lname}</a></td>
+    </tr>
+    <tr>
+        <td class="applicationQualification" colspan="3">${param.qualification} (${param.year})</td>
+    </tr>
+    <tr>
+        <td>Application Complete</td>
+        <td>Complete</td>
+        <td>-</td>
+    </tr>
+    <tr>
+        <td>Documents Verified</td>
+        <td>Incomplete</td>
+        <td>Invalid documents received</td>
+    </tr>
+    <tr>
+        <td>Course Approved</td>
+        <td>Complete</td>
+        <td>-</td>
+    </tr>
+    <tr>
+        <td>Supervisor Status</td>
+        <td>Complete</td>
+        <td>Appointed Grant Dick</td>
+    </tr>
+    <tr>
+        <td>External Approval</td>
+        <td>N/A</td>
+        <td>-</td>
+    </tr>
+    <tr>
+        <td>HOD Approval</td>
+        <td>Incomplete</td>
+        <td>Awaiting correct documentation</td>
+    </tr>
+    <tr>
+        <td colspan="3">Incomplete - Work Required</td>
+    </tr>
+</table>
