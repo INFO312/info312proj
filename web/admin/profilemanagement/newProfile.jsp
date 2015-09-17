@@ -10,15 +10,13 @@
 <%
     String name = "";
     String sidebarURL = "";
-
     // Check if the user is logged in. If no then redirect to login.jsp
 //    Person p = (Person) session.getAttribute("currentuser");
 //    String userType = (String) session.getAttribute("usertype");
     String r = "admin";
     Person p = new Person("Mr", r, "User", r, r, r, r, r, r, 'M', "1/1/11");
-    String userType = "r";
-
-    if (userType != "r") {
+    String userType = "a";
+    if (userType != "a") {
         response.sendRedirect(request.getContextPath() + "/login.jsp");
         return;
     }
@@ -43,118 +41,18 @@
             <div id="main_content_area">
                 
                 <nav class="subnav">
-                    <h2>Create New Department Member Profile</h2>
+                    <h2>Profile Management</h2>
                     <ul>
-                        <li>
-                            <span>Create New Profile</span>
+                        <li class="subnav-item active">
+                            <a href="/PostGradSystem/admin/profilemanagement/newProfile.jsp">Create New Profile</a>
                         </li>
-                        <li>
-                            <a href="/PostGradSystem/admin/profilemanagement/manageprofile/index.jsp"><span>Manage Profiles</span></a>
+                        <li class="subnav-item">
+                            <a href="/PostGradSystem/admin/profilemanagement/index.jsp">Manage Profiles</a>
+                        </li>
+                        <li class="subnav-item">
+                            <a href="/PostGradSystem/admin/profilemanagement/browseProfiles.jsp">Browse Profiles</a>
                         </li>
                     </ul>
-                </nav>
-
-                <form id="createMember" action="" method="post">
-                    <div class="float-left">
-                        <label for="fname">First Name</label>
-                        <br>
-                        <input name="fname" type="text">
-                        <br>
-
-                        <label for="mname">Middle Name</label>
-                        <br>
-                        <input name="lname" type="text">
-                        <br>
-
-                        <label for="mname">Last Name</label>
-                        <br>
-                        <input name="lname" type="text">
-                        <br>
-
-
-                        <label for="access">Access Level</label>
-                        <br>
-                        <select name="access">
-                            <option value ="d">Department Member</option>
-                            <option value ="a">Administrator</option>
-                        </select>
-                        <br>
-
-
-                        <label for="genre">Gender</label>
-                        <br>
-                        <input name="fname" type="text">
-                    </div>
-
-                    <div class="float-right">
-
-                        <label for="email">Email</label>
-                        <br>
-                        <input name="fname" type="text">
-                        <br>
-
-
-                        <label for="mphone">Mobile Phone</label>
-                        <br>
-                        <input name="fname" type="text">
-                        <br>
-
-
-                        <label for="hphone">Home Phone</label>
-                        <br>
-                        <input name="fname" type="text">
-                        <br>
-
-
-                        <label for="wphone">Work Phone</label>
-                        <br>
-                        <input name="fname" type="text">
-                        <br>
-
-                        <label for="dob">Date of Birth</label>
-                        <br>
-                        <input name="fname" type="text">
-                        <br>
-
-                    </div>
-
-
-                    <div class="clear">
-
-                        <label for="address">Address</label>
-                        <br>
-                        <input name="address" type="text">
-                        <br>
-
-
-                        <label for="qualifications">Qualifications</label>
-                        <br>
-                        <select name="qualifications">
-                            <option value =""></option>
-                        </select>
-                        <br>
-
-                        <button type="button" name="addAnotherQualification" class="yellowButton ">+ Add another qualification</button>
-                        <br>
-
-
-                        <label for="publications">Publications</label>
-                        <br>
-                        <textarea name="fname"></textarea>
-                        <br>
-
-
-                        <label for="otherInformation">Other Information</label>
-                        <br>
-                        <textarea name="fname"></textarea>
-                        </div>
-                        <input type="submit" name="createDepartmentMember" class="yellowButton" value="Create Department Member">
-
-                    
-                </form>
-
-                <nav id="subnav">
-                    <h2>Create New Candidate Profile</h2>
                 </nav>
 
                 <form id="createMember" action="/PostGradSystem/RegisterServlet" method="post">
