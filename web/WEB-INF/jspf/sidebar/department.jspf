@@ -3,7 +3,7 @@
 <div id = "sidebar_container">
     
     <div id="sidebar_top">
-        <img src="_images/uni_logo.jpg"  alt = "Uni Logo"><br>
+        <img src="/PostGradSystem/images/uni_logo.jpg"  alt = "Uni Logo"><br>
         <h3>GAP</h3>
         <!-- <h4>Graduate Application Portal</h4> -->
         
