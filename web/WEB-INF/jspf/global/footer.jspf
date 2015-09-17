@@ -1,7 +1,7 @@
 <%-- any content can be specified here e.g.: --%>
 <%@ page pageEncoding="UTF-8" %>
 <footer id="footer">
-    <p> Footer </p>
+    <p>Department of Information Science / Contact / Help</p>
 </footer>
 
 <script>
