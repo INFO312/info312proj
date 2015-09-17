@@ -39,11 +39,14 @@
                 <jsp:param name="name" value="<%= name%>" />
             </jsp:include>
             <jsp:include page="/WEB-INF/jspf/sidebar/candidate.jspf" flush="true" />  
+            <link href="/PostGradSystem/css/candidate/style.css" rel="stylesheet" type="text/css">
             <div id="main_content_area">
                 <nav id="subnav">
                     
                 </nav>
-                    <h2>Apply - Programme Selection</h2>
+                <fieldset class="loginFormFieldset">
+                        
+                    <legend>Apply - Programme Selection</legend>
                     
                     <p>
                         Type the name of the programme you wish to apply for and select a preferred year of study
@@ -53,34 +56,39 @@
                     </p>
                     <form name="form2" action="/PostGradSystem/candidate/apply/c_period.jsp" method="post">
                         <label for="programme">Programme:</label>
-                            <select name="programme">
+                        <span>
+                            <select name="programme" class="mytext">
                                 <option value =""></option>
                                 <option value ="masterOfScience">Master of Science</option>
                                 <option value ="masterOfBusinessDataScience">Master of Business Data Science</option>
                                 <option value ="masterOfBusinessAdministration">Master of Business Administration</option>
                                 <option value ="masterOfBusiness">Master of Business</option>
                             </select>
+                        </span>
+                        <br>
+                        <br>
                         
                         <label for="year">Year:</label>
-                            <select name="year">
+                        <span>
+                            <select name="year" class="mytext">
                                 <option value =""></option>
                                 <option value ="2015">2015</option>
                                 <option value ="2016">2016</option>
                                 <option value ="2017">2017</option>
                                 <option value ="2018">2018</option>
                             </select>
+                        </span>
+                       
                         <br>
                         <br>
-                        <button type="button" name="addAnotherQualification" class="yellowButton addAnotherQualificationButton">+ Add another programme</button>
-                        <br>
-                        <br>
-                        <a href="/PostGradSystem/index.jsp"><button type="button" class="yellowButton">Cancel</button></a>
-                        <input class="yellowButton" action="action" type="button" value="Back" onclick="history.go(-1);" />
                         
-                        <input class="yellowButton" type="submit" name="next" id="next" value="Next">
+                        <input class="yellowButton" type="submit" name="next" id="next" value="Next"/>
+                        <input class="yellowButton" action="action" type="button" value="Back" onclick="history.go(-1);" />
+                        <a href="/PostGradSystem/index.jsp"><button type="button" class="yellowButton">Cancel</button></a>
                         
                     
                     </form>
+                </fieldset>
             </div>
         </div>
     </body>

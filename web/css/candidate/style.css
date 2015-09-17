@@ -1,0 +1,79 @@
+/*
+Post Grad Management System Project Files
+2015
+Authors: Kadin Boyle
+*/
+/* 
+    Created on : Aug 14, 2015, 3:56:07 PM
+    Author     : Kadin
+*/
+/*### Login Form Styling ------------------------------*/
+.mytext{
+    width:315px;
+} 
+
+.loginForm h2 {
+    width:95%;
+    font-size: 26px;
+    line-height: 28px;
+    padding: 0;
+    margin: 14px auto 14px 30px;
+    border-bottom: 2px solid #CCC;
+    font-family:"Minion Pro", Georgia, serif;
+}
+.loginFormFieldset {
+    width:700px;
+    height:auto;
+    padding:25px 0px 50px 0px;
+    background-color:#CCC;
+    margin:auto;
+}
+.loginFormFieldset legend {
+    font-family:"Minion Pro", Georgia, serif;
+    font-size:18px;
+    margin-left:15px;
+}
+.loginFormFieldset span {
+    float:right;
+    margin-right:15px;
+}
+.loginFormFieldset input[type=text], input[type=password] {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    display:inline-block;
+    *display: inline;
+    /* for IE7*/
+    zoom:1;
+    /* for IE7*/
+    vertical-align:middle;
+    margin-left:20px;
+    width:305px;
+    float: right;
+    margin-right: 15px;
+}
+.loginFormFieldset label {
+    font: 13px Helvetica, Arial, Geneva, sans-serif;
+    display:inline-block;
+    *display: inline;
+    /* for IE7*/
+    zoom:1;
+    /* for IE7*/
+    float: left;
+    padding-top: 5px;
+    text-align: right;
+    width: 300px;
+}
+/** Style for just yellow button position in this fielset **/
+ .loginFormFieldset .yellowButton {
+    margin-top:20px;
+    margin-right:15px;
+    float:right;
+    
+}
+
+ .loginFormFieldset addAnotherQualificationButton {
+    margin-top:20px;
+    margin-right:15px;
+    float:right;
+    
+}

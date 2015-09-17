@@ -38,31 +38,45 @@
                 <jsp:param name="name" value="<%= name%>" />
             </jsp:include>
             <jsp:include page="/WEB-INF/jspf/sidebar/candidate.jspf" flush="true" />  
+            <link href="/PostGradSystem/css/candidate/style.css" rel="stylesheet" type="text/css">
             <div id="main_content_area">
                 <nav id="subnav">
                     
                 </nav>
-                    <h2>Apply - Returning Otago Student</h2>
-                   
+                    <fieldset class="loginFormFieldset">
+                        
+                    <legend>Apply - Returning Otago Student</legend>
+                    
                     <form name="form1" action="/PostGradSystem/candidate/apply/b_apply.jsp" method="post">
-                        <label for="programme">Are you currently or have you previously studied at the University of Otago?:</label>
-                            <select name="yesno">
+                        
+                        <label for="programme">Current or Previous student?</label>
+                        
+                        <span>
+                            <select name="yesno" class="mytext">
                                 <option value =""></option>
                                 <option value ="yes">Yes</option>
                                 <option value ="no">No</option>
                             </select>
+                        </span>
+                        
+                        <br>
+                        <br>
+                        
                         <label for="studentNumberCode">Student Number Code:</label>
-                            <input name="studentNumberCode" type="text">
+                      
+                            <input name="studentNumberCode" type="text" class="mytext"/>
+                       
                             <br>
                         <br>
                         <br>
-                        <a href="/PostGradSystem/index.jsp"><button type="button" class="yellowButton">Cancel</button></a>
-                        <input class="yellowButton" action="action" type="button" value="Back" onclick="history.go(-1);" />
-                        
                         <input class="yellowButton" type="submit" name="next" id="next" value="Next">
+                        <input class="yellowButton" action="action" type="button" value="Back" onclick="history.go(-1);" />
+                        <a href="/PostGradSystem/index.jsp"><button type="button" class="yellowButton">Cancel</button></a>
+                        
                         
                     
                     </form>
+                    </fieldset>
             </div>
         </div>
     </body>

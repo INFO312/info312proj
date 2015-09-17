@@ -30,6 +30,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <jsp:include page="/WEB-INF/jspf/global-include.jspf" />
         <script src="/PostGradSystem/scripts/root/addDepartmentMember.js" type="text/javascript"></script>
+        <link href="/PostGradSystem/css/candidate/style.css" rel="stylesheet" type="text/css">
         <title><%=name%></title>
     </head>
     <body>
@@ -41,8 +42,9 @@
             <div id="main_content_area">
                 <nav id="subnav">
                 </nav>
-
-                <h2>Apply - Supervisor Request</h2>
+                
+                <fieldset class="loginFormFieldset">
+                <legend>Apply - Supervisor Request</legend>
 
                 <p>
                     This step is optional and can be completed at a later time.
@@ -55,14 +57,11 @@
                 </p>
 
                 <form name="form4" action="/PostGradSystem/candidate/apply/e_qualifications.jsp" method="post">
-                    <label for="supervisor">---Here will be your programme you selected---:</label>
-
-                    <input hidden type="text" id="hiddenDepartmentMemberCounter" name="departmentMemberCounter">
-
-                    <div id="departmentMemberSelectorContainer0">
+                    <p>---Here will be your programme you selected---:</label><p>
+                    
                         <label for="departmentMembers">Department Members</label>
-                        <br>
-                        <select name="departmentMembers0" class="departmentMemberSelector">
+                        <span>
+                        <select name="departmentMembers0" class="mytext">
                             <option value =""></option>
                             <option value ="alecHolt">Alec Holt</option>
                             <option value ="brendonWoodford">Brendon Woodford</option>
@@ -70,8 +69,10 @@
                             <option value ="hankWolfe">Hank Wolfe</option>
                             <option value ="holgerRegenbrecht">Holger Regenbrecht</option>
                         </select>  
+                        </span>
                         <br>
-                    </div>
+                        <br>
+                   
                     <button type="button" name="addAnotherDepartmentMember" class="yellowButton addAnotherDepartmentMemberButton">+ Add another Department Member</button>
                     <br>
 
@@ -84,6 +85,7 @@
 
 
                 </form>
+                </fieldset>
 
             </div>
 
