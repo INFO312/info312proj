@@ -135,14 +135,14 @@ h4 {
                     display:block;
                 }
 
-                    #sidebar_top nav li a{
+                    #sidebar_top a{
                         font-size: 12px;
                         height:20px; 
                         color:white;
                         text-decoration:none;
                     }
 
-                    #sidebar_top nav li a:hover{
+                    #sidebar_top a:hover{
                         color:#FFEC0F;
                     }
 
@@ -206,13 +206,13 @@ h4 {
 
     .subnav li {
         display: inline-block;
-        padding: 10px 50px;
+        padding: 10px 30px;
         cursor: pointer;
     }
     
     .subnav a:hover,
     .subnav li:hover {
-        color: yellow;
+        color:#FFEC0F;
     }
     
     .subnav li a {
