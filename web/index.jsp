@@ -15,17 +15,22 @@
     ArrayList<String> contentIncludeURLs = new ArrayList<String>();
     
     // Check if the user is logged in. If no then redirect to login.jsp
-//    Person p = (Person) session.getAttribute("currentuser");
-//    String userType = (String) session.getAttribute("usertype");
-    String r = "root";
-    Person p = new Person( "Mr", r,  "User", r, r, r, r, r, r, 'M', Util.convertStringToTimestamp("1900-12-01 00:00:00") );
-    String userType = "r";
-//    String userType = null;
-    
+    // Person p = (Person) session.getAttribute("currentuser");
+    // String userType = (String) session.getAttribute("usertype");
+    //String r = "root";
+    //Person p = new Person( "Mr", r,  "User", r, r, r, r, r, r, 'M', Util.convertStringToTimestamp("1900-12-01 00:00:00") );
+    //String userType = "";
+    //String userType = null;
+     String userType = (String)session.getAttribute("userType");
     if (userType == null) {
         response.sendRedirect(request.getContextPath() + "/login.jsp");
         return;
     } else {
+        Person p = (Person)session.getAttribute("currentUser");
+        if(p == null){
+            response.sendRedirect(request.getContextPath() + "/login.jsp");
+            return;
+        }
         switch(userType) {
             case "r":
                 sidebarURL = "/WEB-INF/jspf/sidebar/root.jspf";
