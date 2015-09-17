@@ -2,7 +2,15 @@
 .applicationSummaryTable tr,
 .applicationSummaryTable td {
     border: 1px solid black;
-    width: 80%;
     margin: auto;
+}
+
+.applicationSummaryTable {
+    width: 80%;
+    margin-bottom: 60px;
+}
+
+.applicationSummaryTable td{
+    padding:10px;
 }
 
