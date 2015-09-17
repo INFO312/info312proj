@@ -25,16 +25,7 @@
 
         <%@include file = "/WEB-INF/jspf/global-include.jspf" %>
         <link href="/PostGradSystem/css/login/form.css" type="text/css" rel="stylesheet">
-        <script>
-            $(function () {
-                $("#datepicker").datepicker({
-                    changeMonth: true,
-                    changeYear: true,
-                    dateFormat: 'dd-mm-yy',
-                    defaultDate: '01-01-1990'
-                });
-            });
-        </script>
+        <script src="/PostGradSystem/scripts/datePicker.js"></script>
        
     </head>
 
