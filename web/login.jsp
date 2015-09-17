@@ -15,6 +15,17 @@
         //Login to continue
         message = request.getAttribute("javax.servlet.error.message").toString();
     }
+    String userType = (String)session.getAttribute("userType");
+    if (userType != null) {
+        response.sendRedirect("/PostGradSystem/");
+    }
+        
+    String reg = (String)session.getAttribute("registrationMsg");
+    if(reg != null){
+        session.removeAttribute("registrationMsg");
+        message = reg;
+    }
+    
 %>
 <!DOCTYPE HTML>
 

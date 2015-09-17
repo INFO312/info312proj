@@ -186,7 +186,9 @@ h4 {
 
 .genericText{
     font: 14px Arial;
-    line-height: 1.5;  
+    line-height: 1.5;
+    padding-left:20px;
+    padding-right:20px;
 }
 
 /*

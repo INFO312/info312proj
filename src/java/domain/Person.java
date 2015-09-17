@@ -8,6 +8,8 @@ package domain;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Timestamp;
+import java.util.Date;
 import resources.Util;
 
 /**
@@ -32,7 +34,8 @@ public class Person {
     private String mphone;
     private String wphone;
     private char gender;
-    private String dob;
+    private Date dob;
+    private Timestamp dobts;
     
 
     
@@ -56,11 +59,11 @@ public class Person {
         this.mphone = data.getString("mphone");
         this.wphone = data.getString("wphone");
         this.gender = data.getString("gender").charAt(0);
-        this.dob = Util.convertTimestampToString(data.getTimestamp("dob"));
+        this.dob = data.getTimestamp("dob");
     }
 
     //Constructor
-    public Person(String title, String firstname, String mname, String lname, String address, String email, String hphone, String mphone, String wphone, char gender, String dob) {
+    public Person(String title, String firstname, String mname, String lname, String address, String email, String hphone, String mphone, String wphone, char gender, Timestamp dob) {
         this.title = title;
         this.firstname = firstname;
         this.mname = mname;
@@ -71,7 +74,7 @@ public class Person {
         this.mphone = mphone;
         this.wphone = wphone;
         this.gender = gender;
-        this.dob = dob;
+        this.dobts = dob;
     }
     
     public boolean setPersonId(int id, String type){
@@ -182,12 +185,16 @@ public class Person {
         this.gender = gender;
     }
 
-    public String getDob() {
-        return dob;
+    public Timestamp getDob() {
+        return dobts;
+    }
+    
+    public Timestamp getDobAsDateTimestamp(){
+        return new Timestamp(getDob().getTime());
     }
 
-    public void setDob(String dob) {
-        this.dob = dob;
+    public void setDob(Timestamp dob) {
+        this.dobts = dob;
     }
 
     @Override
