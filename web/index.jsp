@@ -4,6 +4,7 @@
     Author     : csutton
 --%>
 
+<%@page import="resources.Util"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="domain.Person"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -16,10 +17,9 @@
     // Check if the user is logged in. If no then redirect to login.jsp
 //    Person p = (Person) session.getAttribute("currentuser");
 //    String userType = (String) session.getAttribute("usertype");
-    
     String r = "root";
-    Person p = new Person( "Mr", r,  "User", r, r, r, r, r, r, 'M', "1/1/11");
-    String userType = "a";
+    Person p = new Person( "Mr", r,  "User", r, r, r, r, r, r, 'M', Util.convertStringToTimestamp("1900-12-01 00:00:00") );
+    String userType = "r";
 //    String userType = null;
     
     if (userType == null) {

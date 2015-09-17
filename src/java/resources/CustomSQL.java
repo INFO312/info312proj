@@ -19,18 +19,18 @@ import java.sql.Statement;
  */
 public class CustomSQL {
     
-    private static final String insertPersonSQL = "INSERT INTO Person (title, fname, mname, lname, address, email, mphone, hphone, wphone, gender, dob, salt, hash)"
-                                    + "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+    public static final String insertPersonSQL = "INSERT INTO Person (title, fname, mname, lname, address, email, mphone, hphone, wphone, gender, dob)"
+                                    + " VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
     
-    private static final String assignCandidateIDSQL = "INSERT INTO Candidate (Candidate_id) VALUES (?)";
+    public static final String assignCandidateIDSQL = "INSERT INTO Candidate (Candidate_id, salt, hash) VALUES (?, ?, ?)";
     
-    private static final String assignStaffIDSQL = "INSERT INTO Staff (Staff_id) VALUES (?)";
+    public static final String assignStaffIDSQL = "INSERT INTO Staff (Staff_id, salt, hash) VALUES (?, ?, ?)";
     
-    private static final String authorizeCandidateSQL = "SELECT salt, hash FROM Candidate_Login WHERE email = ?";
+    public static final String authorizeCandidateSQL = "SELECT salt, hash FROM candidate_login WHERE email = ?";
     
-    private static final String authorizeStaffSQL = "SELECT salt, hash FROM Staff_Login WHERE email = ?";
+    public static final String authorizeStaffSQL = "SELECT salt, hash FROM Staff_Login WHERE email = ?";
     
-    private static final String retrieveUserSQL = "SELECT * FROM Person WHERE email = ?";
+    public static final String retrieveUserSQL = "SELECT * FROM Person WHERE email = ?";
     
     //Returns the prepared statement for inserting a person into the database
     public static PreparedStatement getRegisterPersonStmt(Person person, String email, String salt, String hash, Connection connection) throws SQLException{
@@ -45,9 +45,7 @@ public class CustomSQL {
         stmt.setString(8, person.getHphone());
         stmt.setString(9, person.getWphone());
         stmt.setString(10, String.valueOf(person.getGender()));
-        stmt.setTimestamp(11, Util.convertStringToTimestamp(person.getDob()));
-        stmt.setString(12, salt);
-        stmt.setString(13, hash);
+        stmt.setTimestamp(11, person.getDobAsDateTimestamp());
         return stmt;
     }
     

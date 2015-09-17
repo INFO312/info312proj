@@ -11,6 +11,9 @@ import domain.Person;
 
 import java.io.IOException;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -36,23 +39,27 @@ public class LoginServlet extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        String username = request.getParameter("username");
-        String password = request.getParameter("password");
+
+        SystemAccessDAO dao = new SystemAccessDAO();
+        String username = (String)request.getParameter("username");
+        String password = (String)request.getParameter("password");
         //SHOULD I STORE THE DAO IN THE SESSION?
         
         //Is the person a staff member or student?
-        String type = request.getParameter("accessLevel");
+        String type = (String)request.getParameter("accessLevel");
         Person user = null;
         try {
-            if(type.equals("candidate"))
+            if(type.equals("student"))
                 user = new SystemAccessDAO().logInCandidate(username, password);
-            //else 
-                //user = new SystemAccessDAO().logInStaff(username, password);
+            else if(type.equals("staff"))
+                user = new SystemAccessDAO().logInStaff(username, password);
+           
         } catch (SQLException exc) {
             //Database error, so send a response, to be grabbed by web.xml and re route to error page
             //NOTE: you must register the redirection page for 503 (Service Unavailable) in the web.xml
             response.sendError(HttpServletResponse.SC_SERVICE_UNAVAILABLE, "An error has occurred ");
         }
+        System.out.println("_________>" + user);
 
         //If we managed to login..
         if (user != null) {
@@ -78,7 +85,7 @@ public class LoginServlet extends HttpServlet {
         } else {
             // no user has those details so send a 401 error
             //NOTE: You must register the redirect page for 401 in web.xml
-            response.sendError(HttpServletResponse.SC_UNAUTHORIZED, "Log in failed! Try again.");
+            response.sendError(HttpServletResponse.SC_UNAUTHORIZED, "Log in failed! Try again!");
         }
         
 }

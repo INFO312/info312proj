@@ -15,6 +15,11 @@
         //Login to continue
         message = request.getAttribute("javax.servlet.error.message").toString();
     }
+    String regfail = (String)session.getAttribute("registrationMsg");
+    if(regfail != null){
+        message = regfail;
+        session.removeAttribute("registrationMsg");
+    }
 %>
 <!DOCTYPE HTML>
 
@@ -24,7 +29,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
         <%@include file = "/WEB-INF/jspf/global-include.jspf" %>
-        <link href="/PostGradSystem/css/login/form.css" type="text/css" rel="stylesheet">
+        <link href="/PostGradSystem/css/admin/form.css" type="text/css" rel="stylesheet">
         <script src="/PostGradSystem/scripts/datePicker.js"></script>
        
     </head>
@@ -33,13 +38,10 @@
         <div id="container">
             <%@include file = "/WEB-INF/jspf/global/header.jspf" %>
             <%@include file = "/WEB-INF/jspf/sidebar/empty.jspf" %>
-
-
-            <!--!!! All Content should be put in here!!! -->
-            <div id="wrapper">
-                <p><%=message%></p>
-                <p> Placeholder 1</p>
-                <p> Placeholder 2 </p>
+            
+            <!--!!! All Content should be put in here !!! -->
+            <div id="main_content_area">
+                <p class ="seessionMessage"><%=message%></p>
 
                 <form id="register-form" action="/PostGradSystem/RegisterServlet" method="post" class ="form-green">
                     <h1> Register </h1>
@@ -66,7 +68,7 @@
                     </label>
                     <label for="lname">
                         <span>Last Name: </span>
-                        <input type="text" name="email">
+                        <input type="text" name="lname">
                     </label>
                     <label for="address">
                         <span>Address: </span>
@@ -107,7 +109,7 @@
                 </form>
 
             </div>
-
+                   
             <%@include file = "/WEB-INF/jspf/global/footer.jspf" %>
         </div>
 

@@ -8,12 +8,21 @@ package servlets;
 import dao.SystemAccessDAO;
 import domain.Person;
 import java.io.IOException;
+import java.sql.Timestamp;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+import javax.swing.text.DateFormatter;
 import resources.Passwords;
+import resources.Util;
 
 /**
  *
@@ -37,7 +46,7 @@ public class RegisterCandidateServlet extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-
+        
         String person_id = null;
 
         String email = request.getParameter("email");
@@ -55,14 +64,13 @@ public class RegisterCandidateServlet extends HttpServlet {
         String mphone = request.getParameter("mphone");
         String wphone = request.getParameter("whpone");
         char gender = request.getParameter("gender").charAt(0);
-        String dob = request.getParameter("dob");
+        String dobstr = request.getParameter("dob") + " 00:00:00";
+        Timestamp ts = Util.convertStringToTimestamp(dobstr);
+
+
         
-        // --------- PERFORM VALIDATION HERE! -------------//
-        
-        //if(fname.length() < 5 || etc etc etc){ }
-        //------------------------------------------------//
-        
-        Person newperson = new Person(title, fname, mname, lname, address, email, hphone, mphone, wphone, gender, dob);
+        Person newperson = new Person(title, fname, mname, lname, address, email, hphone, mphone, wphone, gender, ts);
+
         //Generate a new salt for this user and conver the password string to Char array
         byte[] saltbytes = Passwords.getNextSalt();
         char[] pwd = password.toCharArray();
@@ -72,14 +80,23 @@ public class RegisterCandidateServlet extends HttpServlet {
         String hashString = new String(hash);
         String saltString = new String(saltbytes);
         
+        boolean registrationSuccessful = false;
+        
         //Try to register the user
         try {
-            new SystemAccessDAO().registerCandidate(newperson, saltString, hashString);
+            registrationSuccessful = new SystemAccessDAO().registerCandidate(newperson, saltString, hashString);
         } catch (Exception e) {
-            //Change this, set error code
-            response.sendRedirect("/PostGradSystem/");
+           Logger.getLogger(RegisterCandidateServlet.class.getName()).log(Level.SEVERE, null, e);
         }
-        response.sendRedirect("/PostGradSystem/");
+        
+        HttpSession session = request.getSession();
+        if(registrationSuccessful){
+            session.setAttribute("registrationMsg", "Your Registration was successful! Please login below");
+            response.sendRedirect("/PostGradSystem/login.jsp");
+        }else{
+            session.setAttribute("registrationMsg", "Your Registration failed! Please try again");
+            response.sendRedirect("/PostGradSystem/register.jsp");
+        }
     }
     
     /** OLD NOT USED TESTING STUFF 
