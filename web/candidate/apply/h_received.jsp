@@ -15,20 +15,21 @@
 //    Person p = (Person) session.getAttribute("currentuser");
 //    String userType = (String) session.getAttribute("usertype");
     String r = "candidate";
-    Person p = new Person("Mr", r, "User", r, r, r, r, r, r, 'M', "1/1/11");
+    //Person p = new Person("Mr", r, "User", r, r, r, r, r, r, 'M', "1/1/11");
     String userType = "r";
 
     if (userType != "r") {
         response.sendRedirect(request.getContextPath() + "/login.jsp");
         return;
     }
-    name = p.getFirstname() + " " + p.getLname();
+    //name = p.getFirstname() + " " + p.getLname();
 %>
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <jsp:include page="/WEB-INF/jspf/global-include.jspf" />
+        <link href="/PostGradSystem/css/admin/form.css" type="text/css" rel="stylesheet">
         <script src="scripts/redirect.js"></script>
         <title><%=name%></title>
         <script src="/PostGradSystem/scripts/root/addAnotherQualification.js" type="text/javascript"></script>
@@ -40,16 +41,14 @@
             </jsp:include>
             <jsp:include page="/WEB-INF/jspf/sidebar/candidate.jspf" flush="true" />  
             <div id="main_content_area">
-                <nav id="subnav">
-
-                </nav>
+               
                 <h2>Apply - Submission</h2>
 
-                <p>
+                <p class="genericText">
                     Congratulations your application had been received. 
-                <p>
+                </p><p class="genericText">
 You can view and add additional information to this and other applications through the application link. 
-                <p>
+                </p><p class="genericText">
 If you have any questions please use the enquiry link to talk directly with a department member.
                 </p>
             </div>

@@ -15,20 +15,21 @@
 //    Person p = (Person) session.getAttribute("currentuser");
 //    String userType = (String) session.getAttribute("usertype");
     String r = "candidate";
-    Person p = new Person("Mr", r, "User", r, r, r, r, r, r, 'M', "1/1/11");
-    String userType = "r";
+    //Person p = new Person("Mr", r, "User", r, r, r, r, r, r, 'M', "1/1/11");
+    String userType = "c";
 
-    if (userType != "r") {
+    if (userType != "c") {
         response.sendRedirect(request.getContextPath() + "/login.jsp");
         return;
     }
-    name = p.getFirstname() + " " + p.getLname();
+    //name = p.getFirstname() + " " + p.getLname();
 %>
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <jsp:include page="/WEB-INF/jspf/global-include.jspf" />
+        <link href="/PostGradSystem/css/admin/form.css" type="text/css" rel="stylesheet">
         <script src="scripts/redirect.js"></script>
         <title><%=name%></title>
         <script src="/PostGradSystem/scripts/root/addAnotherQualification.js" type="text/javascript"></script>
@@ -40,16 +41,14 @@
             </jsp:include>
             <jsp:include page="/WEB-INF/jspf/sidebar/candidate.jspf" flush="true" />  
             <div id="main_content_area">
-                <nav id="subnav">
-
-                </nav>
+                
                 <h2>Apply - Submission</h2>
 
-                <p>
+                <p class="genericText">
                     By submitting this application for postgraduate study with the Department of Information Science at the University of Otago you agree the all information provided is correct and true. 
                 </p>
-
-                <form name="form7" method="post" action="/PostGradSystem/candidate/apply/h_received.jsp" onsubmit="if (document.getElementById('agree').checked) {
+                <fieldset class="registerFormFieldset">
+                <form name="form7" class="form-green" method="post" action="/PostGradSystem/candidate/apply/h_received.jsp" onsubmit="if (document.getElementById('agree').checked") {
                             return true;
                         } else {
                             alert('Please indicate that you have read and agree to the Terms and Conditions and Privacy Policy');
@@ -64,6 +63,7 @@
                     <input class="yellowButton" type="submit" name="next" id="next" value="Next"/>
 
                 </form>
+                </fieldset>
             </div>
         </div>
     </body>

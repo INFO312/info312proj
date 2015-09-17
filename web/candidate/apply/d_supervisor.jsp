@@ -15,14 +15,14 @@
 //    Person p = (Person) session.getAttribute("currentuser");
 //    String userType = (String) session.getAttribute("usertype");
     String r = "candidate";
-    Person p = new Person("Mr", r, "User", r, r, r, r, r, r, 'M', "1/1/11");
+    //Person p = new Person("Mr", r, "User", r, r, r, r, r, r, 'M', "1/1/11");
     String userType = "r";
 
     if (userType != "r") {
         response.sendRedirect(request.getContextPath() + "/login.jsp");
         return;
     }
-    name = p.getFirstname() + " " + p.getLname();
+    //name = p.getFirstname() + " " + p.getLname();
 %>
 <!DOCTYPE html>
 <html>
@@ -42,19 +42,20 @@
             <div id="main_content_area">
                 <nav id="subnav">
                 </nav>
-                
+                <p class="genericText">
+                    This step is optional and can be completed at a later time.</p>
+                <p class="genericText">
+                    Specify members of the department that you would like to supervise your study. You may select up to three per programme application. 
+                </p>
+                <p class="genericText">
+                    This is a <b>request only</b> and does not guarantee supervision by the requested department member(s).</p>
+                <p class="genericText">
+                    <b><a href="http://infosci.otago.ac.nz/our-people/">Look at Department Members Here</a></b>
+                </p>
                 <fieldset class="loginFormFieldset">
                 <legend>Apply - Supervisor Request</legend>
 
-                <p>
-                    This step is optional and can be completed at a later time.
-                <p>
-                    Specify members of the department that you would like to supervise your study. You may select up to three per programme application. 
-                <p>
-                    This is a <b>request only</b> and does not guarantee supervision by the requested department member(s).
-                <p>
-                    <b><a href="http://infosci.otago.ac.nz/our-people/">Look at Department Members Here</a></b>
-                </p>
+                
 
                 <form name="form4" action="/PostGradSystem/candidate/apply/e_qualifications.jsp" method="post">
                     <p>---Here will be your programme you selected---:</label><p>

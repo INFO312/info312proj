@@ -15,14 +15,14 @@
 //    Person p = (Person) session.getAttribute("currentuser");
 //    String userType = (String) session.getAttribute("usertype");
     String r = "candidate";
-    Person p = new Person("Mr", r, "User", r, r, r, r, r, r, 'M', "1/1/11");
+   // Person p = new Person("Mr", r, "User", r, r, r, r, r, r, 'M', "1/1/11");
     String userType = "r";
 
     if (userType != "r") {
         response.sendRedirect(request.getContextPath() + "/login.jsp");
         return;
     }
-    name = p.getFirstname() + " " + p.getLname();
+    //name = p.getFirstname() + " " + p.getLname();
 %>
 <!DOCTYPE html>
 <html>
@@ -32,6 +32,7 @@
         <script src="scripts/redirect.js"></script>
         <title><%=name%></title>
         <script src="/PostGradSystem/scripts/root/addAnotherQualification.js" type="text/javascript"></script>
+        <link href="/PostGradSystem/css/admin/form.css" type="text/css" rel="stylesheet">
     </head>
     <body>
         <div id ="container">
@@ -51,7 +52,8 @@
                     <p>
                         If you have uploaded an academic transcript before you will be able to reuse that document for this application, although you are free to upload a recent revision. 
                     </p>
-                    <form name="form6" action="/PostGradSystem/candidate/apply/g_submission.jsp" method="post">
+                    <fieldset class="registerFormFieldset">
+                    <form name="form6" action="/PostGradSystem/candidate/apply/g_submission.jsp" method="post" class="form-green">
                         
                         <label for="academicTranscript"><b>Academic Transcript:</b></label>
                         <input type="file" name="academicTranscript" size="chars"> 
@@ -72,6 +74,7 @@
                         
                     
                     </form>
+                    </fieldset>
             </div>
         </div>
     </body>

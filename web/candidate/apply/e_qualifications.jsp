@@ -15,20 +15,21 @@
 //    Person p = (Person) session.getAttribute("currentuser");
 //    String userType = (String) session.getAttribute("usertype");
     String r = "candidate";
-    Person p = new Person("Mr", r, "User", r, r, r, r, r, r, 'M', "1/1/11");
+    //Person p = new Person("Mr", r, "User", r, r, r, r, r, r, 'M', "1/1/11");
     String userType = "r";
 
     if (userType != "r") {
         response.sendRedirect(request.getContextPath() + "/login.jsp");
         return;
     }
-    name = p.getFirstname() + " " + p.getLname();
+    //name = p.getFirstname() + " " + p.getLname();
 %>
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <jsp:include page="/WEB-INF/jspf/global-include.jspf" />
+        <link href="/PostGradSystem/css/admin/form.css" type="text/css" rel="stylesheet">
         <script src="scripts/redirect.js"></script>
         <title><%=name%></title>
         <script src="/PostGradSystem/scripts/root/addAnotherQualification.js" type="text/javascript"></script>
@@ -40,9 +41,7 @@
             </jsp:include>
             <jsp:include page="/WEB-INF/jspf/sidebar/candidate.jspf" flush="true" />  
             <div id="main_content_area">
-                <nav id="subnav">
-                    
-                </nav>
+                
                     <h2>Apply - Attained Qualifications</h2>
                     
                     <p>
@@ -51,7 +50,9 @@
                     <p>
                         E.g. Bachelor of Science (BSc)
                     </p>
-                    <form name="form5" action="/PostGradSystem/candidate/apply/f_documents.jsp" method="post">
+                    <fieldset class="registerFormFieldset">
+                        <legend>Hi</legend>
+                    <form name="form5" action="/PostGradSystem/candidate/apply/f_documents.jsp" method="post" class="form-green">
                         <label for="qualifications">Qualifications:</label>
                             <input name="qualifications" type="text">
                         
@@ -84,6 +85,7 @@
                         
                     
                     </form>
+                    </fieldset>
             </div>
         </div>
     </body>
