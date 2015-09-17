@@ -19,8 +19,8 @@
         return;
     }
     name = p.getFirstname() + " " + p.getLname();
-    
-    
+
+
 %>
 <!DOCTYPE html>
 <html>
@@ -36,7 +36,7 @@
                 <jsp:param name="name" value="<%= name%>" />
             </jsp:include>
             <jsp:include page="/WEB-INF/jspf/sidebar/admin.jspf" flush="true" />
-            
+
             <div id="main_content_area">
                 <nav class="subnav">
                     <h2>Application Management</h2>
@@ -60,91 +60,55 @@
                 </nav>
 
                 <h3>20 August 2014</h3>
-                
+
                 <table class="applicationSummaryTable">
-                    <tr>
-                        <td class="applicationName" colspan="3"><a href="/PostGradSystem/admin/applicationManagement/application.jsp">FNAME LNAME</a></td>
-                    </tr>
-                    <tr>
-                        <td class="applicationQualification" colspan="3">Master of Business Data Science (2015)</td>
-                    </tr>
-                    <tr>
-                        <td>Application Complete</td>
-                        <td>Complete</td>
-                        <td>-</td>
-                    </tr>
-                    <tr>
-                        <td>Documents Verified</td>
-                        <td>Incomplete</td>
-                        <td>Invalid documents received</td>
-                    </tr>
-                    <tr>
-                        <td>Course Approved</td>
-                        <td>Complete</td>
-                        <td>-</td>
-                    </tr>
-                    <tr>
-                        <td>Supervisor Status</td>
-                        <td>Complete</td>
-                        <td>Appointed Grant Dick</td>
-                    </tr>
-                    <tr>
-                        <td>External Approval</td>
-                        <td>N/A</td>
-                        <td>-</td>
-                    </tr>
-                    <tr>
-                        <td>HOD Approval</td>
-                        <td>Incomplete</td>
-                        <td>Awaiting correct documentation</td>
-                    </tr>
-                    <tr>
-                        <td colspan="3">Incomplete - Work Required</td>
-                    </tr>
-                </table>
-                
-                <table class="applicationSummaryTable">
-                    <tr>
-                        <td class="applicationName" colspan="3">FNAME LNAME</td>
-                    </tr>
-                    <tr>
-                        <td class="applicationQualification" colspan="3">Master of Business Data Science (2015)</td>
-                    </tr>
-                    <tr>
-                        <td>Application Complete</td>
-                        <td>Complete</td>
-                        <td>-</td>
-                    </tr>
-                    <tr>
-                        <td>Documents Verified</td>
-                        <td>Incomplete</td>
-                        <td>Invalid documents received</td>
-                    </tr>
-                    <tr>
-                        <td>Course Approved</td>
-                        <td>Complete</td>
-                        <td>-</td>
-                    </tr>
-                    <tr>
-                        <td>Supervisor Status</td>
-                        <td>Complete</td>
-                        <td>Appointed Grant Dick</td>
-                    </tr>
-                    <tr>
-                        <td>External Approval</td>
-                        <td>N/A</td>
-                        <td>-</td>
-                    </tr>
-                    <tr>
-                        <td>HOD Approval</td>
-                        <td>Incomplete</td>
-                        <td>Awaiting correct documentation</td>
-                    </tr>
-                    <tr>
-                        <td colspan="3">Incomplete - Work Required</td>
-                    </tr>
-                </table>
-                
+                        <tr>
+                            <th>Item</th>
+                            <th>Status</th>
+                            <th>Message</th>
+                            <th>Action</th>
+                        </tr>
+                        <tr class="astGreen">
+                            <td>Initial Application</td>
+                            <td>Complete</td>
+                            <td>-</td>
+                            <td><button type="button" name="" disabled>Complete Item</button></td>
+                        </tr>
+                        <tr class="astYellow">
+                            <td>Documents Verified</td>
+                            <td>Incomplete</td>
+                            <td>Invalid documents received</td>
+                            <td><button type="button" name="">Complete Item</button></td>
+                        </tr>
+                        <tr class="astGreen">
+                            <td>Course Approved</td>
+                            <td>Complete</td>
+                            <td>-</td>
+                            <td><button type="button" name="" disabled>Complete Item</button></td>
+                        </tr>
+                        <tr class="astGreen">
+                            <td>Supervisor Status</td>
+                            <td>Complete</td>
+                            <td>Appointed Grant Dick</td>
+                            <td><button type="button" name="" disabled>Complete Item</button></td>
+                        </tr>
+                        <tr class="astGreen">
+                            <td>External Approval</td>
+                            <td>N/A</td>
+                            <td>-</td>
+                            <td><button type="button" name="" disabled>Complete Item</button></td>
+                        </tr>
+                        <tr class="astYellow">
+                            <td>HOD Approval</td>
+                            <td>Incomplete</td>
+                            <td>Awaiting correct documentation</td>
+                            <td><button type="button" name="" disabled>Complete Item</button></td>
+                        </tr>
+                        <tr class="astYellow bottomTableRow">
+                            <td colspan="4">Incomplete - Work Required</td>
+                        </tr>
+                    </table>
+
             </div>
             <%@include file = "/WEB-INF/jspf/global/footer.jspf" %>
         </div>
