@@ -2,15 +2,62 @@
 .applicationSummaryTable tr,
 .applicationSummaryTable td {
     border: 1px solid black;
-    margin: auto;
 }
 
 .applicationSummaryTable {
     width: 80%;
-    margin-bottom: 60px;
+    margin: 0 auto 60px auto;
+    border-collapse: collapse;
 }
 
 .applicationSummaryTable td{
     padding:10px;
 }
 
+.applicationSummaryTable button {
+    width: 100%;
+}
+
+.applicationSummaryTable th {
+    text-align: center;
+    font-weight: bold;
+}
+
+.applicationSummaryTable tr td:nth-child(2),
+.applicationSummaryTable tr td:nth-child(3) {
+    text-align: center;
+}
+
+.bottomTableRow {
+    text-align: center;
+    font-size: 20px;
+}
+
+.astGreen {
+    background-color: #66FF66;
+}
+
+.astYellow {
+    background-color: #FFFF66;
+}
+
+.astRed {
+    background-color: #FF3300;
+}
+
+#supervisorTable {
+    margin: 0 auto 30px auto;
+    text-align: right;
+}
+
+#supervisorTable,
+#supervisorTable tr,
+#supervisorTable td {
+    border-bottom: 1px solid black;
+    border-collapse: collapse;
+    padding: 10px;
+}
+
+#supervisorTable tr td button {
+    width: 100%;
+}
