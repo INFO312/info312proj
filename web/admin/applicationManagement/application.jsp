@@ -26,6 +26,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
         <jsp:include page="/WEB-INF/jspf/global-include.jspf" />
         <link href="/PostGradSystem/css/application.css" rel="stylesheet" type="text/css" />
+        <script src="/PostGradSystem/scripts/applicationDocumentToggle.js"></script>
         <title><%=name%></title>
     </head>
     <body>
@@ -44,27 +45,79 @@
                 <ul>
                     <li>QUALIFICATION</li>
                 </ul>
-                <h3 class="float-left">Academic Transcript</h3>
-                <button class="float-right applicationShowHide" type="button" name="showTranscript" >Show</button>
-                <hr class="clear">
-                <iframe data-src="/PostGradSystem/placeholders/cv.pdf"></iframe>
                 
-                <h3 class="float-left">Personal Statement</h3>
-                <button class="float-right applicationShowHide" type="button" name="showTranscript" >Show</button>
-                <hr class="clear">
-                <iframe data-src="/PostGradSystem/placeholders/cv.pdf"></iframe>
+                <div class="applicationDoucment">
+                    <h3 class="documentHeader">Academic Transcript</h3>
+                    <button class="applicationShowHide" type="button" name="showTranscript" >Show</button>
+                    <hr>
+                    <iframe data-src="/PostGradSystem/placeholders/cv.pdf"></iframe>
+                </div>
                 
-                <h3>Additional Information</h3>
-                <button class="float-right applicationShowHide" type="button" name="showTranscript" >Show</button>
-                <hr class="clear">
-                <iframe data-src="/PostGradSystem/placeholders/cv.pdf"></iframe>
+                <div class="applicationDoucment">
+                    <h3 class="documentHeader">Personal Statement</h3>
+                    <button class="applicationShowHide" type="button" name="showTranscript" >Show</button>
+                    <hr>
+                    <iframe data-src="/PostGradSystem/placeholders/cv.pdf"></iframe>
+                </div>
                 
-                <h3>Supplementary Documents</h3>
-                <button class="float-right applicationShowHide" type="button" name="showTranscript" >Show</button>
-                <hr class="clear">
-                <iframe data-src="/PostGradSystem/placeholders/cv.pdf"></iframe>
-                
+                <div class="applicationDoucment">
+                    <h3 class="documentHeader">Additional Information</h3>
+                    <button class="test2 applicationShowHide" type="button" name="showTranscript" >Show</button>
+                    <hr>
+                    <iframe data-src="/PostGradSystem/placeholders/cv.pdf"></iframe>
+                </div>
+                    
+                <div class="applicationDoucment">
+                    <h3 class="documentHeader">Supplementary Documents</h3>
+                    <button class="test2 applicationShowHide" type="button" name="showTranscript" >Show</button>
+                    <hr>
+                    <iframe data-src="/PostGradSystem/placeholders/cv.pdf"></iframe>
+                </div>
+                    
                 <h3>Supervisors</h3>
+                
+                <table class="applicationSummaryTable">
+                    <tr>
+                        <td class="applicationName" colspan="3"><a href="/PostGradSystem/admin/applicationManagement/application.jsp">FNAME LNAME</a></td>
+                    </tr>
+                    <tr>
+                        <td class="applicationQualification" colspan="3">Master of Business Data Science (2015)</td>
+                    </tr>
+                    <tr>
+                        <td>Application Complete</td>
+                        <td>Complete</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>Documents Verified</td>
+                        <td>Incomplete</td>
+                        <td>Invalid documents received</td>
+                    </tr>
+                    <tr>
+                        <td>Course Approved</td>
+                        <td>Complete</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>Supervisor Status</td>
+                        <td>Complete</td>
+                        <td>Appointed Grant Dick</td>
+                    </tr>
+                    <tr>
+                        <td>External Approval</td>
+                        <td>N/A</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>HOD Approval</td>
+                        <td>Incomplete</td>
+                        <td>Awaiting correct documentation</td>
+                    </tr>
+                    <tr>
+                        <td colspan="3">Incomplete - Work Required</td>
+                    </tr>
+                </table>
+                
             </div>
             <%@include file = "/WEB-INF/jspf/global/footer.jspf" %>
         </div>
