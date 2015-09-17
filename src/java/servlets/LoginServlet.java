@@ -49,17 +49,20 @@ public class LoginServlet extends HttpServlet {
         String type = (String)request.getParameter("accessLevel");
         Person user = null;
         try {
-            if(type.equals("student"))
+            if(type.equals("student")){
                 user = new SystemAccessDAO().logInCandidate(username, password);
-            else if(type.equals("staff"))
+                type = "c";
+            }
+            else if(type.equals("staff")){
                 user = new SystemAccessDAO().logInStaff(username, password);
+                type = "d";
+            }
            
         } catch (SQLException exc) {
             //Database error, so send a response, to be grabbed by web.xml and re route to error page
             //NOTE: you must register the redirection page for 503 (Service Unavailable) in the web.xml
             response.sendError(HttpServletResponse.SC_SERVICE_UNAVAILABLE, "An error has occurred ");
         }
-        System.out.println("_________>" + user);
 
         //If we managed to login..
         if (user != null) {
@@ -67,8 +70,8 @@ public class LoginServlet extends HttpServlet {
             
             //Set the session attribute so that we can retrieve the current User,AND
             //their type when navigating across pages i.e USER or STAFF.
-            session.setAttribute("currentuser", user);
-            session.setAttribute("usertype", type); //Set to staff or student..
+            session.setAttribute("currentUser", user);
+            session.setAttribute("userType", type); //Set to staff or student..
             
             // get the requested page from the session if they tried to access a page for
             // which they were not authorized.
