@@ -33,40 +33,6 @@ Authors: Kadin Boyle
     float:right;
     margin-right:65px;
 }
-.loginFormFieldset input[type=text], input[type=password] {
-    margin-top: 5px;
-    margin-bottom: 5px;
-    display:inline-block;
-    *display: inline;
-    /* for IE7*/
-    zoom:1;
-    /* for IE7*/
-    vertical-align:middle;
-    margin-left:20px;
-    width:250px;
-}
-.loginFormFieldset label {
-    font: 13px Helvetica, Arial, Geneva, sans-serif;
-    display:inline-block;
-    *display: inline;
-    /* for IE7*/
-    zoom:1;
-    /* for IE7*/
-    float: left;
-    padding-top: 5px;
-    text-align: right;
-    width: 140px;
-}
-/** Style for just yellow button position in this fielset **/
- .loginFormFieldset .yellowButton {
-    margin-top:20px;
-    margin-right:65px;
-    float:right;
-    clear:both;
-}
-/*--- END LOGIN FORM STYLING ------------*/
-
-
 
 .registerFormFieldset{
     padding:5px 0px 50px 0px;
