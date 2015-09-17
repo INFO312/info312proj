@@ -16,13 +16,13 @@
 //    String userType = (String) session.getAttribute("usertype");
     String r = "candidate";
     //Person p = new Person("Mr", r, "User", r, r, r, r, r, r, 'M', "1/1/11");
-    String userType = "r";
+    String userType = "c";
 
-    if (userType != "r") {
+    if (userType != "c") {
         response.sendRedirect(request.getContextPath() + "/login.jsp");
         return;
     }
-    //name = p.getFirstname() + " " + p.getLname();
+    name = "John Smith";
 %>
 <!DOCTYPE html>
 <html>
@@ -58,9 +58,20 @@
                 
 
                 <form name="form4" action="/PostGradSystem/candidate/apply/e_qualifications.jsp" method="post">
-                    <p>---Here will be your programme you selected---:</label><p>
+                    <p>Master of Science</label><p>
                     
                         <label for="departmentMembers">Department Members</label>
+                        <span>
+                        <select name="departmentMembers0" class="mytext">
+                            <option value =""></option>
+                            <option value ="alecHolt">Alec Holt</option>
+                            <option value ="brendonWoodford">Brendon Woodford</option>
+                            <option value ="grantDick">Grant Dick</option>
+                            <option value ="hankWolfe">Hank Wolfe</option>
+                            <option value ="holgerRegenbrecht">Holger Regenbrecht</option>
+                        </select>  
+                        </span>
+                        <br>
                         <span>
                         <select name="departmentMembers0" class="mytext">
                             <option value =""></option>
@@ -79,10 +90,11 @@
 
                     <br>
                     <br>
-                    <a href="/PostGradSystem/index.jsp"><button type="button" class="yellowButton">Cancel</button></a>
-                    <input class="yellowButton" action="action" type="button" value="Back" onclick="history.go(-1);" />
-
                     <input type="submit" name="next" id="next" value="Next" class="yellowButton">
+                   
+                    <input class="yellowButton" action="action" type="button" value="Back" onclick="history.go(-1);" />
+ <a href="/PostGradSystem/index.jsp"><button type="button" class="yellowButton">Cancel</button></a>
+                    
 
 
                 </form>

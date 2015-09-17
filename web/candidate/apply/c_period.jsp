@@ -15,14 +15,14 @@
 //    Person p = (Person) session.getAttribute("currentuser");
 //    String userType = (String) session.getAttribute("usertype");
     String r = "candidate";
-    Person p = new Person("Mr", r, "User", r, r, r, r, r, r, 'M', "1/1/11");
-    String userType = "r";
+    //Person p = new Person("Mr", r, "User", r, r, r, r, r, r, 'M', "1/1/11");
+    String userType = "c";
 
-    if (userType != "r") {
+    if (userType != "c") {
         response.sendRedirect(request.getContextPath() + "/login.jsp");
         return;
     }
-    name = p.getFirstname() + " " + p.getLname();
+    name = "John Smith";
 %>
 <!DOCTYPE html>
 <html>
@@ -49,7 +49,7 @@
                         For each programme application select the study term
                     </p>
                     <p>
-                        ---Here will be your programme you selected in the pervious screen---
+                        Master of Science
                     <form name="form3" action="/PostGradSystem/candidate/apply/d_supervisor.jsp" method="post">
                         <label for="programme">Year:</label>
                         <span>

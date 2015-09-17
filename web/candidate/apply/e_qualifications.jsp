@@ -16,13 +16,13 @@
 //    String userType = (String) session.getAttribute("usertype");
     String r = "candidate";
     //Person p = new Person("Mr", r, "User", r, r, r, r, r, r, 'M', "1/1/11");
-    String userType = "r";
+    String userType = "c";
 
-    if (userType != "r") {
+    if (userType != "c") {
         response.sendRedirect(request.getContextPath() + "/login.jsp");
         return;
     }
-    //name = p.getFirstname() + " " + p.getLname();
+    name = "John Smith";
 %>
 <!DOCTYPE html>
 <html>
@@ -42,7 +42,7 @@
             <jsp:include page="/WEB-INF/jspf/sidebar/candidate.jspf" flush="true" />  
             <div id="main_content_area">
                 
-                    <h2>Apply - Attained Qualifications</h2>
+                  
                     
                     <p>
                         Enter the qualifications you have previously attained and the year completed
@@ -51,9 +51,11 @@
                         E.g. Bachelor of Science (BSc)
                     </p>
                     <fieldset class="registerFormFieldset">
-                        <legend>Hi</legend>
+                        <legend>Apply - Attained Qualifications</legend>
                     <form name="form5" action="/PostGradSystem/candidate/apply/f_documents.jsp" method="post" class="form-green">
                         <label for="qualifications">Qualifications:</label>
+                            <input name="qualifications" type="text">
+                            <br>
                             <input name="qualifications" type="text">
                         
                         <label for="year">Year:</label>
@@ -78,10 +80,12 @@
                             </select>
                         <br>
                         <br>
-                        <a href="/PostGradSystem/index.jsp"><button type="button" class="yellowButton">Cancel</button></a>
-                        <input class="yellowButton" action="action" type="button" value="Back" onclick="history.go(-1);" />
-                        
                         <input class="yellowButton" type="submit" name="next" id="next" value="Next">
+                        
+                        <input class="yellowButton" action="action" type="button" value="Back" onclick="history.go(-1);" />
+                        <a href="/PostGradSystem/index.jsp"><button type="button" class="yellowButton">Cancel</button></a>
+                        
+                        
                         
                     
                     </form>

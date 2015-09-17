@@ -22,7 +22,7 @@
         response.sendRedirect(request.getContextPath() + "/login.jsp");
         return;
     }
-    //name = p.getFirstname() + " " + p.getLname();
+    name = "John Smith";
 %>
 <!DOCTYPE html>
 <html>
@@ -42,13 +42,14 @@
             <jsp:include page="/WEB-INF/jspf/sidebar/candidate.jspf" flush="true" />  
             <div id="main_content_area">
                 
-                <h2>Apply - Submission</h2>
+                
 
                 <p class="genericText">
                     By submitting this application for postgraduate study with the Department of Information Science at the University of Otago you agree the all information provided is correct and true. 
                 </p>
                 <fieldset class="registerFormFieldset">
-                <form name="form7" class="form-green" method="post" action="/PostGradSystem/candidate/apply/h_received.jsp" onsubmit="if (document.getElementById('agree').checked") {
+                    <legend>Apply - Submission</legend>
+                <form name="form7" class="form-green" method="post" action="/PostGradSystem/candidate/apply/h_received.jsp" onsubmit="if (document.getElementById('agree').checked){
                             return true;
                         } else {
                             alert('Please indicate that you have read and agree to the Terms and Conditions and Privacy Policy');
@@ -57,10 +58,11 @@
                     <input type="checkbox" name="checkbox" value="check" id="agree" /> I have read and agree to the Terms and Conditions and Privacy Policy
                     <br>
                     <br>
-
+<input class="yellowButton" type="submit" name="next" id="next" value="Next"/>
+<input class="yellowButton" action="action" type="button" value="Back" onclick="history.go(-1);" />
                     <a href="/PostGradSystem/index.jsp"><button type="button" class="yellowButton">Cancel</button></a>
-                    <input class="yellowButton" action="action" type="button" value="Back" onclick="history.go(-1);" />
-                    <input class="yellowButton" type="submit" name="next" id="next" value="Next"/>
+                    
+                    
 
                 </form>
                 </fieldset>
