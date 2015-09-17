@@ -10,6 +10,8 @@ import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -21,7 +23,7 @@ public class Util {
     public static Timestamp convertStringToTimestamp(String str_date) {
         try {
             DateFormat formatter;
-            formatter = new SimpleDateFormat("dd/MM/yyyy");
+            formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
             // you can change format of date
             Date date = formatter.parse(str_date);
             java.sql.Timestamp timeStampDate = new Timestamp(date.getTime());
@@ -36,6 +38,11 @@ public class Util {
     //Converts a timestamp (When we retrieve from Database) to a String
     public static String convertTimestampToString(Timestamp timestamp) {
         return new SimpleDateFormat("dd/MM/yyyy").format(timestamp);
+    }
+    
+    
+    public static Timestamp stringToDate(String str){
+       return Util.convertStringToTimestamp(str);
     }
 
 }
