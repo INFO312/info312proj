@@ -273,3 +273,20 @@ h4 {
     background-image: -ms-linear-gradient(top, #e6ad00 0%, #ffcc23 100%);
     color: #000000;
 }
+
+.tooltip {
+    background: rgba(200, 200, 200, 0.5);
+    padding: 20px 20px;
+    border-radius: 20px;
+    margin-top: 10px;
+}
+
+.warningParagraph {
+    text-align: center;
+    font-size: 18px;
+}
+
+.warning {
+    color: red;
+    font-weight: bold;
+}
