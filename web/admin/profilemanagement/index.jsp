@@ -3,17 +3,15 @@
     Created on : Sep 11, 2015, 11:45:13 AM
     Author     : nblomfield
 --%>
+<%@page import="resources.Util"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="domain.Person"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%
     String name = "";
     String sidebarURL = "";
-    // Check if the user is logged in. If no then redirect to login.jsp
-//    Person p = (Person) session.getAttribute("currentuser");
-//    String userType = (String) session.getAttribute("usertype");
-    String r = "admin";
-    Person p = new Person("Mr", r, "User", r, r, r, r, r, r, 'M', "1/1/11");
+    Person p = new Person( "Mr", "Root",  "User", "Root", "Root", "Root", "Root",
+        "Root", "Root", 'M' ,Util.convertStringToTimestamp("1900-12-01 00:00:00") );
     String userType = "a";
     if (userType != "a") {
         response.sendRedirect(request.getContextPath() + "/login.jsp");
