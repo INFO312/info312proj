@@ -42,9 +42,6 @@
                         <li class="subnav-item active">
                             <a href="/PostGradSystem/admin/profilemanagement/index.jsp">Manage Profiles</a>
                         </li>
-                        <li class="subnav-item">
-                            <a href="/PostGradSystem/admin/profilemanagement/browse.jsp">Browse Profiles</a>
-                        </li>
                     </ul>
                 </nav>
                 
