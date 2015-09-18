@@ -38,6 +38,15 @@
                     <h2>Portal Management</h2>
                 </nav>
                 
+                <div class="tooltip">
+                   <p>This pages allows for the management of the student portal. The current functionality allows for</p>
+                    <ul>
+                        <li>Creating new programs</li>
+                        <li>Managing current programs through editing and deleting functionality</li>
+                    </ul>
+                   <p>If you require the addition of a department member or the modification of a department members access level you must log in with root access.</p>
+                </div>
+
                 <%@include file = "/WEB-INF/jspf/admin/managePrograms.jspf" %>
                 <%@include file = "/WEB-INF/jspf/admin/createProgram.jspf" %>
                 

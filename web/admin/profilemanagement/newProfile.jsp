@@ -50,6 +50,11 @@
                         </li>
                     </ul>
                 </nav>
+                
+                <div class="tooltip">
+                    <p>This pages allows for the creation of a candidate profile. Once created a email will be sent to the candidate allowing them to claim the profile.</p>
+                    <p>If you require the addition of a department member you must log in with root access.</p>
+                </div>
 
                 <form id="createMember" action="/PostGradSystem/RegisterServlet" method="post">
                     
