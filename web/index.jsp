@@ -12,21 +12,19 @@
     String name = "";
     String sidebarURL = "";
     
-    ArrayList<String> contentIncludeURLs = new ArrayList<String>();
+    ArrayList<String> contentIncludeURLs = new ArrayList<>();
     
     // Check if the user is logged in. If no then redirect to login.jsp
-    // Person p = (Person) session.getAttribute("currentuser");
-    // String userType = (String) session.getAttribute("usertype");
-    //String r = "root";
-    //Person p = new Person( "Mr", r,  "User", r, r, r, r, r, r, 'M', Util.convertStringToTimestamp("1900-12-01 00:00:00") );
-    //String userType = "";
-    //String userType = null;
-     String userType = (String)session.getAttribute("userType");
+    Person p = new Person( "Mr", "Root",  "User", "Root", "Root", "Root", "Root",
+    "Root", "Root", 'M' ,Util.convertStringToTimestamp("1900-12-01 00:00:00") );
+    
+    String userType = "a";
+//    String userType = (String)session.getAttribute("userType");
     if (userType == null) {
         response.sendRedirect(request.getContextPath() + "/login.jsp");
         return;
     } else {
-        Person p = (Person)session.getAttribute("currentUser");
+//        Person p = (Person)session.getAttribute("currentUser");
         if(p == null){
             response.sendRedirect(request.getContextPath() + "/login.jsp");
             return;
