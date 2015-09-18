@@ -32,7 +32,7 @@
         <link href="/PostGradSystem/css/admin/form.css" type="text/css" rel="stylesheet">
         <script src="scripts/redirect.js"></script>
         <title><%=name%></title>
-        <script src="/PostGradSystem/scripts/root/addAnotherQualification.js" type="text/javascript"></script>
+        <script src="/PostGradSystem/scripts/root/candidateQualifications.js" type="text/javascript"></script>
     </head>
     <body>
         <div id ="container">
@@ -53,33 +53,27 @@
                     <fieldset class="registerFormFieldset">
                         <legend>Apply - Attained Qualifications</legend>
                     <form name="form5" action="/PostGradSystem/candidate/apply/f_documents.jsp" method="post" class="form-green">
-                        <label for="qualifications">Qualifications:</label>
+                        
+                        <div id="qualificationSelectorContainer0">
+                           
+                        </div>
+                        <div id='TextBoxesGroup'>
+                            <label>Select a Supervisor: </label>
+                            <div id="TextBoxDiv1">
+                                <label for="qualifications">Qualifications:</label>
                             <input name="qualifications" type="text">
                             <br>
-                            <input name="qualifications" type="text">
                         
                         <label for="year">Year:</label>
-                            <select name="year">
-                                <option value =""></option>
-                                <option value ="2000">2000</option>
-                                <option value ="2001">2001</option>
-                                <option value ="2002">2002</option>
-                                <option value ="2003">2003</option>
-                                <option value ="2004">2004</option>
-                                <option value ="2005">2005</option>
-                                <option value ="2006">2006</option>
-                                <option value ="2007">2007</option>
-                                <option value ="2008">2008</option>
-                                <option value ="2009">2009</option>
-                                <option value ="2010">2010</option>
-                                <option value ="2011">2011</option>
-                                <option value ="2012">2012</option>
-                                <option value ="2013">2013</option>
-                                <option value ="2014">2014</option>
-                                <option value ="2015">2015</option>
-                            </select>
+                            <input type="text" name="textbox' id="textbox value="" >
+                            </div>
+                        </div>
+                        <input type='button' value='Add Qualification' id='addButton' class="yellowButton">
+                        <input type='button' value='Remove Qulification' id='removeButton' class="yellowButton">
                         <br>
                         <br>
+                        
+                        
                         <input class="yellowButton" type="submit" name="next" id="next" value="Next">
                         
                         <input class="yellowButton" action="action" type="button" value="Back" onclick="history.go(-1);" />

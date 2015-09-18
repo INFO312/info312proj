@@ -12,14 +12,11 @@ $(document).ready(function(){
 	var newTextBoxDiv = $(document.createElement('div'))
 	     .attr("id", 'TextBoxDiv' + counter);
                 
-	newTextBoxDiv.after().html('<select name="textbox' + counter + 
-	      '" id="textbox' + counter + '" value="" >' 
-              + counter + '<option value=""></option>' 
-              + counter + '<option value="alecHolt">Alec Holt</option>' 
-              + counter + '<option value="brendonWoodford">BrendonWoodford</option>' 
-              + counter + '<option value="grantDick">Grant Dick</option>' 
-              + counter + '<option value="hankWolfe">Hank Wolfe</option>' 
-              + counter + '<option value="holgerRegenbrecht">Holger Regenbrecht</option>');
+	newTextBoxDiv.after().html('<label>Qualification:'+ '</label>' +
+	      '<input type="text" name="textbox' +  
+	      '" id="textbox' + '" value="" >' +'<label>Year:'+ '</label>' +
+	      '<input type="number" name="textbox' + 
+	      '" id="textbox' + '" value="" >');
       
  
             
@@ -30,7 +27,7 @@ $(document).ready(function(){
      });
 
      $("#removeButton").click(function () {
-	if(counter==1){
+	if(counter===1){
           alert("No more textbox to remove");
           return false;
        }   
