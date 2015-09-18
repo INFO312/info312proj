@@ -14,15 +14,13 @@
     // Check if the user is logged in. If no then redirect to login.jsp
 //    Person p = (Person) session.getAttribute("currentuser");
 //    String userType = (String) session.getAttribute("usertype");
-    String r = "root";
-    Person p = new Person("Mr", r, "User", r, r, r, r, r, r, 'M', "1/1/11");
     String userType = "r";
-
     if (userType != "r") {
-        response.sendRedirect(request.getContextPath() + "/login.jsp");
+        //response.sendRedirect(request.getContextPath() + "/login.jsp");
         return;
     }
-    name = p.getFirstname() + " " + p.getLname();
+    Person p = (Person)session.getAttribute("currentUser");
+    if(p != null) name = p.getFirstname() + " " + p.getLname();
 %>
 <!DOCTYPE html>
 <html>

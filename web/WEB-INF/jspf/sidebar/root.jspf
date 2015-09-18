@@ -18,7 +18,7 @@
             </fieldset>
             <ul>
                 <li>
-                    <a href="/PostGradSystem/logout.jsp">Logout</a>
+                    <p><a href="/PostGradSystem/LogoutServlet"/>Logout</a></p>
                 </li>
             </ul>
         </nav>  

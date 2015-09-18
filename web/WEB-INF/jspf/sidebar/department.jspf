@@ -17,6 +17,7 @@
                     <li><a href="/PostGradSystem/department/applications.jsp"><span>Application Management</span></a></li>
                 </ul>
             </fieldset>
+            <p><a href="/PostGradSystem/LogoutServlet"/>Logout</a></p>
         </nav>    
     </div>
     

@@ -26,9 +26,11 @@
                 <li><a href="enquire.jsp"><span>Enquire</span></a></li>
            </ul>
            </fieldset>
+           <p><a href="/PostGradSystem/LogoutServlet"/>Logout</a></p>
            </nav>
+                
         </div>
         <div id="sidebar_bottom">
-        ˙˙
+        
         </div>
     </div>
