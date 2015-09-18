@@ -37,7 +37,7 @@
                 
                 <div class="tooltip">
                     <h3>Profile Successfully Creates</h3>
-                    <p>An email has been sent to the candidates email address with a link allowing them to claim the profile. The unclaimed profile will be visible under the <a href="/PostGradSystem/admin/profileManagement/browse.jsp">Profile Management</a> page in the navigation bar.</p>
+                    <p>An email has been sent to the candidates email address with a link allowing them to claim the profile.</p>
                 </div>
                 
             </div>
