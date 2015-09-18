@@ -34,12 +34,12 @@
             
             <div id="main_content_area">
                 <nav class="subnav">
-                    <h2>Manage Department Members</h2>
+                    <h2>Manage Candidate Profiles</h2>
                     <ul>
-                        <li class="subnav-item active">
+                        <li class="subnav-item">
                             <a href="/PostGradSystem/admin/profilemanagement/newProfile.jsp">Create New Profile</a>
                         </li>
-                        <li class="subnav-item">
+                        <li class="subnav-item active">
                             <a href="/PostGradSystem/admin/profilemanagement/index.jsp">Manage Profiles</a>
                         </li>
                         <li class="subnav-item">

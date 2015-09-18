@@ -37,7 +37,7 @@
             <div id="main_content_area">
                 
                 <nav class="subnav">
-                    <h2>Profile Management</h2>
+                    <h2>Manage Candidate Profiles</h2>
                     <ul>
                         <li class="subnav-item active">
                             <a href="/PostGradSystem/admin/profilemanagement/newProfile.jsp">Create New Profile</a>
