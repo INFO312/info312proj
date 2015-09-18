@@ -8,8 +8,9 @@ function deleteQualification() {
     $(this).remove();
     
     // Remove the qualification containter
+    console.log("i am here 1");
     var qualificationToBeRemovedSelector = "select[name='qualification" + qualificationNumebr + "']";
-    
+    console.log("i am here 1");
     // Remoe the qualification container
     $(qualificationToBeRemovedSelector).parent().remove();
     
