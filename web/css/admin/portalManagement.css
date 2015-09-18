@@ -1,0 +1,34 @@
+#managePrograms {
+    width: 50%;
+    margin: 40px auto;
+    font-size: 20px;
+}
+
+#managePrograms ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+#managePrograms li {
+    clear: both;
+    margin: 10px 0;
+}
+
+#managePrograms button {
+    float:right;
+    margin-left: 10px;
+}
+
+#createProgram {
+    width: 50%;
+    margin: 0 auto;
+    font-size: 20px;
+}
+
+#createProgram input {
+    width: 100%;
+    font-size: 18px;
+    line-height:30px;
+    margin-bottom: 10px;
+}
