@@ -11,9 +11,10 @@
            <legend> Profile </legend>
            <ul>
            	<li><a href="/PostGradSystem/index.jsp"><span>Home</span></a></li>
-                <li><a href="/PostGradSystem/candidate/details.jsp"><span>Details</span></a></li>
-                <li><a href="/PostGradSystem/candidate/pendingapps.jsp"><span>Pending Applications</span></a></li>
-                <li><a href="/PostGradSystem/candidate/documents.jsp"><span>Uploaded Documents</span></a></li>
+                <li><a href="/PostGradSystem/candidate/profile/index.jsp"><span>My Profile</span></a></li>
+                <li><a href="/PostGradSystem/candidate/pendingapplications/index.jsp"><span>Pending Applications</span></a></li>
+                <li><a href="/PostGradSystem/candidate/documents/index.jsp"><span>Uploaded Documents</span></a></li>
+                <li><a href="/PostGradSystem/candidate/messageCenter/index.jsp"><span>Message Center</span></a></li>
            </ul>
                 
            </fieldset>
@@ -22,11 +23,11 @@
            <legend>  Tasks </legend>
            <ul>
                 <li><a href="/PostGradSystem/candidate/apply/a_returning.jsp"><span>Apply</span></a></li>
-                <li><a href="upload.jsp"><span>Upload</span></a></li>
-                <li><a href="enquire.jsp"><span>Enquire</span></a></li>
+                <li><a href="/PostGradSystem/candidate/upload/index.jsp"><span>Upload</span></a></li>
+                <li><a href="/PostGradSystem/candidate/browse/index.jsp"><span>Browse Department Profiles</span></a></li>
            </ul>
            </fieldset>
-           <p><a href="/PostGradSystem/LogoutServlet"/>Logout</a></p>
+           <p><a href="/PostGradSystem/LogoutServlet">Logout</a></p>
            </nav>
                 
         </div>
