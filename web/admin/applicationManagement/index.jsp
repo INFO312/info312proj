@@ -7,9 +7,6 @@
 <%@page import="domain.Person"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%
-    String name = "";
-    String sidebarURL = "";
-    
     Person p = new Person( "Mr", "Root",  "User", "Root", "Root", "Root", "Root",
         "Root", "Root", 'M' ,Util.convertStringToTimestamp("1900-12-01 00:00:00") );
     String userType = "a";
@@ -18,7 +15,7 @@
         response.sendRedirect(request.getContextPath() + "/login.jsp");
         return;
     }
-    name = p.getFirstname() + " " + p.getLname();
+    String name = p.getFirstname() + " " + p.getLname();
 %>
 <!DOCTYPE html>
 <html>
