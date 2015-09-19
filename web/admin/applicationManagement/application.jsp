@@ -23,7 +23,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
         <jsp:include page="/WEB-INF/jspf/global-include.jspf" />
         <link href="/PostGradSystem/css/application.css" rel="stylesheet" type="text/css" />
-        <link href="/PostGradSystem/css/admin/applicationSummaryTable.css" rel="stylesheet" type="text/css" />
+        <link href="/PostGradSystem/css/applicationSummaryTable.css" rel="stylesheet" type="text/css" />
         <script src="/PostGradSystem/scripts/applicationDocumentToggle.js"></script>
         <title><%=name%></title>
     </head>
