@@ -24,7 +24,6 @@
         <jsp:include page="/WEB-INF/jspf/global-include.jspf" />
         <link href="/PostGradSystem/css/applicationSummaryTable.css" rel="stylesheet" type="text/css" />
         <link href="/PostGradSystem/css/admin/applicationManagement.css" rel="stylesheet" type="text/css" />
-        <script src="/PostGradSystem/scripts/admin/applicationSummaryShowHide.js"></script>
         <title><%=name%></title>
     </head>
     <body>
@@ -45,6 +44,33 @@
                         <li class="subnav-item"><a href="/PostGradSystem/admin/applicationManagement/applicationsHistory.jsp">Applications History</a></li>
                         <li class="subnav-item active"><a href="/PostGradSystem/admin/applicationManagement/search.jsp">Search</a></li>
                     </ul>
+                </div>
+                
+                <div id="applicationSearchWrapper">
+                    
+                    <form>
+                        <label for="searchbox">Search Applications</label>
+                        <br>
+                        <input type="text" name="searchbox">
+                        <input type="submit" value="Search">
+                    </form>
+                    
+                </div>
+                
+                <div id="searchOutput">
+                    <hr>
+                    <h3>Results</h3>
+                    <hr>
+                    <jsp:include page="/WEB-INF/jspf/admin/applicationSummaryTableWithTitle.jspf" flush="true">
+                        <jsp:param name="name" value="John Smith" />
+                        <jsp:param name="qualification" value="Master of Business Data Science" />
+                    </jsp:include>
+
+                    <jsp:include page="/WEB-INF/jspf/admin/applicationSummaryTableWithTitle.jspf" flush="true">
+                        <jsp:param name="name" value="Bob Lee" />
+                        <jsp:param name="qualification" value="Master of Science" />
+                    </jsp:include>
+
                 </div>
 
             </div>
