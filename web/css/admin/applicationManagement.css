@@ -1,0 +1,11 @@
+ .applicationSummaryDate {
+   cursor: pointer;
+}
+
+.applicationSummaryDate:hover {
+    text-decoration: underline;
+}
+
+.applicationSummaryWrapper {
+    display: none;
+}
