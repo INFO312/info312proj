@@ -1,0 +1,6 @@
+<div class="applicationSummaryWrapper">
+    
+    <h4 class="applicationTitle"><a href="/PostGradSystem/admin/application.jsp">${param.name} - ${param.qualification}</a></h4>
+    <jsp:include page="/WEB-INF/jspf/admin/applicationSummaryTable.jspf" flush="true" />
+    
+</div>

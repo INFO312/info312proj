@@ -1,0 +1,47 @@
+<table class="applicationSummaryTable">
+    <tr>
+        <th>Item</th>
+        <th>Status</th>
+        <th>Message</th>
+        <th>Action</th>
+    </tr>
+    <tr class="astGreen">
+        <td>Initial Application</td>
+        <td>Complete</td>
+        <td>-</td>
+        <td><button type="button" name="" disabled>Complete Item</button></td>
+    </tr>
+    <tr class="astYellow">
+        <td>Documents Verified</td>
+        <td>Incomplete</td>
+        <td>Invalid documents received</td>
+        <td><button type="button" name="">Complete Item</button></td>
+    </tr>
+    <tr class="astGreen">
+        <td>Course Approved</td>
+        <td>Complete</td>
+        <td>-</td>
+        <td><button type="button" name="" disabled>Complete Item</button></td>
+    </tr>
+    <tr class="astGreen">
+        <td>Supervisor Status</td>
+        <td>Complete</td>
+        <td>Appointed Grant Dick</td>
+        <td><button type="button" name="" disabled>Complete Item</button></td>
+    </tr>
+    <tr class="astGreen">
+        <td>External Approval</td>
+        <td>N/A</td>
+        <td>-</td>
+        <td><button type="button" name="" disabled>Complete Item</button></td>
+    </tr>
+    <tr class="astYellow">
+        <td>HOD Approval</td>
+        <td>Incomplete</td>
+        <td>Awaiting correct documentation</td>
+        <td><button type="button" name="" disabled>Complete Item</button></td>
+    </tr>
+    <tr class="astYellow bottomTableRow">
+        <td colspan="4">Incomplete - Work Required</td>
+    </tr>
+</table> 
