@@ -1,4 +1,8 @@
 function setup() {
+    
+    $(".applicationSummaryWrapper").each(function() {
+       $(this).toggle();
+    });
 
     $(".applicationSummaryDate").click(function() {
         

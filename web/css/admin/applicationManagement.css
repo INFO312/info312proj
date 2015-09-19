@@ -7,5 +7,30 @@
 }
 
 .applicationSummaryWrapper {
-    display: none;
+    
+}
+
+#applicationSearchWrapper {
+    background: rgba(200, 200, 200, 0.5);
+    padding: 20px 20px;
+    border-radius: 20px;
+    margin: 10px 0;
+}
+
+#applicationSearchWrapper input {
+    line-height: 30px;
+    font-size: 20px;
+}
+
+#applicationSearchWrapper input[type="submit"] {
+    width: 19%;
+    margin: 0;
+    padding: 0;
+    height: 30px;
+}
+
+#applicationSearchWrapper input[type="text"] {
+    width: 80%;
+    margin: 0;
+    padding: 0;
 }
