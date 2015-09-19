@@ -52,3 +52,20 @@
     display: inline;
     float: right;
 }
+
+#supervisorTable {
+    margin: 0 auto 30px auto;
+    text-align: right;
+}
+
+#supervisorTable,
+#supervisorTable tr,
+#supervisorTable td {
+    border-bottom: 1px solid black;
+    border-collapse: collapse;
+    padding: 10px;
+}
+
+#supervisorTable tr td button {
+    width: 100%;
+}
