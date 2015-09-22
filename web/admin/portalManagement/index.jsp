@@ -23,6 +23,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
         <jsp:include page="/WEB-INF/jspf/global-include.jspf" />
         <link href="/PostGradSystem/css/admin/portalManagement.css" rel="stylesheet" type="text/css" />
+        <script src="/PostGradSystem/scripts/admin/editProgram.js"></script>
         <title><%=name%></title>
     </head>
     <body>
