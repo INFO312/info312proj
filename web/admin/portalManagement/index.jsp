@@ -46,6 +46,8 @@
                         <li>Managing current programs through editing and deleting functionality</li>
                     </ul>
                    <p>If you require the addition of a department member or the modification of a department members access level you must log in with root access.</p>
+                   
+                   <p class="warningParagraph"><span class="warning">Warning:</span> Any changes made including deletions are <em>permanent</em> therfore take care.</p>
                 </div>
 
                 <%@include file = "/WEB-INF/jspf/admin/managePrograms.jspf" %>
