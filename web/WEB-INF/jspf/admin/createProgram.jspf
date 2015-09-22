@@ -8,10 +8,16 @@
     <form>
         
         <label for="programName">Program Name</label>
+        <br>
         <input type="text" name="programName">
+        <select>
+            <option>Enabled</option>
+            <option>Disabled</option>
+        </select>
         <br>
         
         <input class="yellowButton" type="submit" value="Create Program">
+        
     </form>
     
 </div>
