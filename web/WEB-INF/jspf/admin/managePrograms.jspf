@@ -2,29 +2,62 @@
 <%@ page pageEncoding="UTF-8" %>
 <div id="managePrograms">
     <h3>Manage Programs</h3>
-    <ul>
+<!--    <ul>
         <li>
-            Master of Business
-            <button type="button" name="editMasterofBusiness" class="yellowButton">Edit</button>
-            <button type="button" name="deleteMasterofBusiness" class="yellowButton">Delete</button>
+            <span class="programTitle">Master of Business</span>
+            <input type="text" value="Master of Business" class="editInput" name="masterofbusiness">
+            <button type="button" name="saveMasterofBusiness" class="saveButton yellowButton">Save</button>
+            <button type="button" name="discardMasterOfBusiness" class="discardButton yellowButton">Discard</button>
+            <button type="button" name="editMasterofBusiness" class="editButton yellowButton">Edit</button>
+            <button type="button" name="deleteMasterofBusiness" class="deleteButton yellowButton">Delete</button>
         </li>
-
-        <li>
-            Master of Business Data Science
-            <button type="button" name="editMasterofBusinessDataScience" class="yellowButton">Edit</button>
-            <button type="button" name="deleteMasterofBusinessDataScience" class="yellowButton">Delete</button>
-        </li>
-
-        <li>
-            Master of Business Administration
-            <button type="button" name="editMasterofBusinessAdministration" class="yellowButton">Edit</button>
-            <button type="button" name="deleteMasterofBusinessAdministration" class="yellowButton">Delete</button>
-        </li>
-
-        <li>
-            Master of Science
-            <button type="button" name="editMasterofScience" class="yellowButton">Edit</button>
-            <button type="button" name="deleteMasterofScience" class="yellowButton">Delete</button>
-        </li>
-    </ul>
+    </ul>-->
+    
+    <table>
+        <tr>
+            <td>
+                <span class="programTitle">Master of Business</span>
+                <input type="text" value="Master of Business" class="editInput" name="masterofbusiness">
+            </td>
+            <td>
+                <button type="button" name="saveMasterofBusiness" class="saveButton yellowButton">Save</button>
+                <button type="button" name="editMasterofBusiness" class="editButton yellowButton">Edit</button>
+            </td>
+            <td>
+                <button type="button" name="discardMasterOfBusiness" class="discardButton yellowButton">Discard</button>
+                <button type="button" name="deleteMasterofBusiness" class="disableButton yellowButton">Disable</button>
+                <button type="button" name="deleteMasterofBusiness" class="enableButton yellowButton">Enable</button>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <span class="programTitle">Master of Business</span>
+                <input type="text" value="Master of Business" class="editInput" name="masterofbusiness">
+            </td>
+            <td>
+                <button type="button" name="saveMasterofBusiness" class="saveButton yellowButton">Save</button>
+                <button type="button" name="editMasterofBusiness" class="editButton yellowButton">Edit</button>
+            </td>
+            <td>
+                <button type="button" name="discardMasterOfBusiness" class="discardButton yellowButton">Discard</button>
+                <button type="button" name="deleteMasterofBusiness" class="disableButton yellowButton">Disable</button>
+                <button type="button" name="deleteMasterofBusiness" class="enableButton yellowButton">Enable</button>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <span class="programTitle">Master of Business</span>
+                <input type="text" value="Master of Business" class="editInput" name="masterofbusiness">
+            </td>
+            <td>
+                <button type="button" name="saveMasterofBusiness" class="saveButton yellowButton">Save</button>
+                <button type="button" name="editMasterofBusiness" class="editButton yellowButton">Edit</button>
+            </td>
+            <td>
+                <button type="button" name="discardMasterOfBusiness" class="discardButton yellowButton">Discard</button>
+                <button type="button" name="deleteMasterofBusiness" class="disableButton yellowButton">Disable</button>
+                <button type="button" name="deleteMasterofBusiness" class="enableButton yellowButton">Enable</button>
+            </td>
+        </tr>
+    </table>
 </div>

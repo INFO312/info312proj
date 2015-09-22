@@ -1,24 +1,36 @@
 #managePrograms {
-    width: 50%;
+    width: 80%;
     margin: 40px auto;
     font-size: 20px;
 }
 
-#managePrograms ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
+#managePrograms table {
+    width: 60%;
+    margin: 0 auto;
+    text-align: center;
 }
 
-#managePrograms li {
-    clear: both;
-    margin: 10px 0;
+#managePrograms table tr td:nth-child(1) {
+    text-align: right;
 }
 
-#managePrograms button {
-    float:right;
-    margin-left: 10px;
+#managePrograms table button {
+    width: 100%;
 }
+
+.saveButton, 
+.discardButton,
+.enableButton {
+    display: none;
+}
+
+.editInput {
+    line-height: 30px;
+    font-size: 20px;
+    display: none;
+}
+
+
 
 #createProgram {
     width: 50%;
@@ -26,9 +38,23 @@
     font-size: 20px;
 }
 
-#createProgram input {
+#createProgram input[type="text"] {
+    width: 70%;
+}
+
+#createProgram input[type="submit"] {
     width: 100%;
-    font-size: 18px;
+
+}
+
+#createProgram input ,
+#createProgram select {
+    font-size: 20px;
     line-height:30px;
     margin-bottom: 10px;
 }
+
+#createProgram select {
+    width: 27%;
+}
+
