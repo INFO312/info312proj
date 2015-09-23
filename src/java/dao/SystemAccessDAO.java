@@ -32,35 +32,14 @@ public class SystemAccessDAO {
 
     }
 
-    public ArrayList<String> TestDatabase() throws SQLException {
-
-        conn = DriverManager.getConnection(dburl);
-        System.out.println("DEBU DEBUGHSDLKFkjlsajlfaskjlflkjassf");
-        Statement stmt = conn.createStatement();
-        ResultSet rs = stmt.executeQuery("SELECT * from person");
-        ArrayList<String> ar = new ArrayList<>();
-
-        while (rs.next()) {
-            String x = rs.getString("fname");
-
-            ar.add(x);
-        }
-        conn.close();
-        return ar;
-    }
-
     // Notice, do not import com.mysql.jdbc.*
-// or you will have problems!
+    // or dao will shit itself
     public static void LoadDriver() {
         try {
-            // The newInstance() call is a work around for some
-            // broken Java implementations
-
             Class.forName("com.mysql.jdbc.Driver").newInstance();
         } catch (Exception ex) {
             System.out.println("ERROR> ERROR");
         }
-
     }
 
     /**
@@ -68,27 +47,19 @@ public class SystemAccessDAO {
      * this method, although could be moved to Servlet, but this would require
      * two different DAO methods?
      *
-     * @param email Email for user to login
-     * @param password Users Password
-     * @return Person object representation of logged in user
-     * @throws SQLException
      */
     public Person logInCandidate(String email, String password) throws SQLException {
         Person person = null;
-        System.out.println("HJFHDSFKSKJDFKJSDKJLKSDJF");
         conn = DriverManager.getConnection(dburl);
-        //connection.setAutoCommit(false);
 
         PreparedStatement authorizeStatement = CustomSQL.getAuthorizeCandidateStmt(email, conn);
         ResultSet rs_authorize = authorizeStatement.executeQuery();
-        System.out.println("DEBUG__________________________________OUTER");
+
         //If we managed to get the salt and hash for this user
         if (rs_authorize.next()) {
-                System.out.println("DEBUG__________________________________INNER");
             //Convert to bytes, MAY NEED TO BE UTF-8?
             byte[] salt = rs_authorize.getString("salt").getBytes();
             byte[] expectedHash = rs_authorize.getString("hash").getBytes();
-            
 
             //If the password they entered is correct (re hash the password with the salt stored
             //in the db, and if the new hash == the expected hash, then credentials are valid
@@ -104,7 +75,6 @@ public class SystemAccessDAO {
             }
         }
         conn.close();
-
         return person;
     }
 
@@ -112,16 +82,10 @@ public class SystemAccessDAO {
      * Logs a user in if credentials are valid CURRENTLY processes password in
      * this method, although could be moved to Servlet, but this would require
      * two different DAO methods?
-     *
-     * @param email Email for user to login
-     * @param password Users Password
-     * @return Person object representation of logged in user
-     * @throws SQLException
      */
     public Person logInStaff(String email, String password) throws SQLException {
         Person person = null;
         conn = DriverManager.getConnection(dburl);
-        //connection.setAutoCommit(false);
 
         PreparedStatement authorizeStatement = CustomSQL.getAuthorizeStaffStmt(email, conn);
         ResultSet rs_authorize = authorizeStatement.executeQuery();
@@ -135,7 +99,6 @@ public class SystemAccessDAO {
 
             //If the password they entered is correct (re hash the password with the salt stored
             //in the db, and if the new hash == the expected hash, then credentials are valid
-            //NOTE: .toCharArray() is neccessary for isExpectedPassword to function
             if (Passwords.isExpectedPassword(password.toCharArray(), salt, expectedHash)) {
                 PreparedStatement retrieveUserStatement = CustomSQL.getRetrieveUserStmt(email, conn);
                 ResultSet rs_person = retrieveUserStatement.executeQuery();
@@ -212,8 +175,8 @@ public class SystemAccessDAO {
      * @param hash
      * @throws SQLException
      */
-    public boolean registerStaff(Person person, String salt, String hash) throws SQLException {
-       conn = DriverManager.getConnection(dburl);
+    public boolean registerStaff(Person person, String salt, String hash, String publications, String otherInformation, ArrayList<String> qualifications) throws SQLException {
+        conn = DriverManager.getConnection(dburl);
         //Insert a new person into the database stmt 
         try {
             PreparedStatement stmt = CustomSQL.getRegisterPersonStmt(person, person.getEmail(), salt, hash, conn);
@@ -240,10 +203,16 @@ public class SystemAccessDAO {
             assignIdStatement.setString(2, salt);
             assignIdStatement.setString(3, hash);
             //Execute second statement on candidate table
-            if (assignIdStatement.executeUpdate() == 0) {
+            if (assignIdStatement.executeUpdate() == 0) { //If failed to assigned staff_id ..
                 System.out.println("Failed to assign staff_id as staff_id in the Staff table!");
                 conn.close();
                 return false;
+            }else{ //Success
+                //Now insert there qualification shit
+                
+                //Now insert there publication shit
+                
+                //Lolcano
             }
         } catch (java.sql.SQLException e) {
             Logger.getLogger(SystemAccessDAO.class.getName()).log(Level.SEVERE, null, e);
@@ -254,4 +223,6 @@ public class SystemAccessDAO {
         conn.close();
         return true;
     }
+
+    
 }

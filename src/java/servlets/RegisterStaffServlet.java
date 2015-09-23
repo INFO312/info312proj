@@ -5,13 +5,21 @@
  */
 package servlets;
 
+import dao.SystemAccessDAO;
+import domain.Person;
 import java.io.IOException;
+import java.sql.Timestamp;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+import resources.Passwords;
+import resources.Util;
 /**
  *
  * @author csutton
@@ -30,18 +38,19 @@ public class RegisterStaffServlet extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
+       String title = request.getParameter("title"); 
        String fname = request.getParameter("fname");
        String mname = request.getParameter("mname");
        String lname = request.getParameter("lname");
        String access = request.getParameter("access");
-       String gender = request.getParameter("gender");
-       
+       char gender = request.getParameter("gender").charAt(0);
+       String password = request.getParameter("password");
        String email = request.getParameter("email");
        String mphone = request.getParameter("mphone");
        String hphone = request.getParameter("hphone");
        String wphone = request.getParameter("wphone");
-       String dob = request.getParameter("dob");
+       String dobstr = request.getParameter("dob") + " 00:00:00";
+        Timestamp ts = Util.convertStringToTimestamp(dobstr);
        
        String address = request.getParameter("address");
        
@@ -51,7 +60,7 @@ public class RegisterStaffServlet extends HttpServlet {
        
        // Find the amount of expected qualifications and add to array
        // while checking if any are empty
-       ArrayList<String> qualifications = new ArrayList<String>();
+       ArrayList<String> qualifications = new ArrayList<>();
        int qualificationCount = Integer.parseInt(request.getParameter("qualificationCounter"));
        for(int i = 0; i < qualificationCount; i ++) {
            String qualification = request.getParameter("qualification" + i);
@@ -59,6 +68,35 @@ public class RegisterStaffServlet extends HttpServlet {
                qualifications.add(qualification);
            }
        }
+       
+       Person newperson = new Person(title, fname, mname, lname, address, email, hphone, mphone, wphone, gender, ts);
+
+        //Generate a new salt for this user and conver the password string to Char array
+        byte[] saltbytes = Passwords.getNextSalt();
+        char[] pwd = password.toCharArray();
+        
+        //Hash the password and salt
+        byte[] hash = Passwords.hash(pwd, saltbytes);
+        String hashString = new String(hash);
+        String saltString = new String(saltbytes);
+        
+        boolean registrationSuccessful = false;
+        
+        //Try to register the user
+        try {
+            registrationSuccessful = new SystemAccessDAO().registerStaff(newperson, saltString, hashString, publications, otherInformation, qualifications);
+        } catch (Exception e) {
+           Logger.getLogger(RegisterCandidateServlet.class.getName()).log(Level.SEVERE, null, e);
+        }
+        
+        HttpSession session = request.getSession();
+        if(registrationSuccessful){
+            session.setAttribute("registrationMsg", "Your Registration was successful! Please login below");
+            response.sendRedirect("/PostGradSystem/login.jsp");
+        }else{
+            session.setAttribute("registrationMsg", "Your Registration failed! Please try again");
+            response.sendRedirect("/PostGradSystem/register.jsp");
+        }
        
                
     }

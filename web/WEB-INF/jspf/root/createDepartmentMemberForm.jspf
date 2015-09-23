@@ -1,4 +1,4 @@
-<form id="createDepartmentMember" action="/PostGradSystem/CreateDepartmentMemeberServelet" method="post">
+<form id="createDepartmentMember" action="/PostGradSystem/CreateDepartmentMemeberServelet" method="post" >
     <div class="float-left">
         <label for="fname">First Name</label>
         <br>
@@ -57,7 +57,7 @@
 
         <label for="dob">Date of Birth</label>
         <br>
-        <input name="dob" type="text">
+        <input name="dob" type="text" id="datepicker">
         <br>
 
     </div>

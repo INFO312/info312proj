@@ -18,6 +18,7 @@ import java.util.logging.Logger;
  * @author Kadin
  */
 public class Util {
+    
 
     //Converts a string to a timestamp when given format dd/MM/yyyy
     public static Timestamp convertStringToTimestamp(String str_date) {

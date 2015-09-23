@@ -4,6 +4,7 @@
     Author     : Nathan
 --%>
 
+<%@page import="domain.ApplicationSessionObject"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="domain.Person"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -23,6 +24,14 @@
         return;
     }
     name = "John Smith";
+    ApplicationSessionObject sess_obj;
+    sess_obj = (ApplicationSessionObject)session.getAttribute("app_session_object");
+    if(sess_obj == null){
+        session.removeAttribute("app_session_object");
+    }
+    sess_obj = new ApplicationSessionObject();
+    session.setAttribute("app_session_object", sess_obj);
+    
 %>
 <!DOCTYPE html>
 <html>
@@ -52,16 +61,13 @@
                         <label for="programme">Current or Previous student?</label>
                         
                         <span>
-                            <select name="yesno" class="mytext">
-                                <option value =""></option>
+                            <select name="isPreviousStudent" class="mytext">
                                 <option value ="yes">Yes</option>
                                 <option value ="no">No</option>
                             </select>
                         </span>
-                        
                         <br>
                         <br>
-                        
                         <label for="studentNumberCode">Student Number Code:</label>
                       
                             <input name="studentNumberCode" type="text" class="mytext"/>

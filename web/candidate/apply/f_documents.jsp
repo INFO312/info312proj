@@ -45,14 +45,14 @@
                     
                 </nav>
                     
-                    <p>
+                    <p class="genericText">
                         Upload required documentation for your application(s) and add any supplementary documentation that may aid in the success of application. 
                     </p>
-                    <p>
+                    <p class="genericText">
                         If you have uploaded an academic transcript before you will be able to reuse that document for this application, although you are free to upload a recent revision. 
                     </p>
                     <fieldset class="registerFormFieldset">
-                        <legend>Apply - Document Upload</legend>
+                        <legend>Apply - Document Upload - DISABLED!</legend>
                     <form name="form6" action="/PostGradSystem/candidate/apply/g_submission.jsp" method="post" class="form-green">
                         
                         <label for="academicTranscript"><b>Academic Transcript:</b></label>

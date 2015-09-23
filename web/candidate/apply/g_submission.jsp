@@ -4,6 +4,7 @@
     Author     : Nathan
 --%>
 
+<%@page import="domain.ApplicationSessionObject"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="domain.Person"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -23,6 +24,12 @@
         return;
     }
     name = "John Smith";
+    
+     ApplicationSessionObject sess_obj;
+    sess_obj = (ApplicationSessionObject)session.getAttribute("app_session_object");
+    if(sess_obj == null){
+        response.sendRedirect("/PostGradSystem/candidate/apply/a_returning.jsp");
+    }
 %>
 <!DOCTYPE html>
 <html>
@@ -49,7 +56,7 @@
                 </p>
                 <fieldset class="registerFormFieldset">
                     <legend>Apply - Submission</legend>
-                <form name="form7" class="form-green" method="post" action="/PostGradSystem/candidate/apply/h_received.jsp" onsubmit="if (document.getElementById('agree').checked){
+                <form name="form7" class="form-green" method="post" action="/PostGradSystem/ProcessApplicationServlet" onsubmit="if (document.getElementById('agree').checked){
                             return true;
                         } else {
                             alert('Please indicate that you have read and agree to the Terms and Conditions and Privacy Policy');

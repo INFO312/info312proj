@@ -4,6 +4,7 @@
     Author     : Nathan
 --%>
 
+<%@page import="domain.ApplicationSessionObject"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="domain.Person"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -23,6 +24,17 @@
         return;
     }
     name = "John Smith";
+    
+    String preferredDepartmentMember = request.getParameter("departmentMembers0");
+    ApplicationSessionObject sess_obj;
+    sess_obj = (ApplicationSessionObject)session.getAttribute("app_session_object");
+    if(sess_obj == null || preferredDepartmentMember == null){
+        response.sendRedirect("/PostGradSystem/candidate/apply/a_returning.jsp");
+    }else{
+        sess_obj.setPreferredSupervisor(preferredDepartmentMember);
+        session.setAttribute("app_session_object", sess_obj);
+    }
+    
 %>
 <!DOCTYPE html>
 <html>
@@ -52,7 +64,7 @@
                     </p>
                     <fieldset class="registerFormFieldset">
                         <legend>Apply - Attained Qualifications</legend>
-                    <form name="form5" action="/PostGradSystem/candidate/apply/f_documents.jsp" method="post" class="form-green">
+                    <form name="form5" action="/PostGradSystem/candidate/apply/g_submission.jsp" method="post" class="form-green">
                         
                         <div id="qualificationSelectorContainer0">
                            

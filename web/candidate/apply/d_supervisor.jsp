@@ -4,6 +4,7 @@
     Author     : Nathan
 --%>
 
+<%@page import="domain.ApplicationSessionObject"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="domain.Person"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -23,6 +24,17 @@
         return;
     }
     name = "John Smith";
+    
+    String programmeLoad = request.getParameter("programmeLoad");
+    ApplicationSessionObject sess_obj;
+    sess_obj = (ApplicationSessionObject)session.getAttribute("app_session_object");
+    if(sess_obj == null || programmeLoad == null){
+        response.sendRedirect("/PostGradSystem/candidate/apply/a_returning.jsp");
+    }else{
+        sess_obj.setProgrammeStudyLoad(programmeLoad);
+        session.setAttribute("app_session_object", sess_obj);
+    }
+    
 %>
 <!DOCTYPE html>
 <html>
@@ -42,21 +54,18 @@
             <div id="main_content_area">
                 <nav id="subnav">
                 </nav>
-                <p>
+                <p class="genericText">
                     This step is optional and can be completed at a later time.</p>
-                <p>
+                <p class="genericText">
                     Specify members of the department that you would like to supervise your study. You may select up to three per programme application. 
                 </p>
-                <p>
+                <p class="genericText">
                     This is a <b>request only</b> and does not guarantee supervision by the requested department member(s).</p>
-                <p>
+                <p class="genericText">
                     <b><a href="http://infosci.otago.ac.nz/our-people/">Look at Department Members Here</a></b>
                 </p>
                 <fieldset class="registerFormFieldset">
                     <legend>Apply - Supervisor Request</legend>
-
-
-
                     <form name="form4" class="green-form" action="/PostGradSystem/candidate/apply/e_qualifications.jsp" method="post">
                         <p>Master of Science</label><p>
 

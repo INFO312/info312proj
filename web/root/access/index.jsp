@@ -11,12 +11,10 @@
     String name = "";
     String sidebarURL = "";
 
-    // Check if the user is logged in. If no then redirect to login.jsp
-//    Person p = (Person) session.getAttribute("currentuser");
-//    String userType = (String) session.getAttribute("usertype");
-    String userType = "r";
+    String userType = (String)session.getAttribute("userType");
+    userType = "r";
     if (userType != "r") {
-        //response.sendRedirect(request.getContextPath() + "/login.jsp");
+        response.sendRedirect(request.getContextPath() + "/login.jsp");
         return;
     }
     Person p = (Person)session.getAttribute("currentUser");
@@ -40,16 +38,16 @@
                 <nav id="subnav">
                     <h2>Manage Department Access Levels</h2>
                 </nav>
-
+                <form action="/PostGradSystem/RootAccessServlet" method="post">
                 <table id="manageDepartmentAccess" style="width:100%">
                     <tr>
                         <td>Heather Cooper</td>
                         <td><label for="access">Access Level</label>
                             <select name="access">
-                                <option value ="Admin">Admin</option>
-                                <option value ="Staff">Staff</option>
-                                <option value ="HOD">HOD</option>
-                                <option value ="PG Advisor">PG Advisor</option>
+                                <option value ="a">Admin</option>
+                                <option value ="d">Staff</option>
+                                <option value ="h">HOD</option>
+                                <option value ="p">PG Advisor</option>
                             </select></td> 
                     </tr>
                     <tr>
@@ -73,7 +71,7 @@
                             </select></td>
                     </tr>
                     <tr>
-                        <td>Brendon Woodford</td>
+                        <td>Brendan Woodford</td>
                         <td><label for="fname">Access Level</label>
                             <select name="fname">
                                 <option value ="Staff">Staff</option>
@@ -114,6 +112,8 @@
                             </select></td>
                     </tr>             
                 </table>
+
+            </form>
                 <br>
                 
                 <button type="button" id="saveButton" class="yellowButton">Save Changes</button>

@@ -4,6 +4,7 @@
     Author     : Nathan
 --%>
 
+<%@page import="domain.ApplicationSessionObject"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="domain.Person"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -23,6 +24,19 @@
         return;
     }
     name = "John Smith";
+    
+    String programme = request.getParameter("programme");
+    String year = request.getParameter("year"); //  checking integer parse l8r? lolz
+    ApplicationSessionObject sess_obj;
+    sess_obj = (ApplicationSessionObject)session.getAttribute("app_session_object");
+    if(sess_obj == null || programme == null || year == null){
+        response.sendRedirect("/PostGradSystem/candidate/apply/a_returning.jsp");
+    }else{
+        sess_obj.setProgrammeName(programme);
+        sess_obj.setProgrammeYear(year);
+        session.setAttribute("app_session_object", sess_obj);
+    }
+
 %>
 <!DOCTYPE html>
 <html>
@@ -45,15 +59,15 @@
                 <fieldset class="loginFormFieldset">
                 <legend>Apply - Study Period</legend>
                     
-                    <p>
+                    <p class="genericText">
                         For each programme application select the study term
                     </p>
                     <p>
                         Master of Science
                     <form name="form3" action="/PostGradSystem/candidate/apply/d_supervisor.jsp" method="post">
-                        <label for="programme">Year:</label>
+                        <label for="programmeLoad">Year:</label>
                         <span>
-                            <select name="programme" class="mytext">
+                            <select name="programmeLoad" class="mytext">
                                 <option value =""></option>
                                 <option value ="fullTime">Full Time</option>
                                 <option value ="PartTime">Part Time</option>

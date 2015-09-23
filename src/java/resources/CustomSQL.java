@@ -14,8 +14,9 @@ import java.sql.Statement;
 
 
 /**
- *
- * @author Kadin
+ * Contains a class that generates SQL Statement/PreparedStatement objects and returns them to the DAO.
+ * Yes, quite a weird class, but the DAO is cluttered enough to read through without having all this stuff in there.
+ * @author Kadin Boyle
  */
 public class CustomSQL {
     
@@ -31,6 +32,7 @@ public class CustomSQL {
     public static final String authorizeStaffSQL = "SELECT salt, hash FROM Staff_Login WHERE email = ?";
     
     public static final String retrieveUserSQL = "SELECT * FROM Person WHERE email = ?";
+    
     
     //Returns the prepared statement for inserting a person into the database
     public static PreparedStatement getRegisterPersonStmt(Person person, String email, String salt, String hash, Connection connection) throws SQLException{

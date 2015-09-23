@@ -4,6 +4,7 @@
     Author     : Nathan
 --%>
 
+<%@page import="domain.ApplicationSessionObject"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="domain.Person"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -23,8 +24,21 @@
         return;
     }
     name = "John Smith";
+    
+    String isPrevious = request.getParameter("isPreviousStudent");
+    String studentCode = request.getParameter("studentNumberCode");
+    ApplicationSessionObject sess_obj;
+    sess_obj = (ApplicationSessionObject)session.getAttribute("app_session_object");
+    if(sess_obj == null || isPrevious == null || studentCode == null){
+        response.sendRedirect("/PostGradSystem/candidate/apply/a_returning.jsp");
+    }else{
+        sess_obj.setIsPreviousStudent(isPrevious);
+        sess_obj.setStudentNumberCode(studentCode);
+        session.setAttribute("app_session_object", sess_obj);
+    }
+    
 %>
-%>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -49,10 +63,10 @@
                         
                     <legend>Apply - Programme Selection</legend>
                     
-                    <p>
+                    <p class="genericText">
                         Type the name of the programme you wish to apply for and select a preferred year of study
                     </p>
-                    <p>
+                    <p class="genericText">
                         E.g. Master of Science (MSc)
                     </p>
                     <form name="form2" action="/PostGradSystem/candidate/apply/c_period.jsp" method="post">
