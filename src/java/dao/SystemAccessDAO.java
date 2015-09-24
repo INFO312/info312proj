@@ -41,6 +41,17 @@ public class SystemAccessDAO {
             System.out.println("ERROR> ERROR");
         }
     }
+    
+    public Boolean personExists(String id) throws SQLException{
+        conn = DriverManager.getConnection(dburl);
+        PreparedStatement existsStatement = conn.prepareStatement("SELECT * FROM Person WHERE person_id = ?");
+        ResultSet rs_authorize = existsStatement.executeQuery();
+        if(rs_authorize.next()){
+            return true;
+        }
+        conn.close();
+        return false;
+    }
 
     /**
      * Logs a user in if credentials are valid CURRENTLY processes password in
@@ -65,7 +76,6 @@ public class SystemAccessDAO {
             //in the db, and if the new hash == the expected hash, then credentials are valid
             //NOTE: .toCharArray() is neccessary for isExpectedPassword to function
             if (Passwords.isExpectedPassword(password.toCharArray(), salt, expectedHash)) {
-                System.out.println("WOAHHHH _______________________");
                 PreparedStatement retrieveUserStatement = CustomSQL.getRetrieveUserStmt(email, conn);
                 ResultSet rs_person = retrieveUserStatement.executeQuery();
                 //Parse a Person object from the result set

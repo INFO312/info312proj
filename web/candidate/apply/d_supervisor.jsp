@@ -77,11 +77,11 @@
                             <div id="TextBoxDiv1">
                                 <select name="departmentMembers0" class="mytext">
                                 <option value =""></option>
-                                <option value ="alecHolt">Alec Holt</option>
-                                <option value ="brendonWoodford">Brendon Woodford</option>
-                                <option value ="grantDick">Grant Dick</option>
-                                <option value ="hankWolfe">Hank Wolfe</option>
-                                <option value ="holgerRegenbrecht">Holger Regenbrecht</option>
+                                <option value ="alec">Alec Holt</option>
+                                <option value ="brendon">Brendon Woodford</option>
+                                <option value ="grant">Grant Dick</option>
+                                <option value ="hank">Hank Wolfe</option>
+                                <option value ="holger">Holger Regenbrecht</option>
                             </select>  
                             </div>
                         </div>

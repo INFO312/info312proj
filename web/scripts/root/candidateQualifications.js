@@ -5,7 +5,7 @@ $(document).ready(function(){
     $("#addButton").click(function () {
 				
 	if(counter>10){
-            alert("Only 10 textboxes allow");
+            alert("Only 10 textboxes allowed");
             return false;
 	}   
 		

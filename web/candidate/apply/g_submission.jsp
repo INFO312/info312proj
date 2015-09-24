@@ -24,11 +24,22 @@
         return;
     }
     name = "John Smith";
-    
-     ApplicationSessionObject sess_obj;
-    sess_obj = (ApplicationSessionObject)session.getAttribute("app_session_object");
-    if(sess_obj == null){
+
+    ApplicationSessionObject sess_obj;
+    sess_obj = (ApplicationSessionObject) session.getAttribute("app_session_object");
+    String qual = request.getParameter("qualifications");
+    String qualYearStr = request.getParameter("qualYear");
+    int qualYear = 0;
+    try {
+        qualYear = Integer.parseInt(qualYearStr);
+    } catch (Exception e) {
+        //do nothing.
+    }
+    if (sess_obj == null || qual == null || qualYear == 0) {
         response.sendRedirect("/PostGradSystem/candidate/apply/a_returning.jsp");
+    } else {
+        sess_obj.addQualificationWithYear(qual, qualYear);
+        session.setAttribute("app_session_object", sess_obj);
     }
 %>
 <!DOCTYPE html>
@@ -48,30 +59,30 @@
             </jsp:include>
             <jsp:include page="/WEB-INF/jspf/sidebar/candidate.jspf" flush="true" />  
             <div id="main_content_area">
-                
-                
+
+
 
                 <p class="genericText">
                     By submitting this application for postgraduate study with the Department of Information Science at the University of Otago you agree the all information provided is correct and true. 
                 </p>
                 <fieldset class="registerFormFieldset">
                     <legend>Apply - Submission</legend>
-                <form name="form7" class="form-green" method="post" action="/PostGradSystem/ProcessApplicationServlet" onsubmit="if (document.getElementById('agree').checked){
-                            return true;
-                        } else {
-                            alert('Please indicate that you have read and agree to the Terms and Conditions and Privacy Policy');
-                            return false;
-                        }">
-                    <input type="checkbox" name="checkbox" value="check" id="agree" /> I have read and agree to the Terms and Conditions and Privacy Policy
-                    <br>
-                    <br>
-<input class="yellowButton" type="submit" name="next" id="next" value="Next"/>
-<input class="yellowButton" action="action" type="button" value="Back" onclick="history.go(-1);" />
-                    <a href="/PostGradSystem/index.jsp"><button type="button" class="yellowButton">Cancel</button></a>
-                    
-                    
+                    <form name="form7" class="form-green" method="post" action="/PostGradSystem/ProcessApplicationServlet" onsubmit="if (document.getElementById('agree').checked) {
+                                return true;
+                            } else {
+                                alert('Please indicate that you have read and agree to the Terms and Conditions and Privacy Policy');
+                                return false;
+                            }">
+                        <input type="checkbox" name="checkbox" value="check" id="agree" /> I have read and agree to the Terms and Conditions and Privacy Policy
+                        <br>
+                        <br>
+                        <input class="yellowButton" type="submit" name="next" id="next" value="Next"/>
+                        <input class="yellowButton" action="action" type="button" value="Back" onclick="history.go(-1);" />
+                        <a href="/PostGradSystem/index.jsp"><button type="button" class="yellowButton">Cancel</button></a>
 
-                </form>
+
+
+                    </form>
                 </fieldset>
             </div>
         </div>

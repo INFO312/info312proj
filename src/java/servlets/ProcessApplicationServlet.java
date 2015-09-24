@@ -36,8 +36,6 @@ public class ProcessApplicationServlet extends HttpServlet {
         
         HttpSession session = request.getSession();
         ApplicationSessionObject sessionObject = (ApplicationSessionObject)session.getAttribute("app_session_object");
-        System.out.println("LKJAFLKDLJ: " + sessionObject);
-        System.err.println("LKJAFLKDLJ: " + sessionObject);
         
         
         
@@ -56,6 +54,8 @@ public class ProcessApplicationServlet extends HttpServlet {
             out.println("</head>");
             out.println("<body>");
             out.println("<h1>Servlet ProcessApplicationServlet at " + request.getContextPath() + "</h1>");
+            out.println("DATA DUMP for SAMO:");
+            out.println(sessionObject);
             out.println("</body>");
             out.println("</html>");
         }

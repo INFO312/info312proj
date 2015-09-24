@@ -82,6 +82,11 @@ public class ApplicationSessionObject {
     public Map getQualMap() {
         return this.qualMap;
     }
+
+    @Override
+    public String toString() {
+        return "ApplicationSessionObject{" + "\n isPreviousStudent=" + isPreviousStudent + ", \n studentNumberCode=" + studentNumberCode + ", \nprogrammeName=" + programmeName + ", \n programmeYear=" + programmeYear + ", \nprogrammeStudyLoad=" + programmeStudyLoad + ", \npreferredSupervisor=" + preferredSupervisor + ", \nqualMap=" + qualMap + '}';
+    }
     
     
     

@@ -77,7 +77,7 @@
                             <br>
                         
                         <label for="year">Year:</label>
-                            <input type="text" name="textbox' id="textbox value="" >
+                            <input type="text" name="qualYear" id="textbox value">
                             </div>
                         </div>
                         <input type='button' value='Add Qualification' id='addButton' class="yellowButton">

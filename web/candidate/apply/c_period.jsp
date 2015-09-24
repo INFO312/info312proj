@@ -69,9 +69,9 @@
                         <span>
                             <select name="programmeLoad" class="mytext">
                                 <option value =""></option>
-                                <option value ="fullTime">Full Time</option>
-                                <option value ="PartTime">Part Time</option>
-                                <option value ="undecided">Undecided</option>
+                                <option value ="F">Full Time</option>
+                                <option value ="P">Part Time</option>
+                                <option value ="U">Undecided</option>
                             </select>
                         </span>
                         <br>
